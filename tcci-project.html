@@ -36,6 +36,7 @@
     .author-list { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem; }
     .author-chip { background:rgba(255,255,255,0.06); border:1px solid var(--border-glass); border-radius:50px; font-size:0.8rem; padding:0.25rem 0.75rem; color:var(--text-muted); }
     .author-chip.me { background:rgba(255,107,53,0.15); border-color:rgba(255,107,53,0.4); color:var(--accent-orange); font-weight:700; }
+    @media (max-width:480px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
   </style>
 </head>
 <body>

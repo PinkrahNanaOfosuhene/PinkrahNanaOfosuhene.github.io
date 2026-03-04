@@ -27,6 +27,7 @@
     .finding-box { background:rgba(0,212,170,0.06); border:1px solid rgba(0,212,170,0.2); border-left:4px solid var(--accent-teal); border-radius:0 12px 12px 0; padding:1.1rem 1.25rem; margin:0.75rem 0; }
     .finding-box p { margin:0; color:var(--text-muted); font-size:0.93rem; }
     .finding-box strong { color:var(--accent-teal); }
+    @media (max-width:480px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
   </style>
 </head>
 <body>
@@ -49,9 +50,7 @@
   <div class="page-header" style="background:linear-gradient(135deg,#001A3A 0%,#0D001F 50%,#001F1A 100%);">
     <span class="page-header-label">Hydroclimatology · GEOS 510 · Group Project · WKU</span>
     <h1 class="page-header-title" style="font-size:clamp(1.5rem,4vw,2.8rem);">
-      Extreme Precipitation Frequency<br>
-      in <span class="accent">Kentucky</span>:<br>
-      Atlas 14 vs. Kentucky Mesonet
+      Extreme Precipitation Frequency in <span class="accent">Kentucky</span>: Atlas 14 vs. Kentucky Mesonet
     </h1>
     <p class="page-header-desc">
       Deriving IDF curves from KYMN station data (2015–2024) and comparing to NOAA Atlas 14

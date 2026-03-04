@@ -111,6 +111,10 @@
     .param-table td:first-child { color: var(--text-white); font-weight: 500; }
     .param-table tr:hover td { background: rgba(255,255,255,0.03); }
 
+    @media (max-width: 480px) {
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     .timeline-period {
       position: relative;
       padding: 1.25rem 1.5rem;
@@ -154,8 +158,7 @@
   <div class="page-header" style="background: linear-gradient(135deg, #0D001F 0%, #001A3A 50%, #001F1A 100%);">
     <span class="page-header-label">WRF Atmospheric Modeling · GEOS 539</span>
     <h1 class="page-header-title" style="font-size:clamp(1.6rem,4vw,3rem);">
-      Numerical Simulation of the<br>
-      <span class="accent">July 26–27, 2022</span> Central Appalachian Flood
+      Numerical Simulation of the <span class="accent">July 26–27, 2022</span> Central Appalachian Flood
     </h1>
     <p class="page-header-desc">
       A 48-hour convection-permitting WRF simulation using ERA5 reanalysis data
@@ -247,11 +250,13 @@
           longitude −85°W):
         </p>
 
-        <table class="param-table">
-          <tr><th>Domain</th><th>Resolution</th><th>Grid Size</th><th>Convection</th></tr>
-          <tr><td>D01 (Parent)</td><td>12 km</td><td>181 × 181</td><td>Kain–Fritsch scheme</td></tr>
-          <tr><td>D02 (Nest)</td><td>4 km</td><td>361 × 361</td><td>Explicit (no cumulus)</td></tr>
-        </table>
+        <div class="table-scroll">
+          <table class="param-table">
+            <tr><th>Domain</th><th>Resolution</th><th>Grid Size</th><th>Convection</th></tr>
+            <tr><td>D01 (Parent)</td><td>12 km</td><td>181 × 181</td><td>Kain–Fritsch scheme</td></tr>
+            <tr><td>D02 (Nest)</td><td>4 km</td><td>361 × 361</td><td>Explicit (no cumulus)</td></tr>
+          </table>
+        </div>
         <p>
           Vertical grid: <strong>41 terrain-following η-levels</strong>, model top at 5 hPa.
           Timestep: 60 s (D01) / 20 s (D02). Integration period: 2022-07-26 00 UTC →
@@ -259,16 +264,18 @@
         </p>
 
         <h3 style="font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--accent-orange); margin:1.25rem 0 0.5rem;">Physics Parameterization</h3>
-        <table class="param-table">
-          <tr><th>Process</th><th>Scheme</th></tr>
-          <tr><td>Microphysics</td><td>WSM6 (mp_physics = 8)</td></tr>
-          <tr><td>Longwave Radiation</td><td>RRTMG (ra_lw_physics = 4)</td></tr>
-          <tr><td>Shortwave Radiation</td><td>RRTMG (ra_sw_physics = 4)</td></tr>
-          <tr><td>Surface Layer</td><td>Monin–Obukhov (sf_sfclay_physics = 1)</td></tr>
-          <tr><td>Land Surface</td><td>Noah LSM (sf_surface_physics = 2)</td></tr>
-          <tr><td>Boundary Layer</td><td>YSU (bl_pbl_physics = 1)</td></tr>
-          <tr><td>Cumulus</td><td>Kain–Fritsch on D01 only; explicit on D02</td></tr>
-        </table>
+        <div class="table-scroll">
+          <table class="param-table">
+            <tr><th>Process</th><th>Scheme</th></tr>
+            <tr><td>Microphysics</td><td>WSM6 (mp_physics = 8)</td></tr>
+            <tr><td>Longwave Radiation</td><td>RRTMG (ra_lw_physics = 4)</td></tr>
+            <tr><td>Shortwave Radiation</td><td>RRTMG (ra_sw_physics = 4)</td></tr>
+            <tr><td>Surface Layer</td><td>Monin–Obukhov (sf_sfclay_physics = 1)</td></tr>
+            <tr><td>Land Surface</td><td>Noah LSM (sf_surface_physics = 2)</td></tr>
+            <tr><td>Boundary Layer</td><td>YSU (bl_pbl_physics = 1)</td></tr>
+            <tr><td>Cumulus</td><td>Kain–Fritsch on D01 only; explicit on D02</td></tr>
+          </table>
+        </div>
 
         <h3 style="font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--accent-orange); margin:1.25rem 0 0.5rem;">Forcing Data &amp; Preprocessing</h3>
         <p>

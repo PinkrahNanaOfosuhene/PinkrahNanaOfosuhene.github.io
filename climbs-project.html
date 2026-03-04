@@ -38,6 +38,7 @@
     .phase-2 .phase-num { color:var(--accent-teal); }
     .phase-3 .phase-num { color:var(--accent-gold); }
     .phase-title { font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--text-white); margin-bottom:0.5rem; }
+    @media (max-width:480px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
   </style>
 </head>
 <body>
@@ -60,8 +61,7 @@
   <div class="page-header" style="background:linear-gradient(135deg,#0D001F 0%,#1A0533 40%,#0A2040 100%);">
     <span class="page-header-label">MS Thesis · NSF EPSCoR CLIMBS · WKU</span>
     <h1 class="page-header-title" style="font-size:clamp(1.5rem,4vw,2.8rem);">
-      Climatological &amp; Future Projections of<br>
-      <span class="accent">Severe-Storm Environments</span><br>in the Ohio River Basin
+      Climatological &amp; Future Projections of <span class="accent">Severe-Storm Environments</span> in the Ohio River Basin
     </h1>
     <p class="page-header-desc">
       ERA5 reanalysis (1996–2025) · CMIP6 SSP5 projections (2026–2100) · Random Forest ML · 4-km downscaling
@@ -161,14 +161,16 @@
       </div>
 
       <div class="prose fade-in-up">
-        <table class="param-table">
-          <tr><th>Category</th><th>Key Parameters</th></tr>
-          <tr><td>Thermodynamic Instability</td><td>MLCAPE, SBCAPE, MUCAPE, MLCIN, LCL Height, Lapse Rates</td></tr>
-          <tr><td>Kinematic / Shear</td><td>0–1 km, 0–3 km, 0–6 km bulk shear vectors, SRH (1 km, 3 km)</td></tr>
-          <tr><td>Moisture</td><td>Precipitable water, mixing ratio, dewpoint depression</td></tr>
-          <tr><td>Composite Indices</td><td>STP, EHI, SCP (Supercell Composite), SHIP</td></tr>
-          <tr><td>Storm Reports (labels)</td><td>NOAA Storm Events: tornado, hail ≥ 1 in, wind ≥ 58 mph</td></tr>
-        </table>
+        <div class="table-scroll">
+          <table class="param-table">
+            <tr><th>Category</th><th>Key Parameters</th></tr>
+            <tr><td>Thermodynamic Instability</td><td>MLCAPE, SBCAPE, MUCAPE, MLCIN, LCL Height, Lapse Rates</td></tr>
+            <tr><td>Kinematic / Shear</td><td>0–1 km, 0–3 km, 0–6 km bulk shear vectors, SRH (1 km, 3 km)</td></tr>
+            <tr><td>Moisture</td><td>Precipitable water, mixing ratio, dewpoint depression</td></tr>
+            <tr><td>Composite Indices</td><td>STP, EHI, SCP (Supercell Composite), SHIP</td></tr>
+            <tr><td>Storm Reports (labels)</td><td>NOAA Storm Events: tornado, hail ≥ 1 in, wind ≥ 58 mph</td></tr>
+          </table>
+        </div>
 
         <!-- ML METHODOLOGY -->
         <h2>3. Three-Phase Methodology</h2>

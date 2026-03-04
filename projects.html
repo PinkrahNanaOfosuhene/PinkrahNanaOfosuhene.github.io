@@ -46,7 +46,7 @@
         <div class="section-divider"></div>
       </div>
 
-      <div class="card fade-in-up" style="border-left:4px solid var(--accent-orange); margin-bottom:2rem;">
+      <a href="climbs-project.html" class="card fade-in-up" style="border-left:4px solid var(--accent-orange); margin-bottom:2rem; display:block; text-decoration:none; cursor:pointer;">
         <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:flex-start;">
           <div style="flex:1; min-width:280px;">
             <div class="tags" style="margin-bottom:1rem;">
@@ -88,11 +88,12 @@
               <div style="color:var(--accent-orange);font-weight:600;margin-bottom:1rem;">In Progress</div>
               <div style="font-family:var(--font-head);font-weight:700;color:var(--text-white);font-size:0.9rem;">Platform</div>
               <div style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">NCAR HPC Cluster</div>
-              <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:0.45rem 1rem; width:100%; justify-content:center;">GitHub ↗</a>
+              <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" class="btn btn-outline" style="font-size:0.8rem; padding:0.45rem 1rem; width:100%; justify-content:center;" onclick="event.stopPropagation();">GitHub ↗</a>
+              <span class="btn btn-primary" style="font-size:0.8rem; padding:0.45rem 1rem; width:100%; justify-content:center; margin-top:0.5rem; display:flex;">Full Project →</span>
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -146,25 +147,27 @@
           </div>
         </div>
 
-        <div class="card">
+        <a href="hydro-project.html" class="card" style="display:block; text-decoration:none; cursor:pointer; border-top:3px solid var(--accent-teal);">
           <div class="card-icon">🌧️</div>
           <div class="tags" style="margin-bottom:0.75rem;">
             <span class="tag teal">Kentucky</span>
             <span class="tag">Group Project</span>
+            <span class="tag gold">Oral Presentation</span>
           </div>
-          <div class="card-title">Kentucky Extreme Precipitation Climatology</div>
+          <div class="card-title">Kentucky Extreme Precipitation — Atlas 14 vs. Mesonet</div>
           <p class="card-text">
-            Developed Atlas-14-style return-period estimates for extreme precipitation events
-            across Kentucky using KY Mesonet station network data. Applied GEV and log-Pearson
-            III frequency distributions.
+            Derived IDF curves from 10 years of Kentucky Mesonet data (2015–2024) using Gumbel
+            extreme-value statistics. Compared statewide precipitation-frequency estimates against
+            NOAA Atlas 14. Found KYMN exceeds Atlas 14 by 5–15% at short durations.
           </p>
-          <div class="tags">
+          <div class="tags" style="margin-bottom:1rem;">
             <span class="tag teal">Python</span>
             <span class="tag">KY Mesonet</span>
-            <span class="tag">Statistical Analysis</span>
-            <span class="tag">Scipy</span>
+            <span class="tag">Gumbel EVT</span>
+            <span class="tag">Kriging</span>
           </div>
-        </div>
+          <span class="btn btn-secondary" style="font-size:0.82rem; padding:0.5rem 1.2rem; display:inline-flex;">View Full Project →</span>
+        </a>
 
         <div class="card">
           <div class="card-icon">📊</div>

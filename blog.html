@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Pinkrah Nana Ofosuhene</title>
+  <meta name="description" content="Science writing and reflections on climate, extreme weather, and life as an atmospheric scientist." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .post-full {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .post-full h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text-white);
+      margin: 2rem 0 0.75rem;
+    }
+    .post-full p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .post-full blockquote {
+      border-left: 3px solid var(--accent-teal);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: rgba(0,212,170,0.06);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+    .post-full strong { color: var(--accent-orange); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Nana<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="page-header-label">Thoughts &amp; Writing</span>
+    <h1 class="page-header-title">The <span class="accent">Blog</span></h1>
+    <p class="page-header-desc">
+      Science writing, reflections on climate change, and dispatches from life
+      as an atmospheric scientist from Ghana studying in Kentucky.
+    </p>
+  </div>
+
+  <!-- BLOG INDEX -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header fade-in-up">
+        <span class="section-label">Latest Posts</span>
+        <h2 class="section-title">Featured <span class="accent">Articles</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid-3 stagger-children">
+
+        <!-- Featured Post -->
+        <div class="blog-card" style="grid-column: span 2; display:flex; flex-direction:column;">
+          <div class="blog-card-header" style="font-size:2.5rem; padding:2rem 2.5rem 1.25rem;">⛈️</div>
+          <div class="blog-card-body" style="flex:1; display:flex; flex-direction:column; padding:1.5rem 2.5rem 2.5rem;">
+            <div class="blog-date">March 2026 · 5 min read</div>
+            <div class="blog-title" style="font-size:1.4rem;">Why I Study Extreme Weather</div>
+            <p class="blog-excerpt">
+              A personal reflection on what drives my work in atmospheric science — from sleepless nights
+              in Ghana during the 2024 heat event, to studying storm-environment changes thousands of miles
+              away in Kentucky's Ohio River Basin.
+            </p>
+            <div class="tags" style="margin-bottom:1.25rem;">
+              <span class="tag teal">Personal</span>
+              <span class="tag gold">Ghana</span>
+              <span class="tag">Heatwaves</span>
+              <span class="tag">Motivation</span>
+            </div>
+            <a href="#post-why-extreme-weather" class="btn btn-primary" style="align-self:flex-start;">Read Post →</a>
+          </div>
+        </div>
+
+        <!-- Post 2 stub -->
+        <div class="blog-card">
+          <div class="blog-card-header">🌍</div>
+          <div class="blog-card-body">
+            <div class="blog-date">Coming Soon</div>
+            <div class="blog-title">From KNUST to WKU: A Cross-Continental Climate Journey</div>
+            <p class="blog-excerpt">
+              Navigating graduate school in the US as a Ghanaian atmospheric scientist — the culture shift,
+              the science upgrade, and what both countries' weather has taught me.
+            </p>
+            <div class="tags">
+              <span class="tag gold">Ghana</span>
+              <span class="tag teal">WKU</span>
+              <span class="tag">Grad School</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 stub -->
+        <div class="blog-card">
+          <div class="blog-card-header">🐍</div>
+          <div class="blog-card-body">
+            <div class="blog-date">Coming Soon</div>
+            <div class="blog-title">Python for Atmospheric Science: Where to Start</div>
+            <p class="blog-excerpt">
+              A practical guide to getting started with Python in climate and weather research —
+              libraries I actually use and why.
+            </p>
+            <div class="tags">
+              <span class="tag orange">Python</span>
+              <span class="tag">Tutorial</span>
+              <span class="tag teal">MetPy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 stub -->
+        <div class="blog-card">
+          <div class="blog-card-header">🌡️</div>
+          <div class="blog-card-body">
+            <div class="blog-date">Coming Soon</div>
+            <div class="blog-title">The 2024 Mali Heatwave: 100 Deaths and a Wake-Up Call</div>
+            <p class="blog-excerpt">
+              Breaking down what happened during the deadly 2024 Mali heat event, and why early-warning
+              systems for West Africa are a matter of life and death.
+            </p>
+            <div class="tags">
+              <span class="tag gold">West Africa</span>
+              <span class="tag orange">Heatwaves</span>
+              <span class="tag">Early Warning</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 stub -->
+        <div class="blog-card">
+          <div class="blog-card-header">🌀</div>
+          <div class="blog-card-body">
+            <div class="blog-date">Coming Soon</div>
+            <div class="blog-title">ERA5 vs CMIP6: What's the Difference and When to Use Each</div>
+            <p class="blog-excerpt">
+              A researcher's practical comparison of ERA5 reanalysis and CMIP6 climate model output —
+              what each is good for, their limits, and how I use both in my thesis.
+            </p>
+            <div class="tags">
+              <span class="tag teal">ERA5</span>
+              <span class="tag orange">CMIP6</span>
+              <span class="tag">Explainer</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <style>
+        @media (max-width: 768px) {
+          .blog-card[style*="grid-column"] { grid-column: span 1 !important; }
+        }
+      </style>
+
+    </div>
+  </section>
+
+  <!-- FULL SAMPLE POST -->
+  <section class="section" id="post-why-extreme-weather" style="background:rgba(255,255,255,0.02); border-top:1px solid var(--border-glass);">
+    <div class="section-inner">
+      <div class="post-full fade-in-up">
+        <div style="margin-bottom:2rem;">
+          <span class="section-label">Blog Post</span>
+          <h1 style="font-family:var(--font-head); font-weight:900; font-size:2.2rem; color:var(--text-white); margin:0.5rem 0 0.75rem; line-height:1.2;">
+            Why I Study Extreme Weather
+          </h1>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center; font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">
+            <span>📅 March 2026</span>
+            <span>⏱ 5 min read</span>
+            <span>✍️ Pinkrah Nana Ofosuhene</span>
+          </div>
+          <div style="height:3px; background:linear-gradient(90deg, var(--accent-orange), var(--accent-teal)); border-radius:2px;"></div>
+        </div>
+
+        <p>
+          I didn't choose atmospheric science. It chose me — or rather, Ghana's university placement
+          system did, dropping me into meteorology when I had my sights set on computer engineering.
+          But somewhere between the first synoptic chart and the first Python script that mapped a
+          temperature anomaly, I stopped being someone who had been redirected and started being
+          someone who was exactly where they needed to be.
+        </p>
+
+        <h2>The Night That Changed Everything</h2>
+
+        <p>
+          In February 2024, I was in Kumasi, Ghana, and I noticed something wrong. People couldn't
+          sleep. Friends were texting at 2am, 3am — not because they were night owls, but because
+          it was simply too hot to close their eyes. This wasn't a heatwave in the conventional sense
+          (daytime highs were only moderately elevated), but the <strong>nighttime temperatures</strong>
+          refused to drop. The minimum daily temperatures were staying abnormally high.
+        </p>
+
+        <blockquote>
+          "I personally noticed people having sleepless nights — and then I traced it in the station data.
+          The signal was right there."
+        </blockquote>
+
+        <p>
+          That was the moment where science became something urgent. I wasn't just analyzing historical
+          records anymore — I was looking at a phenomenon that was actively disrupting people's lives,
+          sleep, and health. And if it was doing this in Kumasi, what was it doing in Mali, in Niger,
+          in the more arid regions of the Sahel?
+        </p>
+
+        <h2>The Mali Wake-Up Call</h2>
+
+        <p>
+          A few months later, a heat event in Mali killed over 100 people. To most of the world, it
+          was a footnote. To me, it was a reason. West Africa is warming faster than the global average
+          in some metrics, and the region has some of the least robust <strong>early-warning systems</strong>
+          on the planet. The gap between what atmospheric science knows and what communities on the ground
+          receive is enormous — and that gap costs lives.
+        </p>
+
+        <p>
+          My undergraduate final-year project on heatwave analysis in Ghana scored 89/100. More
+          importantly, it was submitted for peer review. Not because I needed a grade. Because the
+          findings mattered.
+        </p>
+
+        <h2>From Ghana to the Ohio River Basin</h2>
+
+        <p>
+          Today I'm at Western Kentucky University, studying severe-storm environments across the
+          Ohio River Basin using ERA5 reanalysis and CMIP6 climate projections. The geography is
+          different; the urgency is the same. Climate change is shifting when and where extreme weather
+          happens — tornadoes, derechos, extreme precipitation events — and the communities of Kentucky
+          and the broader Ohio Valley need robust, data-driven science to prepare.
+        </p>
+
+        <p>
+          Extreme weather is the common thread. Whether it's a heatwave in West Africa stripping
+          agricultural workers of their ability to work during daylight hours, or a tornado outbreak
+          in the Ohio Valley that communities couldn't anticipate — the tools are the same: good data,
+          careful diagnostics, and the courage to communicate findings clearly.
+        </p>
+
+        <h2>Why You Should Care Too</h2>
+
+        <p>
+          If you're reading this, you probably already care about climate. But I'd ask you to think
+          about where <em>you</em> sit in the chain between science and impact. Atmospheric science
+          produces forecasts and projections every day that could, in principle, save lives. Whether
+          they actually do depends on whether those findings leave the pages of journals and reach
+          the people who need them.
+        </p>
+
+        <p>
+          That's the kind of atmospheric scientist I want to be. Not just one who publishes. One who
+          bridges.
+        </p>
+
+        <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--border-glass); display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="research.html" class="btn btn-primary">Explore My Research →</a>
+          <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-name">Pinkrah Nana <span>Ofosuhene</span></div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-divider"></div>
+    <p style="font-size:0.82rem; color:var(--text-muted);">© 2026 Pinkrah Nana Ofosuhene · Atmospheric Scientist · WKU</p>
+    <div class="footer-ghana"><span></span><span></span><span></span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

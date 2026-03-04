@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WRF Flood Simulation | Pinkrah Nana Ofosuhene</title>
+  <meta name="description" content="WRF numerical simulation of the July 26–27, 2022 Central Appalachian flash flood event." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .prose h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--text-white);
+      margin: 2.25rem 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .prose p {
+      color: var(--text-muted);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 0.9rem;
+    }
+    .prose strong { color: var(--accent-orange); font-weight: 600; }
+    .prose em { color: var(--accent-teal); font-style: normal; font-weight: 500; }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .metric-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 1.1rem 0.75rem;
+      text-align: center;
+    }
+    .metric-val {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+      display: block;
+      line-height: 1.1;
+    }
+    .metric-lbl {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    .fig-wrap {
+      margin: 2rem 0;
+    }
+    .fig-wrap img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border-glass);
+      display: block;
+    }
+    .fig-caption {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.6rem;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .fig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 640px) { .fig-grid { grid-template-columns: 1fr; } }
+
+    .param-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1.5rem 0;
+    }
+    .param-table th {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent-teal);
+      background: rgba(0,212,170,0.08);
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0,212,170,0.2);
+    }
+    .param-table td {
+      padding: 0.65rem 1rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .param-table td:first-child { color: var(--text-white); font-weight: 500; }
+    .param-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+    .timeline-period {
+      position: relative;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-glass);
+      border-left: 3px solid var(--accent-teal);
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 1rem;
+    }
+    .timeline-period h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--accent-orange);
+      margin-bottom: 0.3rem;
+    }
+    .timeline-period p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Nana<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header" style="background: linear-gradient(135deg, #0D001F 0%, #001A3A 50%, #001F1A 100%);">
+    <span class="page-header-label">WRF Atmospheric Modeling · GEOS 539</span>
+    <h1 class="page-header-title" style="font-size:clamp(1.6rem,4vw,3rem);">
+      Numerical Simulation of the<br>
+      <span class="accent">July 26–27, 2022</span> Central Appalachian Flood
+    </h1>
+    <p class="page-header-desc">
+      A 48-hour convection-permitting WRF simulation using ERA5 reanalysis data
+      and a two-domain nested setup, verified against NOAA Stage IV precipitation.
+    </p>
+    <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+      <span class="tag teal" style="font-size:0.8rem; padding:0.35rem 1rem;">WRF v4.7.1</span>
+      <span class="tag orange" style="font-size:0.8rem; padding:0.35rem 1rem;">ERA5 Reanalysis</span>
+      <span class="tag gold" style="font-size:0.8rem; padding:0.35rem 1rem;">NCAR Derecho HPC</span>
+      <span class="tag" style="font-size:0.8rem; padding:0.35rem 1rem;">Python · WRF-Python · Cartopy</span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="section">
+    <div class="section-inner" style="max-width:900px;">
+
+      <!-- QUICK STATS -->
+      <div class="metric-grid fade-in-up">
+        <div class="metric-box">
+          <span class="metric-val">48 hr</span>
+          <span class="metric-lbl">Simulation Length</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val">4 km</span>
+          <span class="metric-lbl">Inner Domain Resolution</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val">0.65</span>
+          <span class="metric-lbl">Correlation (R)</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val">64</span>
+          <span class="metric-lbl">MPI Tasks (Derecho)</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val">41</span>
+          <span class="metric-lbl">Vertical η-levels</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-val">12.6</span>
+          <span class="metric-lbl">RMSE (mm)</span>
+        </div>
+      </div>
+
+      <div class="prose fade-in-up">
+
+        <!-- ABSTRACT -->
+        <div class="card" style="border-left:4px solid var(--accent-teal); margin-bottom:2.5rem;">
+          <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-teal); margin-bottom:0.75rem;">Abstract</h3>
+          <p style="margin:0; color:var(--text-muted); font-size:0.97rem; line-height:1.8;">
+            A high-impact flash-flood event on <strong>July 26–27, 2022</strong> devastated parts of
+            Kentucky, West Virginia, and Virginia — producing catastrophic rainfall, washed-out bridges,
+            inundated homes, and multiple fatalities. The city of Huntington, WV recorded its wettest
+            July on record (239 mm). This study configured the <strong>WRF model v4.7.1</strong> with
+            ERA5 reanalysis data and a two-domain nested setup (<em>12 km outer</em> and
+            <em>4 km convection-permitting inner domain</em>) to simulate the event. Simulated precipitation
+            was verified against NOAA Stage IV observations using pixel-to-pixel spatial comparisons
+            and quantitative metrics. Results showed moderate daily agreement
+            (<strong>R = 0.65, R² = 0.42</strong>), demonstrating WRF's capability and limitations in
+            capturing short-duration, high-intensity Appalachian flood rainfall.
+          </p>
+        </div>
+
+        <!-- INTRODUCTION -->
+        <h2>1. Event Overview &amp; Motivation</h2>
+        <p>
+          The Central Appalachian region is particularly vulnerable to flash flooding due to its complex
+          terrain, which enhances orographic lifting and channels runoff into narrow valleys. On
+          <strong>July 26–27, 2022</strong>, a devastating series of flash floods swept across eastern
+          Kentucky, West Virginia, and southwestern Virginia. In Mingo and McDowell Counties (WV),
+          homes were submerged and bridges washed out, triggering multiple state-of-emergency declarations.
+        </p>
+        <p>
+          The event featured <em>slow-moving, training convective cells</em>, strong moisture advection
+          from the Gulf of Mexico, and persistent low-level jet interaction with complex Appalachian
+          terrain — ideal conditions for testing a convection-permitting model. This project applied
+          end-to-end WRF modeling skills: domain design, physics parameterization, HPC execution on
+          NCAR Derecho, and objective verification.
+        </p>
+
+        <!-- MODEL SETUP -->
+        <h2>2. Model Configuration</h2>
+
+        <h3 style="font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--accent-orange); margin:1.25rem 0 0.5rem;">Domain Design</h3>
+        <p>
+          A two-way nested domain was centered over the Ohio/Kentucky region using
+          <strong>Lambert Conformal Conic projection</strong> (true latitudes 30°N / 60°N, central
+          longitude −85°W):
+        </p>
+
+        <table class="param-table">
+          <tr><th>Domain</th><th>Resolution</th><th>Grid Size</th><th>Convection</th></tr>
+          <tr><td>D01 (Parent)</td><td>12 km</td><td>181 × 181</td><td>Kain–Fritsch scheme</td></tr>
+          <tr><td>D02 (Nest)</td><td>4 km</td><td>361 × 361</td><td>Explicit (no cumulus)</td></tr>
+        </table>
+        <p>
+          Vertical grid: <strong>41 terrain-following η-levels</strong>, model top at 5 hPa.
+          Timestep: 60 s (D01) / 20 s (D02). Integration period: 2022-07-26 00 UTC →
+          2022-07-28 00 UTC.
+        </p>
+
+        <h3 style="font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--accent-orange); margin:1.25rem 0 0.5rem;">Physics Parameterization</h3>
+        <table class="param-table">
+          <tr><th>Process</th><th>Scheme</th></tr>
+          <tr><td>Microphysics</td><td>WSM6 (mp_physics = 8)</td></tr>
+          <tr><td>Longwave Radiation</td><td>RRTMG (ra_lw_physics = 4)</td></tr>
+          <tr><td>Shortwave Radiation</td><td>RRTMG (ra_sw_physics = 4)</td></tr>
+          <tr><td>Surface Layer</td><td>Monin–Obukhov (sf_sfclay_physics = 1)</td></tr>
+          <tr><td>Land Surface</td><td>Noah LSM (sf_surface_physics = 2)</td></tr>
+          <tr><td>Boundary Layer</td><td>YSU (bl_pbl_physics = 1)</td></tr>
+          <tr><td>Cumulus</td><td>Kain–Fritsch on D01 only; explicit on D02</td></tr>
+        </table>
+
+        <h3 style="font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--accent-orange); margin:1.25rem 0 0.5rem;">Forcing Data &amp; Preprocessing</h3>
+        <p>
+          Initial and lateral boundary conditions from <strong>ERA5</strong> (0.25° × 0.25°, hourly,
+          137 hybrid-sigma levels). ERA5 fields were converted to WPS intermediate format using the
+          NCAR-recommended <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.4rem; border-radius:4px; font-size:0.85rem;">era5_to_int.py</code>
+          script — ensuring correct handling of hybrid-sigma levels, soil fields, and pressure level
+          reconstruction. Geogrid and Metgrid completed with NCAR WPS_GEOG static data.
+        </p>
+        <p>
+          The simulation ran on <strong>NCAR Derecho</strong> supercomputer using
+          <strong>64 MPI tasks across 4 compute nodes</strong>, completing successfully:
+          <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.5rem; border-radius:4px; font-size:0.85rem;">d01 2022-07-28_00:00:00 wrf: SUCCESS COMPLETE WRF</code>
+        </p>
+
+        <!-- STORM EVOLUTION -->
+        <h2>3. Storm Evolution — 6-Hour Precipitation Fields</h2>
+        <p>
+          The 6-hourly accumulated precipitation fields from both domains capture the lifecycle of a
+          long-lived, west-to-east <strong>mesoscale convective system (MCS)</strong> responsible
+          for the Appalachian flooding. D02 at 4 km consistently resolved sharper gradients, narrower
+          convective cores, and more realistic rainfall organization compared to the 12-km parent domain.
+        </p>
+
+      </div>
+
+      <!-- FIGURE GRID: first two periods -->
+      <div class="fig-grid fade-in-up">
+        <div class="fig-wrap" style="margin:0;">
+          <img src="images/wrf_precip_00-06_jul26.png" alt="WRF 6-hr precipitation 00–06 UTC July 26, 2022" loading="lazy" />
+          <p class="fig-caption">
+            <strong>Fig 1 — 00–06 UTC, July 26:</strong> Initial convective development over NE Missouri
+            and western Illinois. D02 resolves a narrow, elongated band extending SE; D01 shows broader
+            but less intense structure. Cores &gt;100 mm/6 hr.
+          </p>
+        </div>
+        <div class="fig-wrap" style="margin:0;">
+          <img src="images/wrf_precip_12-18_jul26.png" alt="WRF 6-hr precipitation 12–18 UTC July 26, 2022" loading="lazy" />
+          <p class="fig-caption">
+            <strong>Fig 2 — 12–18 UTC, July 26:</strong> Convective band broadens to SW–NE orientation
+            across Kentucky, Virginia, and West Virginia. D02 maintains a narrower axis of intense
+            elements while D01 shows a wider, more diffuse band.
+          </p>
+        </div>
+      </div>
+
+      <div class="fig-grid fade-in-up">
+        <div class="fig-wrap" style="margin:0;">
+          <img src="images/wrf_precip_18-00_jul26-27.png" alt="WRF 6-hr precipitation 18 UTC July 26 – 00 UTC July 27" loading="lazy" />
+          <p class="fig-caption">
+            <strong>Fig 3 — 18 UTC Jul 26 – 00 UTC Jul 27:</strong> Lead-up to peak flooding in eastern
+            Kentucky. D02 produces frequent, intense localized bursts. Several heavy pockets appear in
+            SE Kentucky and W. West Virginia — consistent with maximum hydrometeorological stress.
+          </p>
+        </div>
+        <div class="fig-wrap" style="margin:0;">
+          <img src="images/wrf_precip_00-06_jul27.png" alt="WRF 6-hr precipitation 00–06 UTC July 27, 2022" loading="lazy" />
+          <p class="fig-caption">
+            <strong>Fig 4 — 00–06 UTC, July 27:</strong> Temporary weakening and disorganization as the
+            system lulls before re-intensification. D02 shows isolated, weaker cells while D01 depicts
+            broader but low-intensity precipitation shield.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose fade-in-up">
+
+        <!-- SYNOPTIC ANALYSIS -->
+        <h2>4. Synoptic &amp; Mesoscale 850-hPa Environment</h2>
+        <p>
+          The 850-hPa temperature, wind, and sea-level pressure (SLP) fields reveal the synoptic
+          environment that sustained 36+ hours of continuous convection:
+        </p>
+
+        <div class="timeline-period">
+          <h4>00 UTC July 26 — Setup</h4>
+          <p>A distinct <strong>baroclinic zone</strong> separated cooler air (~12–18°C) over the Great
+          Lakes from warmer air (~24–30°C) across Missouri, Kentucky, and Tennessee. Southwesterly
+          low-level flow was already transporting warm, moist air into the Ohio Valley along a weak
+          surface trough (1010–1014 hPa).</p>
+        </div>
+
+        <div class="timeline-period">
+          <h4>06–12 UTC July 26 — Intensification</h4>
+          <p>Thermal gradient sharpened; warm 850-hPa air (27–33°C) expanded NE into Kentucky.
+          Domain 2 resolved the strengthening <strong>southwesterly low-level jet</strong>. A SW–NE
+          oriented SLP trough extended into Kentucky/WV, supporting persistent low-level inflow
+          into the developing convection.</p>
+        </div>
+
+        <div class="timeline-period">
+          <h4>18 UTC Jul 26 – 00 UTC Jul 27 — Peak Flooding Phase</h4>
+          <p>Warm 850-hPa temperatures (27–33°C) persisted across southern Kentucky. Subtle semi-closed
+          SLP contours indicated <strong>slow progression</strong> of the synoptic disturbance —
+          maintaining a persistent environment for continuous moisture transport into Appalachian
+          terrain. This period aligns with the <em>peak simulated rainfall intensities</em>.</p>
+        </div>
+
+        <div class="timeline-period">
+          <h4>12–18 UTC July 27 — Decay</h4>
+          <p>Baroclinic zone shifted eastward; temperatures cooled to 18–24°C through eastern Kentucky.
+          Wind speeds weakened, SLP contours became diffuse, reflecting the breakdown of organized
+          synoptic and mesoscale support after 36 hours of back-building convection.</p>
+        </div>
+
+        <!-- VERIFICATION -->
+        <h2>5. Verification Against NOAA Stage IV</h2>
+        <p>
+          Daily accumulated precipitation on July 26 from the D02 (4-km) domain was compared to
+          NOAA Stage IV multi-sensor rainfall analysis — the operational gauge-corrected radar product
+          used as the ground truth for quantitative precipitation verification.
+        </p>
+      </div>
+
+      <!-- VERIFICATION FIGURE -->
+      <div class="fig-wrap fade-in-up">
+        <img src="images/wrf_verification.png" alt="WRF vs NOAA Stage IV verification" loading="lazy" />
+        <p class="fig-caption">
+          <strong>Fig 5 — Daily Verification (July 26, 2022):</strong> (a) NOAA Stage IV observed
+          rainfall; (b) WRF D02 simulated rainfall; (c) WRF – Stage IV bias map (positive = overestimate);
+          (d) Pixel-to-pixel scatterplot with 1:1 reference line. WRF correctly reproduces the SW–NE
+          rainband orientation but overestimates peak intensities.
+        </p>
+      </div>
+
+      <div class="prose fade-in-up">
+
+        <h3 style="font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--accent-orange); margin:1.25rem 0 0.75rem;">Verification Metrics — July 26</h3>
+        <div class="metric-grid">
+          <div class="metric-box">
+            <span class="metric-val">+2.0</span>
+            <span class="metric-lbl">Bias (mm)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">12.6</span>
+            <span class="metric-lbl">RMSE (mm)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">4.4</span>
+            <span class="metric-lbl">MAE (mm)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">0.65</span>
+            <span class="metric-lbl">Correlation R</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">0.42</span>
+            <span class="metric-lbl">R² Score</span>
+          </div>
+        </div>
+
+        <p>
+          The correlation of <strong>R = 0.65</strong> indicates moderate skill — particularly notable
+          given the <em>complex Appalachian terrain</em>, the narrow high-gradient rainband, and the
+          4-km grid spacing. The scatterplot shows dense clustering below 40 mm where WRF matches
+          observations well, with increasing scatter at higher intensities reflecting the model's
+          tendency to over-predict peak convective rainfall.
+        </p>
+        <p>
+          The positive bias (+2.0 mm) and widespread positive bias shading in the bias map (central
+          Kentucky and West Virginia) reflect over-amplified convective cores in D02 — a known
+          limitation of convection-permitting simulations at 4 km when orographic enhancement
+          interacts with a back-building MCS.
+        </p>
+
+        <!-- CONCLUSIONS -->
+        <h2>6. Conclusions</h2>
+        <p>
+          This study demonstrates that WRF with a 4-km convection-permitting nest and ERA5 boundary
+          conditions successfully reproduces the <em>mesoscale organization, orientation, and timing</em>
+          of the July 26–27, 2022 Central Appalachian flood event. The two-way nested configuration
+          allowed D02 to resolve the narrow convective band structure and localized rainfall maxima
+          that the coarser D01 domain smoothed over.
+        </p>
+        <p>
+          Key findings:
+        </p>
+        <ul style="color:var(--text-muted); padding-left:1.5rem; font-size:0.97rem; line-height:1.8;">
+          <li>WRF correctly captured the <strong>SW–NE rainband orientation</strong> and general placement of the convective system</li>
+          <li>The 4-km domain <strong>over-predicted peak rainfall intensities</strong> by a factor of ~1.5–2× in the highest-impact zones</li>
+          <li>The synoptic environment — quasi-stationary baroclinic zone, southwesterly low-level jet, slow-moving SLP trough — was well-reproduced in both domains</li>
+          <li>The moderate R = 0.65 skill score is encouraging for a single deterministic run without data assimilation over complex terrain</li>
+          <li>The WPS intermediate-file method for ERA5 ingestion performed reliably on NCAR Derecho</li>
+        </ul>
+      </div>
+
+      <!-- TECH STACK -->
+      <div class="card fade-in-up" style="margin-top:2.5rem;">
+        <h3 class="card-title" style="margin-bottom:1rem;">Full Technology Stack</h3>
+        <div class="tags">
+          <span class="tag orange">WRF v4.7.1</span>
+          <span class="tag orange">WPS (geogrid/metgrid/ungrib)</span>
+          <span class="tag teal">ERA5 Reanalysis</span>
+          <span class="tag teal">NOAA Stage IV</span>
+          <span class="tag">Python</span>
+          <span class="tag">WRF-Python</span>
+          <span class="tag">Xarray</span>
+          <span class="tag">Cartopy</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag gold">NCAR Derecho (HPC)</span>
+          <span class="tag">MPI (64 tasks)</span>
+          <span class="tag">Linux / PBS Scheduler</span>
+          <span class="tag">Lambert Conformal Conic</span>
+          <span class="tag">WSM6 Microphysics</span>
+          <span class="tag">RRTMG Radiation</span>
+          <span class="tag">Noah LSM</span>
+          <span class="tag">YSU PBL</span>
+          <span class="tag">Kain–Fritsch Cumulus</span>
+        </div>
+      </div>
+
+      <!-- NAVIGATION -->
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border-glass);">
+        <a href="projects.html" class="btn btn-outline">← Back to Projects</a>
+        <a href="research.html" class="btn btn-secondary">Current Research →</a>
+        <a href="contact.html" class="btn btn-primary">Collaborate with Me</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-name">Pinkrah Nana <span>Ofosuhene</span></div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-divider"></div>
+    <p style="font-size:0.82rem; color:var(--text-muted);">© 2026 Pinkrah Nana Ofosuhene · Atmospheric Scientist · WKU</p>
+    <div class="footer-ghana"><span></span><span></span><span></span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ============================================================
-   styles.css — Apple Liquid Glass Design System
+   styles.css — Professional scientific portfolio design system
    PinkrahNanaOfosuhene.github.io
    ============================================================ */
 
@@ -10,9 +10,9 @@
    ============================================================ */
 :root {
   /* Core backgrounds */
-  --bg-base:   #07071c;
-  --bg-deep:   #05050f;
-  --bg-mid:    #09091e;
+  --bg-base:   #071016;
+  --bg-deep:   #04080c;
+  --bg-mid:    #0b1820;
 
   /* Glass material levels */
   --glass-1:   rgba(255,255,255,0.05);
@@ -23,9 +23,9 @@
   --glass-highlight:   rgba(255,255,255,0.09);
 
   /* Accents */
-  --accent-orange: #FF6B35;
-  --accent-teal:   #00D4AA;
-  --accent-gold:   #FFD700;
+  --accent-orange: #F97316;
+  --accent-teal:   #14B8A6;
+  --accent-gold:   #FACC15;
   --accent-red:    #E63946;
   --accent-green:  #2DC653;
   --accent-purple: #A78BFA;
@@ -48,9 +48,9 @@
   --border-glass: rgba(255,255,255,0.11);
 
   /* Shape */
-  --radius-card: 20px;
-  --radius-btn:  50px;
-  --radius-xl:   28px;
+  --radius-card: 8px;
+  --radius-btn:  10px;
+  --radius-xl:   12px;
 
   /* Motion */
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -70,10 +70,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   background-color: var(--bg-base);
-  background-image:
-    radial-gradient(ellipse 80% 55% at 10%  0%,  rgba(90, 50,220,0.20) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 45% at 90% 10%,  rgba(255,107, 53,0.14) 0%, transparent 50%),
-    radial-gradient(ellipse 65% 50% at 50% 105%, rgba( 0,212,170,0.10) 0%, transparent 55%);
+  background-image: linear-gradient(180deg, #071016 0%, #0a1620 42%, #071016 100%);
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-body);
@@ -102,7 +99,7 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
   border: 1px solid var(--glass-border-lit);
-  border-radius: 60px;
+  border-radius: 12px;
   width: calc(100% - 3rem);
   max-width: 900px;
   box-shadow:
@@ -191,15 +188,10 @@ img { max-width: 100%; display: block; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg,
-    #090420 0%,
-    #180840 20%,
-    #10104e 42%,
-    #0b2848 65%,
-    #062c38 82%,
-    #042c1c 100%);
-  background-size: 300% 300%;
-  animation: gradientShift 16s ease infinite;
+  background:
+    linear-gradient(180deg, rgba(4,8,12,0.54), rgba(4,8,12,0.88)),
+    linear-gradient(90deg, rgba(4,8,12,0.85), rgba(4,8,12,0.35)),
+    url("images/climbs_validation.png") center / cover no-repeat;
   z-index: 0;
 }
 
@@ -216,32 +208,11 @@ img { max-width: 100%; display: block; }
   z-index: 1;
 }
 
-/* Ambient orb glows */
 .hero::before {
-  content: '';
-  position: absolute;
-  width: 650px;
-  height: 650px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,107,53,0.20) 0%, transparent 65%);
-  top: -160px;
-  right: -160px;
-  z-index: 1;
-  animation: orbFloat 10s ease-in-out infinite;
-  filter: blur(50px);
+  display: none;
 }
 .hero::after {
-  content: '';
-  position: absolute;
-  width: 550px;
-  height: 550px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,212,170,0.16) 0%, transparent 65%);
-  bottom: -120px;
-  left: -120px;
-  z-index: 1;
-  animation: orbFloat 13s ease-in-out infinite reverse;
-  filter: blur(60px);
+  display: none;
 }
 
 @keyframes orbFloat {

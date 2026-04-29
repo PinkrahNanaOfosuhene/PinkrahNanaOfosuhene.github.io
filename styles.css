@@ -101,7 +101,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--glass-border-lit);
   border-radius: 12px;
   width: calc(100% - 3rem);
-  max-width: 900px;
+  max-width: 1040px;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.13),
     inset 0 -1px 0 rgba(0,0,0,0.10),
@@ -175,14 +175,14 @@ img { max-width: 100%; display: block; }
    HERO
    ============================================================ */
 .hero {
-  min-height: 100vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
-  padding: 7rem 2rem 4rem;
+  padding: 7rem 2rem 3rem;
 }
 
 .hero-bg {
@@ -204,7 +204,9 @@ img { max-width: 100%; display: block; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.55) 100%);
+  background:
+    linear-gradient(180deg, rgba(4,8,12,0.14), rgba(4,8,12,0.48)),
+    radial-gradient(ellipse at 70% 36%, transparent 0%, rgba(4,8,12,0.62) 68%);
   z-index: 1;
 }
 
@@ -220,10 +222,19 @@ img { max-width: 100%; display: block; }
   50%       { transform: translateY(-45px) scale(1.06); }
 }
 
-.hero-content {
+.hero-shell {
   position: relative;
   z-index: 2;
-  max-width: 820px;
+  width: min(1120px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.72fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 720px;
 }
 
 .hero-badge {
@@ -241,7 +252,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 0.4rem 1.2rem;
-  border-radius: var(--radius-btn);
+  border-radius: 999px;
   margin-bottom: 1.75rem;
   animation: fadeInDown 0.8s ease both;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
@@ -250,7 +261,7 @@ img { max-width: 100%; display: block; }
 .hero-name {
   font-family: var(--font-head);
   font-weight: 900;
-  font-size: clamp(2.8rem, 7.5vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 5.8rem);
   line-height: 1.05;
   letter-spacing: -2px;
   color: var(--text-white);
@@ -271,26 +282,158 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   font-size: clamp(0.9rem, 2.2vw, 1.18rem);
   color: rgba(255,255,255,0.60);
-  letter-spacing: 2px;
-  margin-bottom: 1.75rem;
+  letter-spacing: 0;
+  margin-bottom: 1.25rem;
   animation: fadeInDown 1s ease 0.2s both;
 }
 
 .hero-description {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
+  max-width: 650px;
+  margin: 0 0 1.5rem;
   line-height: 1.78;
   animation: fadeInDown 1s ease 0.3s both;
+}
+
+.hero-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease 0.35s both;
+}
+
+.hero-focus span {
+  color: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px;
+  padding: 0.34rem 0.72rem;
+  font-size: 0.76rem;
+  font-weight: 700;
 }
 
 .hero-cta {
   display: flex;
   gap: 0.85rem;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   animation: fadeInDown 1s ease 0.4s both;
+}
+
+.hero-panel {
+  background: rgba(5, 12, 18, 0.72);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.38);
+  animation: fadeInDown 1s ease 0.2s both;
+}
+
+.hero-portrait-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.hero-portrait-card img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  object-position: 70% 20%;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.22);
+}
+
+.hero-portrait-card strong,
+.hero-portrait-card span {
+  display: block;
+}
+
+.hero-portrait-card strong {
+  color: var(--text-white);
+  font-family: var(--font-head);
+  font-size: 0.98rem;
+}
+
+.hero-portrait-card span {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.hero-panel-main {
+  padding: 1.1rem;
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(20,184,166,0.12), rgba(249,115,22,0.06)),
+    rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.panel-label {
+  display: block;
+  color: var(--accent-teal);
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hero-panel-main h2 {
+  color: var(--text-white);
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  line-height: 1.35;
+  margin-bottom: 0.7rem;
+}
+
+.hero-panel-main p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.hero-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+
+.hero-panel-grid div {
+  padding: 0.85rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.09);
+}
+
+.hero-panel-grid strong,
+.hero-panel-grid span {
+  display: block;
+}
+
+.hero-panel-grid strong {
+  font-family: var(--font-head);
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.hero-panel-grid span {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
 }
 
 /* ============================================================
@@ -490,10 +633,10 @@ img { max-width: 100%; display: block; }
    LIQUID GLASS CARDS
    ============================================================ */
 .card {
-  background: var(--glass-2);
-  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.065);
+  border: 1px solid rgba(255,255,255,0.105);
   border-radius: var(--radius-card);
-  padding: 2rem;
+  padding: 1.65rem;
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   transition: all var(--spring);
@@ -503,7 +646,7 @@ img { max-width: 100%; display: block; }
     inset 0 1px 0 rgba(255,255,255,0.11),
     inset 0 -1px 0 rgba(0,0,0,0.06),
     0 1px 2px rgba(0,0,0,0.12),
-    0 16px 40px rgba(0,0,0,0.28);
+    0 14px 34px rgba(0,0,0,0.24);
 }
 
 /* Top specular gradient — the "liquid glass" reflection */
@@ -540,17 +683,27 @@ img { max-width: 100%; display: block; }
 .card > * { position: relative; z-index: 1; }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.008);
+  transform: translateY(-4px);
   border-color: rgba(255,255,255,0.20);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.16),
     inset 0 -1px 0 rgba(0,0,0,0.08),
     0 2px 4px rgba(0,0,0,0.15),
-    0 28px 64px rgba(0,0,0,0.38),
-    0 0 50px rgba(255,107,53,0.07);
+    0 24px 54px rgba(0,0,0,0.34);
 }
 
-.card-icon { font-size: 2.25rem; margin-bottom: 1rem; }
+.card-icon {
+  font-size: 1.85rem;
+  margin-bottom: 1rem;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 8px;
+}
 
 .card-title {
   font-family: var(--font-head);
@@ -581,6 +734,87 @@ img { max-width: 100%; display: block; }
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+
+/* ============================================================
+   FEATURED WORK
+   ============================================================ */
+.feature-band {
+  background: rgba(255,255,255,0.025);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.feature-work {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.feature-copy .section-title {
+  font-size: clamp(1.9rem, 3.2vw, 2.55rem);
+}
+
+.feature-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.feature-gallery {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-rows: repeat(2, minmax(150px, 1fr));
+  gap: 0.9rem;
+}
+
+.feature-tile {
+  position: relative;
+  min-height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.25);
+}
+
+.feature-tile.large {
+  grid-row: span 2;
+}
+
+.feature-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.04);
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.feature-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,0.82));
+}
+
+.feature-tile span {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.9rem;
+  z-index: 1;
+  color: var(--text-white);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.feature-tile:hover img {
+  transform: scale(1.045);
+  filter: saturate(1.05) contrast(1.08);
+}
 
 /* ============================================================
    TAGS / PILLS — Liquid Glass
@@ -1216,6 +1450,39 @@ img { max-width: 100%; display: block; }
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
 
+  .hero {
+    min-height: auto;
+    padding: 6.5rem 1.25rem 2.5rem;
+  }
+  .hero-shell {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+  .hero-content {
+    text-align: left;
+  }
+  .hero-panel {
+    order: 2;
+  }
+  .hero-name {
+    letter-spacing: -1px;
+  }
+  .hero-cta {
+    justify-content: flex-start;
+  }
+  .feature-work {
+    grid-template-columns: 1fr;
+  }
+  .feature-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+  .feature-tile,
+  .feature-tile.large {
+    min-height: 220px;
+    grid-row: auto;
+  }
+
   .about-grid { grid-template-columns: 1fr; text-align: center; }
   .about-photo { margin: 0 auto; }
   .about-photo-placeholder { margin: 0 auto; }
@@ -1232,8 +1499,12 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 480px) {
-  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
   .btn { width: 100%; justify-content: center; }
+  .hero-focus span { width: 100%; text-align: center; }
+  .hero-panel-grid { grid-template-columns: 1fr; }
+  .feature-tile,
+  .feature-tile.large { min-height: 180px; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .section { padding: 2.5rem 1rem; }
   .card { padding: 1.5rem 1.25rem; }

@@ -1,8 +1,8 @@
 /* ============================================================
-   script.js — Navbar, Scroll, Animations
+   script.js - Navbar, scroll, and animation behavior
    ============================================================ */
 
-// ── Navbar: scroll class + hamburger ──────────────────────────
+// Navbar: scroll class + hamburger
 const navbar = document.querySelector('.navbar');
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
@@ -34,7 +34,7 @@ if (hamburger) {
   });
 }
 
-// ── Active nav link highlight ─────────────────────────────────
+// Active nav link highlight
 function setActiveNav() {
   const current = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
@@ -48,7 +48,7 @@ function setActiveNav() {
 }
 setActiveNav();
 
-// ── Scroll-triggered fade-in ──────────────────────────────────
+// Scroll-triggered fade-in
 const fadeEls = document.querySelectorAll('.fade-in-up');
 
 const observer = new IntersectionObserver((entries) => {
@@ -62,7 +62,7 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeEls.forEach(el => observer.observe(el));
 
-// ── Skill bar animation ───────────────────────────────────────
+// Skill bar animation
 const skillBars = document.querySelectorAll('.skill-bar-fill');
 
 // Read data-width or inline style width attribute and set CSS variable
@@ -82,7 +82,7 @@ const skillObserver = new IntersectionObserver((entries) => {
 
 skillBars.forEach(bar => skillObserver.observe(bar));
 
-// ── Animated counter for stats ────────────────────────────────
+// Animated counter for stats
 function animateCounter(el) {
   const target = parseFloat(el.dataset.target);
   const isDecimal = el.dataset.decimal === 'true';
@@ -113,7 +113,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(c => counterObserver.observe(c));
 
-// ── Smooth scroll for anchor links ───────────────────────────
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -126,7 +126,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ── Stagger child animations ──────────────────────────────────
+// Stagger child animations
 document.querySelectorAll('.stagger-children').forEach(container => {
   Array.from(container.children).forEach((child, i) => {
     child.style.transitionDelay = `${i * 0.1}s`;

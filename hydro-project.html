@@ -4,262 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kentucky Extreme Precipitation | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Comparison of NOAA Atlas 14 to precipitation frequency statistics derived from the Kentucky Mesonet." />
+  <meta name="description" content="Kentucky Mesonet and NOAA Atlas 14 precipitation-frequency analysis by Pinkrah Nana Ofosuhene." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    .prose h2 { font-family:var(--font-head); font-weight:700; font-size:1.3rem; color:var(--text-white); margin:2.25rem 0 0.75rem; padding-bottom:0.4rem; border-bottom:1px solid var(--border-glass); }
-    .prose p  { color:var(--text-muted); font-size:0.97rem; line-height:1.8; margin-bottom:0.9rem; }
-    .prose strong { color:var(--accent-orange); font-weight:600; }
-    .prose em  { color:var(--accent-teal); font-style:normal; font-weight:500; }
-    .prose ul  { color:var(--text-muted); padding-left:1.5rem; font-size:0.97rem; line-height:1.9; margin-bottom:1rem; }
-    .fig-wrap  { margin:2rem 0; }
-    .fig-wrap img { width:100%; border-radius:12px; border:1px solid var(--border-glass); display:block; }
-    .fig-caption { font-size:0.82rem; color:var(--text-muted); text-align:center; margin-top:0.6rem; font-style:italic; line-height:1.5; }
-    .fig-grid  { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:2rem 0; }
-    @media (max-width:640px) { .fig-grid { grid-template-columns:1fr; } }
-    .metric-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1rem; margin:1.5rem 0; }
-    .metric-box { background:rgba(255,255,255,0.05); border:1px solid var(--border-glass); border-radius:12px; padding:1.1rem 0.75rem; text-align:center; }
-    .metric-val { font-family:var(--font-head); font-weight:800; font-size:1.55rem; color:var(--accent-gold); display:block; line-height:1.1; }
-    .metric-lbl { font-size:0.72rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem; display:block; }
-    .finding-box { background:rgba(0,212,170,0.06); border:1px solid rgba(0,212,170,0.2); border-left:4px solid var(--accent-teal); border-radius:0 12px 12px 0; padding:1.1rem 1.25rem; margin:0.75rem 0; }
-    .finding-box p { margin:0; color:var(--text-muted); font-size:0.93rem; }
-    .finding-box strong { color:var(--accent-teal); }
-    @media (max-width:480px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
-  </style>
 </head>
 <body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">Pinkrah Nana Ofosuhene</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">Pinkrah<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </nav>
+<header class="page-header">
+  <span class="page-header-label">Hydroclimatology</span>
+  <h1 class="page-header-title">Kentucky Mesonet vs NOAA Atlas 14</h1>
+  <p class="page-header-desc">
+    Precipitation-frequency statistics from Kentucky Mesonet observations compared with NOAA Atlas 14 design-rainfall guidance.
+  </p>
+</header>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header" style="background:linear-gradient(135deg,#061014 0%,#0a171d 52%,#102028 100%);">
-    <span class="page-header-label">Hydroclimatology &middot; GEOS 510 &middot; Group Project &middot; WKU</span>
-    <h1 class="page-header-title" style="font-size:clamp(1.5rem,4vw,2.8rem);">
-      Extreme Precipitation Frequency in <span class="accent">Kentucky</span>: Atlas 14 vs. Kentucky Mesonet
-    </h1>
-    <p class="page-header-desc">
-      Deriving IDF curves from KYMN station data (2015–2024) and comparing to NOAA Atlas 14
-      across durations of 5 minutes to 24 hours and return periods of 2–100 years.
-    </p>
-    <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
-      <span class="tag teal">Group Project &middot; Fall 2025</span>
-      <span class="tag orange">KY Mesonet</span>
-      <span class="tag">NOAA Atlas 14</span>
-      <span class="tag gold">Oral Presentation</span>
+<section class="section">
+  <div class="section-inner">
+    <div class="grid-4">
+      <div class="card"><div class="card-title">Objective</div><p class="card-text">Evaluate how Kentucky Mesonet precipitation-frequency estimates compare with NOAA Atlas 14.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Kentucky Mesonet observations and NOAA Atlas 14 reference precipitation-frequency estimates.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Annual maxima, return-period estimation, IDF curves, and spatial comparison of precipitation intensity.</p></div>
+      <div class="card"><div class="card-title">Outputs</div><p class="card-text">IDF curves, spatial rainfall diagnostics, and hydroclimate design interpretation.</p></div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-title">Research Relevance</div>
+      <p class="card-text">
+        This project supports regional hydroclimate risk assessment by testing whether modern Mesonet observations
+        reveal short-duration precipitation behavior that differs from established Atlas 14 design guidance.
+      </p>
+    </div>
+
+    <div class="fig-grid">
+      <div class="fig-wrap">
+        <img src="images/hydro_idf_curve.png" alt="Kentucky Mesonet derived IDF curve" />
+        <p class="fig-caption">Kentucky Mesonet-derived intensity-duration-frequency curve.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/hydro_spatial_multidur.png" alt="Spatial extreme precipitation diagnostics for Kentucky" />
+        <p class="fig-caption">Spatial analysis of short-duration precipitation extremes across Kentucky.</p>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">
+      <a href="projects.html" class="btn btn-secondary">Back to Projects</a>
+      <a href="publications.html" class="btn btn-outline">Publication Status</a>
     </div>
   </div>
+</section>
 
-  <section class="section">
-    <div class="section-inner" style="max-width:900px;">
+<footer class="footer">
+  <div class="footer-name">Pinkrah Nana Ofosuhene</div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
+</footer>
 
-      <!-- AUTHORS + STATS -->
-      <div class="card fade-in-up" style="border-left:4px solid var(--accent-teal); margin-bottom:2rem;">
-        <div style="display:flex; gap:2rem; flex-wrap:wrap; align-items:flex-start; justify-content:space-between;">
-          <div>
-            <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-teal); margin-bottom:0.5rem;">Authors</h3>
-            <p class="card-text" style="margin:0;">P. Tobbe, <strong style="color:var(--accent-orange);">Pinkrah Nana Ofosuhene</strong>, S. Adhikari, Z. Suriano<br>
-            <span style="font-size:0.85rem;">Dept. of Earth, Environmental &amp; Atmospheric Sciences, WKU</span></p>
-          </div>
-          <div>
-            <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-teal); margin-bottom:0.5rem;">Venue</h3>
-            <p class="card-text" style="margin:0;">WKU Atmospheric Sciences Seminar<br>
-            <span style="font-size:0.85rem;">Oral Presentation &middot; Fall 2025</span></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="metric-grid fade-in-up">
-        <div class="metric-box"><span class="metric-val">10 yr</span><span class="metric-lbl">KYMN Record</span></div>
-        <div class="metric-box"><span class="metric-val">5 min</span><span class="metric-lbl">Shortest Duration</span></div>
-        <div class="metric-box"><span class="metric-val">100 yr</span><span class="metric-lbl">Max Return Period</span></div>
-        <div class="metric-box"><span class="metric-val">0.99+</span><span class="metric-lbl">r vs Atlas 14</span></div>
-        <div class="metric-box"><span class="metric-val">5–15%</span><span class="metric-lbl">Short-dur Bias</span></div>
-        <div class="metric-box"><span class="metric-val">Gumbel</span><span class="metric-lbl">EVT Framework</span></div>
-      </div>
-
-      <div class="prose fade-in-up">
-
-        <!-- ABSTRACT -->
-        <div class="card" style="border-left:4px solid var(--accent-teal); margin-bottom:2.5rem;">
-          <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-teal); margin-bottom:0.75rem;">Abstract</h3>
-          <p style="margin:0; color:var(--text-muted); font-size:0.97rem; line-height:1.8;">
-            Extreme precipitation poses increasing risks to infrastructure, water resources, and public safety.
-            In the US, <strong>NOAA Atlas 14</strong> provides standard precipitation-frequency estimates for
-            engineering design — but it does not incorporate data from the <em>Kentucky Mesonet (KYMN)</em>,
-            a dense automated station network established after Atlas 14 development. This study derives
-            precipitation frequency statistics from KYMN observations (2015–2024), constructs statewide
-            <strong>IDF curves using a Gumbel extreme-value framework</strong> for return periods 2–100 years
-            and durations 5 min–24 hr, and compares directly to Atlas 14. Results show KYMN intensities
-            <strong>exceed Atlas 14 for frequent events</strong> (2–10 yr RP, short durations ≤30 min,
-            differences ~5–15%) but are <strong>systematically lower for rare events</strong> (≥50 yr RP).
-            Findings suggest Atlas 14 may underestimate short-duration design rainfall — with implications for
-            Kentucky's flood-prone urban drainage and infrastructure.
-          </p>
-        </div>
-
-        <h2>1. Motivation</h2>
-        <p>
-          Atlas 14 was developed using station records through the mid-2000s. The <strong>Kentucky Mesonet</strong>
-          — launched afterward — now provides a dense, high-quality network of automated sub-hourly rainfall
-          observations across the state. As extreme precipitation events intensify under climate change, the
-          question of whether current design standards remain adequate is of direct practical importance for
-          civil infrastructure, stormwater management, and flood-hazard planning.
-        </p>
-
-        <h2>2. Data &amp; Methods</h2>
-        <p>
-          <strong>Annual Maximum Precipitation (AMP)</strong> series were extracted from KYMN stations for
-          durations from <em>5 minutes to 24 hours</em> (5-minute timestep) using 2015–2024 records.
-          A <strong>Gumbel extreme value distribution</strong> was fitted to each duration's AMP series to
-          produce return-period estimates at 2, 5, 10, 25, 50, and 100 years.
-          <strong>Kriging interpolation</strong> was applied to produce spatially continuous statewide maps.
-          Station-level IDF curves were then compared pixel-by-pixel against NOAA Atlas 14 values for
-          Warren County and statewide.
-        </p>
-
-      </div>
-
-      <!-- ANNUAL MAX CURVE -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/hydro_mean_amp.png" alt="Mean Annual Maximum Precipitation Curve for Kentucky" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 1 — Mean Annual Maximum Precipitation Curve (Kentucky, 2015–2024):</strong>
-          Statewide mean AMP increases monotonically with duration — from ~0.4 in at 5 min to ~3.5 in at 24 hr.
-          The curve reflects the dominance of convective systems at short durations and synoptic-scale events at longer durations.
-        </p>
-      </div>
-
-      <!-- TIME SERIES -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/hydro_timeseries.png" alt="Annual maximum time series all durations with slopes" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 2 — Annual Maximum Time Series (all durations, 2015–2024):</strong>
-          Trend lines across all duration categories reveal the temporal variability and any emerging trends
-          in extreme precipitation over the KYMN record period.
-        </p>
-      </div>
-
-      <!-- SPATIAL MAP -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/hydro_spatial_60min.png" alt="Spatial distribution of 60-minute AMP across Kentucky" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 3 — Spatial Distribution of 60-Minute AMP across Kentucky Mesonet Stations:</strong>
-          Higher short-duration extreme rainfall is concentrated in central and western Kentucky, while
-          eastern portions show relatively lower AMP values — consistent with the climatological gradient
-          of convective precipitation across the Commonwealth.
-        </p>
-      </div>
-
-      <!-- MULTI-DURATION SPATIAL -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/hydro_spatial_multidur.png" alt="Spatial AMP across multiple durations" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 4 — Spatial AMP Across Multiple Durations (Part 1):</strong>
-          Station-level AMP across 5, 10, 15, and 30-minute durations showing coherent spatial variability.
-          Kriging interpolation reveals localized hotspots and gradients persistent across short-duration thresholds.
-        </p>
-      </div>
-
-      <!-- IDF CURVE -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/hydro_idf_curve.png" alt="Atlas-14-style IDF curves for Kentucky" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 5 — KYMN-Derived Intensity-Duration-Frequency (IDF) Curves:</strong>
-          Statewide IDF curves for return periods 2–100 years. Design intensities exceed 5 in/hr for
-          short-duration (≤10 min) events, decreasing to &lt;0.2 in/hr at 24-hour durations. The 100-year
-          5-minute intensity (~5.5–5.7 in/hr) defines the upper bound for Kentucky infrastructure design.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>3. Key Findings</h2>
-      </div>
-
-      <div class="fade-in-up">
-        <div class="finding-box">
-          <p><strong>Short-duration underestimation:</strong> KYMN intensities exceed Atlas 14 estimates for frequent events (2–10 year return periods) at durations ≤30 min by approximately 5–15%.</p>
-        </div>
-        <div class="finding-box">
-          <p><strong>Rare-event overestimation:</strong> For return periods ≥50 years, KYMN-derived values are systematically lower than Atlas 14 — reflecting the shorter (10-year) Mesonet record not yet capturing the rarest extremes.</p>
-        </div>
-        <div class="finding-box">
-          <p><strong>Exceptional curve agreement:</strong> Station-level comparisons against Atlas 14 show correlation coefficients <strong>r &gt; 0.99</strong> across all return periods, confirming excellent shape agreement despite magnitude differences.</p>
-        </div>
-        <div class="finding-box">
-          <p><strong>Spatial pattern:</strong> Higher short-duration AMP concentrations in central and western Kentucky; lower values in the eastern Appalachian zone. Localized hotspots visible across the dense Mesonet network.</p>
-        </div>
-        <div class="finding-box">
-          <p><strong>Design implication:</strong> Atlas 14 may underestimate design rainfall for short-duration events — particularly relevant for urban drainage infrastructure in rapidly developing parts of Kentucky.</p>
-        </div>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>4. Significance &amp; Future Work</h2>
-        <p>
-          These findings directly support the case for incorporating KYMN observations into future
-          precipitation-frequency updates (e.g., <strong>NOAA Atlas 15</strong>). As extreme events
-          intensify under climate change, and as dense modern monitoring networks capture short-duration
-          convective extremes that older gauge networks missed, updated IDF standards become increasingly
-          important for flood-resilient infrastructure design.
-        </p>
-        <p>
-          Future extensions include: full statewide kriging at all return periods, comparison with
-          radar-based QPE, and incorporation of trends under warming scenarios.
-        </p>
-      </div>
-
-      <!-- TECH STACK -->
-      <div class="card fade-in-up" style="margin-top:1.5rem;">
-        <h3 class="card-title" style="margin-bottom:1rem;">Technology Stack</h3>
-        <div class="tags">
-          <span class="tag orange">Python</span>
-          <span class="tag orange">Pandas / NumPy</span>
-          <span class="tag orange">Matplotlib / Seaborn</span>
-          <span class="tag teal">Kentucky Mesonet (KYMN)</span>
-          <span class="tag teal">NOAA Atlas 14</span>
-          <span class="tag">Gumbel EVT</span>
-          <span class="tag">Kriging Interpolation</span>
-          <span class="tag">Scipy (stats)</span>
-          <span class="tag gold">IDF Curve Analysis</span>
-          <span class="tag">Annual Maximum Series</span>
-        </div>
-      </div>
-
-      <!-- NAV -->
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border-glass);">
-        <a href="projects.html" class="btn btn-outline">← Back to Projects</a>
-        <a href="research.html" class="btn btn-secondary">All Research →</a>
-        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-name">Pinkrah Nana <span>Ofosuhene</span></div>
-    <nav class="footer-links">
-      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a><a href="cv.html">CV</a><a href="contact.html">Contact</a>
-    </nav>
-    <div class="footer-divider"></div>
-    <p style="font-size:0.82rem; color:var(--text-muted);">&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
-    <div class="footer-ghana"><span></span><span></span><span></span></div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

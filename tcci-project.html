@@ -3,350 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TCCI Ghana | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Mapping Tourism Climate Suitability in Ghana: A Four-Decade Spatiotemporal Assessment using the Tourism Climate Comfort Index (TCCI)." />
+  <title>Tourism Climate Comfort Index Ghana | Pinkrah Nana Ofosuhene</title>
+  <meta name="description" content="Applied climatology project mapping tourism climate comfort across Ghana using long-term station data and the Tourism Climate Comfort Index." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    .prose h2 { font-family:var(--font-head); font-weight:700; font-size:1.3rem; color:var(--text-white); margin:2.25rem 0 0.75rem; padding-bottom:0.4rem; border-bottom:1px solid var(--border-glass); }
-    .prose h3 { font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--accent-orange); margin:1.5rem 0 0.5rem; }
-    .prose p  { color:var(--text-muted); font-size:0.97rem; line-height:1.8; margin-bottom:0.9rem; }
-    .prose strong { color:var(--accent-orange); font-weight:600; }
-    .prose em  { color:var(--accent-teal); font-style:normal; font-weight:500; }
-    .prose ul  { color:var(--text-muted); padding-left:1.5rem; font-size:0.97rem; line-height:1.9; margin-bottom:1rem; }
-    .fig-wrap  { margin:2rem 0; }
-    .fig-wrap img { width:100%; border-radius:12px; border:1px solid var(--border-glass); display:block; }
-    .fig-caption { font-size:0.82rem; color:var(--text-muted); text-align:center; margin-top:0.6rem; font-style:italic; line-height:1.5; }
-    .fig-grid  { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:2rem 0; }
-    @media (max-width:640px) { .fig-grid { grid-template-columns:1fr; } }
-    .metric-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(125px,1fr)); gap:1rem; margin:1.5rem 0; }
-    .metric-box { background:rgba(255,255,255,0.05); border:1px solid var(--border-glass); border-radius:12px; padding:1.1rem 0.75rem; text-align:center; }
-    .metric-val { font-family:var(--font-head); font-weight:800; font-size:1.5rem; color:var(--accent-gold); display:block; line-height:1.1; }
-    .metric-lbl { font-size:0.7rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem; display:block; }
-    .zone-card { background:rgba(255,255,255,0.04); border:1px solid var(--border-glass); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:0.85rem; }
-    .zone-name { font-family:var(--font-head); font-weight:700; font-size:0.9rem; color:var(--accent-teal); margin-bottom:0.4rem; }
-    .zone-body { font-size:0.9rem; color:var(--text-muted); line-height:1.7; }
-    .zone-months { display:inline-flex; gap:0.4rem; flex-wrap:wrap; margin-top:0.5rem; }
-    .month-good  { background:rgba(0,212,170,0.15); border:1px solid rgba(0,212,170,0.3); color:var(--accent-teal); font-size:0.72rem; font-weight:700; padding:0.15rem 0.5rem; border-radius:50px; }
-    .month-bad   { background:rgba(255,107,53,0.15); border:1px solid rgba(255,107,53,0.3); color:var(--accent-orange); font-size:0.72rem; font-weight:700; padding:0.15rem 0.5rem; border-radius:50px; }
-    .eq-box { background:rgba(0,212,170,0.06); border:1px solid rgba(0,212,170,0.2); border-radius:12px; padding:1.25rem 1.5rem; margin:1.25rem 0; font-family:monospace; font-size:0.95rem; color:var(--text-white); }
-    .eq-box .eq-label { font-family:var(--font-head); font-size:0.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent-teal); margin-bottom:0.5rem; display:block; }
-    .author-list { display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem; }
-    .author-chip { background:rgba(255,255,255,0.06); border:1px solid var(--border-glass); border-radius:50px; font-size:0.8rem; padding:0.25rem 0.75rem; color:var(--text-muted); }
-    .author-chip.me { background:rgba(255,107,53,0.15); border-color:rgba(255,107,53,0.4); color:var(--accent-orange); font-weight:700; }
-    @media (max-width:480px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
-  </style>
 </head>
 <body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">Pinkrah Nana Ofosuhene</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">Pinkrah<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </nav>
+<header class="page-header">
+  <span class="page-header-label">Applied Climatology</span>
+  <h1 class="page-header-title">Tourism Climate Comfort Index in Ghana</h1>
+  <p class="page-header-desc">
+    A station-based applied climatology project assessing climate suitability for tourism planning across Ghana.
+  </p>
+</header>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header" style="background:linear-gradient(135deg,#061014 0%,#0a171d 52%,#102028 100%);">
-    <span class="page-header-label">Applied Climatology &middot; KNUST &middot; Ghana &middot; Manuscript</span>
-    <h1 class="page-header-title" style="font-size:clamp(1.4rem,3.5vw,2.7rem);">
-      Mapping Tourism Climate Suitability<br>in <span class="accent">Ghana</span>:<br>
-      A Four-Decade TCCI Assessment
-    </h1>
-    <p class="page-header-desc">
-      43 years (1981–2023) &middot; 22 synoptic stations &middot; 4 agro-ecological zones &middot;
-      Ordinary Kriging &middot; TCCI ranging −11.3 to +12.2
-    </p>
-    <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
-      <span class="tag gold">Applied Climatology Project</span>
-      <span class="tag teal">KNUST + WKU</span>
-      <span class="tag">SDG 3 &middot; SDG 8 &middot; SDG 13</span>
+<section class="section">
+  <div class="section-inner">
+    <div class="grid-4">
+      <div class="card"><div class="card-title">Objective</div><p class="card-text">Evaluate seasonal and regional tourism climate suitability across Ghana.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Long-term Ghana Meteorological Agency station records from 22 synoptic stations.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Tourism Climate Comfort Index computation, data imputation, and spatial interpolation.</p></div>
+      <div class="card"><div class="card-title">Outputs</div><p class="card-text">Monthly comfort index plots, station heatmaps, and Ghana-wide spatial comfort maps.</p></div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-title">Research Relevance</div>
+      <p class="card-text">
+        This work is retained as applied climatology because it uses meteorological station data to support
+        climate-sensitive planning. It is secondary to the severe-weather, hydroclimatology, and climate-extremes portfolio.
+      </p>
+    </div>
+
+    <div class="fig-grid">
+      <div class="fig-wrap">
+        <img src="images/tcci_fig3_monthly_tcci.png" alt="Monthly Tourism Climate Comfort Index across Ghana" />
+        <p class="fig-caption">Monthly TCCI variation across Ghana climate zones.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/tcci_fig6_spatial_maps.jpg" alt="Spatial TCCI maps across Ghana" />
+        <p class="fig-caption">Spatial interpolation of monthly tourism climate comfort across Ghana.</p>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">
+      <a href="projects.html" class="btn btn-secondary">Back to Projects</a>
+      <a href="research.html" class="btn btn-outline">Research Overview</a>
     </div>
   </div>
+</section>
 
-  <section class="section">
-    <div class="section-inner" style="max-width:920px;">
+<footer class="footer">
+  <div class="footer-name">Pinkrah Nana Ofosuhene</div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
+</footer>
 
-      <!-- AUTHORS -->
-      <div class="card fade-in-up" style="border-left:4px solid var(--accent-gold); margin-bottom:2rem;">
-        <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-gold); margin-bottom:0.5rem; font-size:0.9rem; letter-spacing:1px; text-transform:uppercase;">Authors</h3>
-        <div class="author-list">
-          <span class="author-chip">J. N. A. Aryee</span>
-          <span class="author-chip">E. I. Yamba</span>
-          <span class="author-chip me">Pinkrah Nana Ofosuhene ★</span>
-          <span class="author-chip">S. Oppong</span>
-          <span class="author-chip">D. Amponsah</span>
-          <span class="author-chip">J. B. Awuni</span>
-          <span class="author-chip">P. Potakey</span>
-          <span class="author-chip">A. Opoku-Dwomoh</span>
-          <span class="author-chip">M. Biney</span>
-        </div>
-        <p style="font-size:0.83rem; color:var(--text-muted); margin-top:0.75rem; margin-bottom:0;">
-          Dept. of Meteorology and Climate Science, KNUST, Ghana &nbsp;&middot;&nbsp;
-          Dept. of Earth, Environmental &amp; Atmospheric Sciences, WKU, USA
-        </p>
-      </div>
-
-      <!-- STATS -->
-      <div class="metric-grid fade-in-up">
-        <div class="metric-box"><span class="metric-val">43 yr</span><span class="metric-lbl">Data Record</span></div>
-        <div class="metric-box"><span class="metric-val">22</span><span class="metric-lbl">Synoptic Stations</span></div>
-        <div class="metric-box"><span class="metric-val">4</span><span class="metric-lbl">Agro-Eco Zones</span></div>
-        <div class="metric-box"><span class="metric-val">−11.3</span><span class="metric-lbl">Min TCCI</span></div>
-        <div class="metric-box"><span class="metric-val">+12.2</span><span class="metric-lbl">Max TCCI</span></div>
-        <div class="metric-box"><span class="metric-val">5</span><span class="metric-lbl">Favourable Months</span></div>
-      </div>
-
-      <div class="prose fade-in-up">
-
-        <!-- ABSTRACT -->
-        <div class="card" style="border-left:4px solid var(--accent-gold); margin-bottom:2.5rem;">
-          <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-gold); margin-bottom:0.75rem;">Abstract</h3>
-          <p style="margin:0; color:var(--text-muted); font-size:0.97rem; line-height:1.8;">
-            Understanding how climate influences tourism comfort is crucial for sustainable destination planning,
-            particularly in regions where climate variability poses significant challenges. This study
-            comprehensively analyzes tourism climate comfort across <strong>Ghana</strong> using the
-            <em>Tourism Climate Comfort Index (TCCI)</em>. The TCCI synthesizes temperature, humidity,
-            rainfall, and sunshine duration into a standardized comfort measure. Utilizing
-            <strong>43 years (1981–2023)</strong> of meteorological data from <strong>22 synoptic stations</strong>
-            across Ghana's four agro-ecological zones, the study evaluates spatial and temporal patterns of
-            tourism climate comfort. Results show <em>favourable conditions typically from November to March</em>,
-            and notable discomfort during <em>May to August</em>, especially in the Coastal and Forest zones.
-            Findings advocate for climate-informed tourism strategies to enhance resilience and economic
-            potential within Ghana's tourism sector.
-          </p>
-        </div>
-
-        <h2>1. Study Area &amp; Context</h2>
-        <p>
-          Ghana is located in West Africa between latitudes 4°N–12°N and longitudes 1.5°E–3.5°W, with a
-          540 km Gulf of Guinea coastline. The country's climate is modulated by the <strong>West African
-          Monsoon</strong> and the seasonal migration of the Intertropical Boundary (ITB), producing
-          distinct dry and rainy seasons across its four agro-ecological zones.
-        </p>
-        <p>
-          Tourism is an increasingly important economic sector in Ghana, yet its climate suitability has
-          been poorly quantified. This study fills that gap with the first long-term, spatially continuous
-          TCCI climatology using station data from the <strong>Ghana Meteorological Agency (GMet)</strong>.
-        </p>
-      </div>
-
-      <!-- GHANA MAP -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/tcci_ghana_map.jpg" alt="Map of Ghana showing the 22 synoptic station locations across the four agro-ecological zones" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 1 — Study Domain:</strong> Map of Ghana showing the locations of 22 synoptic stations
-          distributed across the four agro-ecological zones — Savannah, Transition, Forest, and Coastal.
-          The station network ensures broad spatial coverage for kriging interpolation.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>2. Methodology</h2>
-        <h3>TCCI Formulation</h3>
-        <p>
-          The TCCI combines meteorological variables into a single comfort index. Variables with
-          <em>positive tourism impacts</em> (temperature amplitude, mean temperature, sunshine hours)
-          are summed, while <em>negative contributors</em> (relative humidity, rainfall) are subtracted.
-          All variables are standardized to a common scale before combination.
-        </p>
-      </div>
-
-      <div class="eq-box fade-in-up">
-        <span class="eq-label">TCCI Formula</span>
-        TCCI = T<sub>amplitude</sub> + T<sub>mean</sub> + SUNHR − RH − RR<br><br>
-        where:<br>
-        T<sub>amplitude</sub> = T<sub>max</sub> − T<sub>min</sub><br>
-        T<sub>mean</sub> = 0.5 × (T<sub>max</sub> + T<sub>min</sub>)<br>
-        Z<sub>i</sub> = (X<sub>i</sub> − μ) / σ &nbsp;[standardization]
-      </div>
-
-      <div class="prose fade-in-up">
-        <p>
-          Missing data (varying from 28–84% availability across stations) were imputed using
-          <strong>linear regression</strong> exploiting the known inverse relationship between
-          temperature and relative humidity, followed by forward/backward filling. Spatial coverage
-          was achieved through <strong>Ordinary Kriging</strong> (implemented via Python's
-          <code style="background:rgba(255,255,255,0.08); padding:0.1rem 0.4rem; border-radius:4px;">pykrige</code>
-          library), which minimizes estimation variance while accounting for spatial autocorrelation.
-        </p>
-
-        <h2>3. Climate Variables by Zone</h2>
-      </div>
-
-      <!-- CLIMATE VARIABLES FIGURE -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/tcci_fig2_climate_vars.jpg" alt="Monthly patterns of rainfall, temperature, relative humidity and sunshine hours across Ghana's agro-ecological zones" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 2 — Monthly Climate Patterns Across Ghana's Agro-Ecological Zones:</strong>
-          Rainfall (top), temperature, relative humidity, and sunshine hours (bottom) for the Savannah,
-          Coastal, Transition, and Forest zones (1981–2023). The Savannah shows a unimodal rainfall pattern
-          and the highest sunshine hours; the Forest and Coastal zones show bimodal patterns with persistently
-          high humidity.
-        </p>
-      </div>
-
-      <div class="fade-in-up">
-        <div class="zone-card">
-          <div class="zone-name">🌾 Savannah Zone</div>
-          <div class="zone-body">Unimodal rainfall (May–September). Temperatures peak ~30.5°C in March. Humidity rises sharply from 30–40% (dry season) to over 80% (July–August). Sunshine abundant year-round (8–9 hrs/day in Feb–March). <strong>Most comfortable zone overall.</strong></div>
-          <div class="zone-months">
-            <span class="month-good">Jan</span><span class="month-good">Feb</span><span class="month-good">Mar</span><span class="month-good">Apr</span><span class="month-good">May</span>
-            <span class="month-bad">Jun</span><span class="month-bad">Jul</span><span class="month-bad">Aug</span><span class="month-bad">Sep</span>
-            <span class="month-good">Oct</span><span class="month-good">Nov</span><span class="month-good">Dec</span>
-          </div>
-        </div>
-        <div class="zone-card">
-          <div class="zone-name">🌿 Transition Zone</div>
-          <div class="zone-body">Intermediate between Forest and Savannah. Bimodal rainfall; moderate temperatures (27–29°C). Humidity 55–80%. Two cycles of comfort with discomfort May–September during peak rains.</div>
-          <div class="zone-months">
-            <span class="month-good">Jan</span><span class="month-good">Feb</span><span class="month-good">Mar</span><span class="month-good">Apr</span>
-            <span class="month-bad">May</span><span class="month-bad">Jun</span><span class="month-bad">Jul</span><span class="month-bad">Aug</span><span class="month-bad">Sep</span>
-            <span class="month-good">Oct</span><span class="month-good">Nov</span><span class="month-good">Dec</span>
-          </div>
-        </div>
-        <div class="zone-card">
-          <div class="zone-name">🌳 Forest Zone</div>
-          <div class="zone-body">Densest vegetation; highest rainfall. Temperatures fall to 24–25°C during July–August. Humidity 70–90% year-round. Lowest sunshine hours of all zones. <strong>Highest discomfort — TCCI as low as −11.3.</strong></div>
-          <div class="zone-months">
-            <span class="month-good">Nov</span><span class="month-good">Dec</span><span class="month-good">Jan</span><span class="month-good">Feb</span><span class="month-good">Mar</span>
-            <span class="month-bad">Apr</span><span class="month-bad">May</span><span class="month-bad">Jun</span><span class="month-bad">Jul</span><span class="month-bad">Aug</span><span class="month-bad">Sep</span><span class="month-bad">Oct</span>
-          </div>
-        </div>
-        <div class="zone-card">
-          <div class="zone-name">🌊 Coastal Zone</div>
-          <div class="zone-body">Maritime influence keeps temperatures stable (26–28°C) but humidity consistently above 80% year-round. Two rainy seasons. Best months: January, November, and December. Prolonged discomfort February–October.</div>
-          <div class="zone-months">
-            <span class="month-good">Jan</span>
-            <span class="month-bad">Feb</span><span class="month-bad">Mar</span><span class="month-bad">Apr</span><span class="month-bad">May</span><span class="month-bad">Jun</span><span class="month-bad">Jul</span><span class="month-bad">Aug</span><span class="month-bad">Sep</span><span class="month-bad">Oct</span>
-            <span class="month-good">Nov</span><span class="month-good">Dec</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>4. Results — Monthly TCCI Patterns</h2>
-      </div>
-
-      <!-- MONTHLY TCCI -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/tcci_fig3_monthly_tcci.png" alt="Monthly TCCI variation across Ghana's climate zones" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 3 — Monthly TCCI Across Ghana's Climate Zones:</strong> All zones show peak
-          TCCI in January–March and minimum values June–August. Positive TCCI (comfortable) in blue;
-          negative TCCI (uncomfortable) in red. The Savannah sustains the longest comfortable period;
-          the Forest zone dips deepest into discomfort.
-        </p>
-      </div>
-
-      <div class="fig-wrap fade-in-up">
-        <img src="images/tcci_fig4_monthly_zones.jpg" alt="Monthly Tourism Climate Comfort Index across Ghana's climate zones — detailed" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 4 — Monthly TCCI Trends by Zone:</strong> Savannah shows a declining trend from
-          January through August, rebounding through December. Coastal zone demonstrates steady decline
-          to June with minimal July–September variation. All zones reach peak comfort in January.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>5. Heatmap — Seasonal &amp; Spatial Comfort Patterns</h2>
-      </div>
-
-      <!-- HEATMAP -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/tcci_fig5_heatmap.jpg" alt="Heatmap of seasonal TCCI variation across 22 synoptic stations" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 5 — TCCI Heatmap (All 22 Stations × 12 Months):</strong> Stations organized by
-          agro-ecological zone. Cooler colors = favorable for tourism; warmer colors = discomfort.
-          November–April comfortable (TCCI −2.3 to +12.2). May–October uncomfortable (−11.1 to +5.4).
-          June–August worst across all zones, especially Forest and Transition.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>6. Spatial Distribution — Monthly TCCI Maps</h2>
-      </div>
-
-      <!-- SPATIAL MAPS -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/tcci_fig6_spatial_maps.jpg" alt="Monthly spatial distribution of TCCI across Ghana" loading="lazy" />
-        <p class="fig-caption">
-          <strong>Fig 6 — Monthly Spatial TCCI Maps (Kriging Interpolation):</strong> TCCI ranges from
-          −10 (red, uncomfortable) to +10 (blue, comfortable). The country is most suitable November–April.
-          Savannah (north) remains comfortable longest; southwestern Forest zone records the most extreme
-          discomfort. Kriging provides continuous nationwide coverage from the 22 point-stations.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>7. Key Findings &amp; Implications</h2>
-        <ul>
-          <li><strong>Best months for tourism in Ghana:</strong> January, February, March, November, December — moderate temperatures, low humidity, minimal rainfall across most zones</li>
-          <li><strong>Worst months:</strong> June, July, August — TCCI as low as −11.3; extreme heat, high humidity, flooding risk, and elevated disease burden</li>
-          <li><strong>December peak:</strong> Confirms Ghana Tourism Authority (2023) data showing the highest international arrivals in December</li>
-          <li><strong>Forest zone most affected:</strong> Persistently high rainfall and humidity create the longest and most severe discomfort periods</li>
-          <li><strong>Urban Heat Island caveat:</strong> The UHI effect in cities like Accra and Kumasi can exacerbate discomfort beyond what rural stations capture</li>
-          <li><strong>Infrastructure implication:</strong> Tourism infrastructure investment should prioritize climate-resilient design — cooling systems, shaded spaces, green roofs — especially in Coastal and Forest zones</li>
-          <li><strong>Atlas 15 parallel:</strong> Just as the Kentucky Mesonet study argued for updated US precipitation standards, this study argues for TCCI integration into Ghana's national tourism planning</li>
-        </ul>
-
-        <h2>8. SDG Alignment</h2>
-        <p>
-          This study directly addresses three UN Sustainable Development Goals:
-          <strong>SDG 3</strong> (health risks from extreme heat/humidity during unfavourable months),
-          <strong>SDG 8</strong> (supporting Ghana's tourism-driven economic growth through climate-smart
-          planning), and <strong>SDG 13</strong> (climate action — integrating climate indices into
-          policy for resilient destination management).
-        </p>
-      </div>
-
-      <!-- TECH STACK -->
-      <div class="card fade-in-up" style="margin-top:1rem;">
-        <h3 class="card-title" style="margin-bottom:1rem;">Technology Stack</h3>
-        <div class="tags">
-          <span class="tag orange">Python</span>
-          <span class="tag orange">Pandas / NumPy</span>
-          <span class="tag orange">Matplotlib / Seaborn</span>
-          <span class="tag teal">pykrige (Ordinary Kriging)</span>
-          <span class="tag teal">Cartopy</span>
-          <span class="tag gold">GMet Station Data</span>
-          <span class="tag gold">43-year Record</span>
-          <span class="tag">Linear Regression Imputation</span>
-          <span class="tag">TCCI Index Computation</span>
-          <span class="tag">Spatial Interpolation</span>
-          <span class="tag">4 Agro-Ecological Zones</span>
-        </div>
-      </div>
-
-      <!-- NAV -->
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border-glass);">
-        <a href="projects.html" class="btn btn-outline">← Back to Projects</a>
-        <a href="publications.html" class="btn btn-secondary">Publications →</a>
-        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-name">Pinkrah Nana <span>Ofosuhene</span></div>
-    <nav class="footer-links">
-      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a><a href="cv.html">CV</a><a href="contact.html">Contact</a>
-    </nav>
-    <div class="footer-divider"></div>
-    <p style="font-size:0.82rem; color:var(--text-muted);">&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
-    <div class="footer-ghana"><span></span><span></span><span></span></div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

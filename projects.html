@@ -4,377 +4,121 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Research and computational atmospheric science projects by Pinkrah Nana Ofosuhene, including ERA5, CMIP6, WRF, Random Forest, and hydroclimatology workflows." />
+  <meta name="description" content="Atmospheric science, climate extremes, WRF, hydroclimatology, and severe-weather research projects by Pinkrah Nana Ofosuhene." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">Pinkrah Nana Ofosuhene</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">Pinkrah<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </nav>
+<header class="page-header">
+  <span class="page-header-label">Research Portfolio</span>
+  <h1 class="page-header-title">Projects</h1>
+  <p class="page-header-desc">
+    Selected projects in severe-weather climatology, climate projections, numerical modeling,
+    hydroclimatology, heat extremes, and reproducible climate-data workflows.
+  </p>
+</header>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <span class="page-header-label">Portfolio</span>
-    <h1 class="page-header-title">My <span class="accent">Projects</span></h1>
-    <p class="page-header-desc">
-      Research projects organized around objectives, datasets, methods, outputs, and scientific
-      relevance for severe-storm climatology, climate extremes, hydroclimatology, and climate data science.
-    </p>
-  </div>
+<section class="section">
+  <div class="section-inner">
+    <div class="grid-3">
+      <a href="climbs-project.html" class="card">
+        <div class="card-title">CLIMBS Severe-Storm Environments</div>
+        <div class="card-subtitle">ERA5, CMIP6, NOAA Storm Events</div>
+        <p class="card-text">
+          Objective: characterize historical and future severe-storm-supportive environments in the Ohio River Basin.
+          Methods include derived thermodynamic and kinematic diagnostics, climate-model evaluation, and Random Forest classification.
+        </p>
+        <div class="tags"><span class="tag teal">Severe Storms</span><span class="tag">HPC</span><span class="tag">Thesis</span></div>
+      </a>
 
-  <!-- FEATURED PROJECT -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="section-header fade-in-up">
-        <span class="section-label">Featured</span>
-        <h2 class="section-title">Flagship <span class="accent">Project</span></h2>
-        <div class="section-divider"></div>
-      </div>
+      <a href="climbs-project.html" class="card">
+        <div class="card-title">ERA5/CMIP6 Severe-Weather Projection Framework</div>
+        <div class="card-subtitle">Climate-model evaluation and bias correction</div>
+        <p class="card-text">
+          Objective: connect ERA5 severe-storm diagnostics with CMIP6 future-scenario output to support regional severe-weather projection analysis.
+        </p>
+        <div class="tags"><span class="tag teal">ERA5</span><span class="tag">CMIP6</span><span class="tag">Downscaling</span></div>
+      </a>
 
-      <a href="climbs-project.html" class="card fade-in-up" style="border-left:4px solid var(--accent-orange); margin-bottom:2rem; display:block; text-decoration:none; cursor:pointer;">
-        <div style="display:flex; gap:1.5rem; flex-wrap:wrap; align-items:flex-start;">
-          <div style="flex:1; min-width:280px;">
-            <div class="tags" style="margin-bottom:1rem;">
-              <span class="tag orange">Active &middot; 2025–Present</span>
-              <span class="tag">Thesis</span>
-              <span class="tag teal">NCAR HPC</span>
-            </div>
-            <h3 class="card-title" style="font-size:1.35rem; margin-bottom:0.75rem;">
-              Severe-Storm Environment Diagnostics — Ohio River Basin
-            </h3>
-            <p class="card-text" style="margin-bottom:1rem;">
-              Objective: quantify historical severe-storm environments across the Ohio River Basin.
-              Datasets: ERA5 reanalysis and NOAA Storm Events labels. Methods: Python/Xarray/MetPy
-              diagnostics for CAPE, CIN, shear, helicity, STP, and related predictors. Outputs:
-              reproducible maps, parameter datasets, and validation-ready severe-weather diagnostics.
-            </p>
-            <p class="card-text" style="margin-bottom:1.25rem;">
-              Research relevance: establishes the baseline for ERA5-to-CMIP6 severe-storm projection
-              work and probabilistic environmental hazard prediction for regional climate-risk assessment.
-            </p>
-            <h4 style="font-family:var(--font-head); font-weight:700; font-size:0.85rem; color:var(--accent-teal); margin-bottom:0.5rem; letter-spacing:1px; text-transform:uppercase;">Stack</h4>
-            <div class="tags">
-              <span class="tag orange">Python</span>
-              <span class="tag orange">MetPy</span>
-              <span class="tag orange">Xarray</span>
-              <span class="tag orange">Cartopy</span>
-              <span class="tag orange">NumPy</span>
-              <span class="tag orange">Pandas</span>
-              <span class="tag">ERA5</span>
-              <span class="tag">CMIP6</span>
-              <span class="tag teal">NCAR Casper/Derecho</span>
-              <span class="tag">Linux</span>
-            </div>
-          </div>
-          <div style="min-width:200px; max-width:240px;">
-            <div style="background:linear-gradient(135deg,rgba(255,107,53,0.12),rgba(0,212,170,0.08)); border-radius:12px; padding:1.5rem; border:1px solid var(--border-glass); text-align:center;">
-              <div style="font-size:2.5rem; margin-bottom:0.5rem;">⚡</div>
-              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-white);font-size:0.9rem;">Status</div>
-              <div style="color:var(--accent-orange);font-weight:600;margin-bottom:1rem;">In Progress</div>
-              <div style="font-family:var(--font-head);font-weight:700;color:var(--text-white);font-size:0.9rem;">Platform</div>
-              <div style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem;">NCAR HPC Cluster</div>
-              <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.8rem; padding:0.45rem 1rem; width:100%; justify-content:center;" onclick="event.stopPropagation();">GitHub</a>
-              <span class="btn btn-primary" style="font-size:0.8rem; padding:0.45rem 1rem; width:100%; justify-content:center; margin-top:0.5rem; display:flex;">Full Project →</span>
-            </div>
-          </div>
-        </div>
+      <a href="climbs-project.html" class="card">
+        <div class="card-title">Random Forest Severe-Weather Hazard Prediction</div>
+        <div class="card-subtitle">NOAA Storm Events and atmospheric predictors</div>
+        <p class="card-text">
+          Objective: estimate probabilistic tornado, hail, and damaging-wind environments using atmospheric predictors and verified storm-event labels.
+        </p>
+        <div class="tags"><span class="tag teal">Random Forest</span><span class="tag">NOAA Storm Events</span><span class="tag">Scikit-learn</span></div>
+      </a>
+
+      <a href="wrf-project.html" class="card">
+        <div class="card-title">WRF Central Appalachian Flood Simulation</div>
+        <div class="card-subtitle">WRF/WPS, ERA5, NOAA Stage IV</div>
+        <p class="card-text">
+          Objective: simulate and verify the July 26-27, 2022 Central Appalachian flood with a convection-permitting WRF setup on NCAR Derecho.
+        </p>
+        <div class="tags"><span class="tag teal">WRF</span><span class="tag">ERA5</span><span class="tag">NCAR Derecho</span></div>
+      </a>
+
+      <a href="hydro-project.html" class="card">
+        <div class="card-title">Kentucky Mesonet vs NOAA Atlas 14</div>
+        <div class="card-subtitle">Precipitation-frequency statistics</div>
+        <p class="card-text">
+          Objective: compare Kentucky Mesonet short-duration precipitation-frequency estimates with NOAA Atlas 14 design-rainfall guidance.
+        </p>
+        <div class="tags"><span class="tag teal">Hydroclimatology</span><span class="tag">IDF Curves</span><span class="tag">Kentucky Mesonet</span></div>
+      </a>
+
+      <a href="research.html#heatwave" class="card">
+        <div class="card-title">Ghana Heatwave Climatology</div>
+        <div class="card-subtitle">Station observations and climate extremes</div>
+        <p class="card-text">
+          Objective: quantify heatwave prevalence, frequency, duration, and intensity using long-term meteorological station records across Ghana.
+        </p>
+        <div class="tags"><span class="tag teal">Heatwaves</span><span class="tag">Ghana</span><span class="tag">Climate Extremes</span></div>
+      </a>
+
+      <a href="compound-heat-dryness.html" class="card">
+        <div class="card-title">Compound Heat-Dryness Extremes</div>
+        <div class="card-subtitle">Hourly station workflow</div>
+        <p class="card-text">
+          Objective: identify compound hot-dry events using temperature, vapor pressure deficit, rolling precipitation deficits, and NOAA impact context.
+        </p>
+        <div class="tags"><span class="tag teal">VPD</span><span class="tag">Station Data</span><span class="tag">Risk Analysis</span></div>
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ALL PROJECTS -->
-  <section class="section" style="background:rgba(255,255,255,0.02); border-top:1px solid var(--border-glass); border-bottom:1px solid var(--border-glass);">
-    <div class="section-inner">
-      <div class="section-header fade-in-up">
-        <span class="section-label">All Work</span>
-        <h2 class="section-title">Project <span class="accent">Gallery</span></h2>
-        <div class="section-divider"></div>
-      </div>
+<footer class="footer">
+  <div class="footer-name">Pinkrah Nana Ofosuhene</div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
+</footer>
 
-      <div class="grid-3 stagger-children">
-
-        <div class="card">
-          <div class="card-icon">🌡️</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag gold">Ghana</span>
-            <span class="tag">2023–2024</span>
-          </div>
-          <div class="card-title">Ghana Heatwave Index Analysis</div>
-          <p class="card-text">
-            Objective: characterize Ghana heatwave climatology. Datasets: daily station maximum and
-            minimum temperatures. Methods: Python-based heatwave frequency, duration, and intensity
-            metrics with trend analysis. Outputs: station-based summaries and figures supporting the
-            Ghana heatwave manuscript submitted for review.
-          </p>
-          <div class="tags">
-            <span class="tag teal">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Station Data</span>
-          </div>
-        </div>
-
-        <a href="tcci-project.html" class="card" style="display:block; text-decoration:none; cursor:pointer; border-top:3px solid var(--accent-gold);">
-          <div class="card-icon">☀️</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag gold">Ghana &middot; Manuscript</span>
-            <span class="tag teal">KNUST + WKU</span>
-          </div>
-          <div class="card-title">Tourism Climate Comfort Index — Ghana</div>
-          <p class="card-text">
-            Objective: evaluate climate suitability for tourism planning across Ghana. Datasets:
-            multi-decadal station climate records. Methods: Tourism Climate Comfort Index and spatial
-            interpolation across agro-ecological zones. Outputs: seasonal comfort maps and manuscript
-            figures for applied climatology.
-          </p>
-          <div class="tags" style="margin-bottom:1rem;">
-            <span class="tag gold">43-year Record</span>
-            <span class="tag teal">pykrige</span>
-            <span class="tag orange">Python</span>
-            <span class="tag">22 Stations</span>
-          </div>
-          <span class="btn btn-outline" style="font-size:0.82rem; padding:0.5rem 1.2rem; display:inline-flex;">View Full Project →</span>
-        </a>
-
-        <a href="hydro-project.html" class="card" style="display:block; text-decoration:none; cursor:pointer; border-top:3px solid var(--accent-teal);">
-          <div class="card-icon">🌧️</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag teal">Kentucky</span>
-            <span class="tag">Group Project</span>
-            <span class="tag gold">Oral Presentation</span>
-          </div>
-          <div class="card-title">Kentucky Extreme Precipitation — Atlas 14 vs. Mesonet</div>
-          <p class="card-text">
-            Objective: compare modern Kentucky Mesonet precipitation-frequency estimates against
-            NOAA Atlas 14. Datasets: KYMN observations from 2015-2024 and Atlas 14 reference values.
-            Methods: Gumbel extreme-value analysis, IDF curves, and spatial comparison. Outputs:
-            short-duration rainfall diagnostics for hydroclimate design relevance.
-          </p>
-          <div class="tags" style="margin-bottom:1rem;">
-            <span class="tag teal">Python</span>
-            <span class="tag">KY Mesonet</span>
-            <span class="tag">Gumbel EVT</span>
-            <span class="tag">Kriging</span>
-          </div>
-          <span class="btn btn-secondary" style="font-size:0.82rem; padding:0.5rem 1.2rem; display:inline-flex;">View Full Project →</span>
-        </a>
-
-        <a href="compound-heat-dryness.html" class="card" style="display:block; text-decoration:none; cursor:pointer; border-top:3px solid var(--accent-gold);">
-          <div class="card-icon">Data</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag gold">Kentucky</span>
-            <span class="tag teal">Climate Data Science</span>
-            <span class="tag">Spring 2026</span>
-          </div>
-          <div class="card-title">Compound Heat-Dryness Events - Kentucky</div>
-          <p class="card-text">
-            Built an hourly station-based workflow to detect compound heat-dryness events from
-            temperature, vapor pressure deficit, and rolling precipitation. The pilot FARM station
-            analysis processed 87,531 hourly records with 0.16% missing core data and identified
-            321 main 7-day compound events across 2016-2025.
-          </p>
-          <div class="tags" style="margin-bottom:1rem;">
-            <span class="tag orange">Python</span>
-            <span class="tag teal">VPD</span>
-            <span class="tag">NOAA Impacts</span>
-            <span class="tag gold">Reproducible Workflow</span>
-          </div>
-          <span class="btn btn-outline" style="font-size:0.82rem; padding:0.5rem 1.2rem; display:inline-flex;">View Full Project -&gt;</span>
-        </a>
-
-        <div class="card">
-          <div class="card-icon">📊</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag">Data Visualization</span>
-            <span class="tag">Teaching</span>
-          </div>
-          <div class="card-title">Python for Climate Science — Tutorial Notebooks</div>
-          <p class="card-text">
-            Developed Jupyter notebooks for undergraduate meteorology instruction at KNUST:
-            reproducible data loading, cleaning, analysis, and visualization workflows using
-            Pandas, NumPy, Matplotlib, Seaborn, Cartopy, and Xarray.
-          </p>
-          <div class="tags">
-            <span class="tag teal">Jupyter</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Seaborn</span>
-            <span class="tag">Xarray</span>
-          </div>
-        </div>
-
-        <div class="card" style="border-top:3px solid var(--accent-purple);">
-          <div class="card-icon">🧠</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag teal">Machine Learning</span>
-            <span class="tag">Kaggle</span>
-            <span class="tag gold">Text-to-Motion</span>
-          </div>
-          <div class="card-title">Sign-Language Text-to-Motion Retrieval Pipeline</div>
-          <p class="card-text">
-            Built retrieval-based pipelines for hierarchical text-to-motion generation for sign
-            language. The work emphasized TF-IDF character n-gram retrieval, weighted voting,
-            row-level ablation, validation discipline, and reproducible model evaluation.
-          </p>
-          <div class="tags">
-            <span class="tag orange">TF-IDF</span>
-            <span class="tag teal">Retrieval</span>
-            <span class="tag">Ablation</span>
-            <span class="tag">Model Selection</span>
-          </div>
-        </div>
-
-        <div class="card" style="border-top:3px solid var(--accent-teal);">
-          <div class="card-icon">🔬</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag teal">Computer Vision</span>
-            <span class="tag">Species Re-ID</span>
-            <span class="tag gold">Pipeline Design</span>
-          </div>
-          <div class="card-title">AnimalCLEF Individual Re-Identification Pipeline</div>
-          <p class="card-text">
-            Developed a dual-embedding strategy for wildlife individual identification, combining
-            descriptor models, query expansion, similarity fusion, clustering, and per-dataset
-            configuration tuning. The project strengthened my practice in reproducible ML systems,
-            validation design, and error analysis.
-          </p>
-          <div class="tags">
-            <span class="tag orange">Embeddings</span>
-            <span class="tag teal">Clustering</span>
-            <span class="tag">Similarity Fusion</span>
-            <span class="tag">Validation</span>
-          </div>
-        </div>
-
-        <a href="wrf-project.html" class="card" style="border-top: 3px solid var(--accent-orange); display:block; text-decoration:none; cursor:pointer;">
-          <div class="card-icon">🌀</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag orange">WRF v4.7.1</span>
-            <span class="tag teal">NCAR Derecho</span>
-            <span class="tag gold">GEOS 539</span>
-          </div>
-          <div class="card-title">WRF Simulation — July 2022 Appalachian Flood</div>
-          <p class="card-text">
-            Objective: simulate the July 26-27, 2022 Central Appalachian flash flood. Datasets:
-            ERA5 boundary conditions and NOAA Stage IV verification. Methods: 48-hour WRF/WPS
-            convection-permitting simulation with a 4-km nested domain, WSM6 microphysics, and
-            RRTMG radiation. Output: precipitation fields and verification diagnostics.
-          </p>
-          <div class="tags" style="margin-bottom:1rem;">
-            <span class="tag orange">WRF</span>
-            <span class="tag teal">ERA5</span>
-            <span class="tag">WRF-Python</span>
-            <span class="tag">Cartopy</span>
-            <span class="tag">64 MPI Tasks</span>
-          </div>
-          <span class="btn btn-primary" style="font-size:0.82rem; padding:0.5rem 1.2rem; display:inline-flex;">View Full Project →</span>
-        </a>
-
-        <div class="card" style="background: linear-gradient(135deg,rgba(255,107,53,0.08),rgba(0,212,170,0.05)); border-style:dashed;">
-          <div class="card-icon">🧭</div>
-          <div class="tags" style="margin-bottom:0.75rem;">
-            <span class="tag">In Progress</span>
-          </div>
-          <div class="card-title">Open Research Tools</div>
-          <p class="card-text">
-            More projects currently in development as part of the CLIMBS research initiative,
-            including the ORB Severe Weather Data Portal and diagnostic toolkits for reproducible
-            storm-environment analysis.
-          </p>
-          <div style="margin-top:1rem;">
-            <a href="https://orb-portal.vercel.app/" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.82rem; padding:0.5rem 1.2rem;">ORB Severe Weather Data Portal</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TECH STACK -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="section-header fade-in-up">
-        <span class="section-label">My Toolkit</span>
-        <h2 class="section-title">Technologies &amp; <span class="accent">Tools</span></h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="grid-2">
-        <div class="card fade-in-up">
-          <h3 class="card-title" style="margin-bottom:1rem;">Python Ecosystem</h3>
-          <div class="skills-group">
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>Python (general)</span><span>Expert</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>MetPy / Cartopy</span><span>Advanced</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>Xarray / Pandas / NumPy</span><span>Advanced</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>Scikit-Learn</span><span>Intermediate</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="70%"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="card fade-in-up">
-          <h3 class="card-title" style="margin-bottom:1rem;">Climate &amp; Modeling</h3>
-          <div class="skills-group">
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>ERA5 / CMIP6 Analysis</span><span>Advanced</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>WRF Modeling</span><span>Intermediate</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="72%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>CDO / NCL</span><span>Intermediate</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="70%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-              <div class="skill-bar-label"><span>FORTRAN</span><span>Working Knowledge</span></div>
-              <div class="skill-bar"><div class="skill-bar-fill" data-width="55%"></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-name">Pinkrah Nana <span>Ofosuhene</span></div>
-    <nav class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="footer-divider"></div>
-    <p style="font-size:0.82rem; color:var(--text-muted);">&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
-    <div class="footer-ghana"><span></span><span></span><span></span></div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -4,203 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compound Heat-Dryness Events | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Climate data science project detecting compound heat-dryness events across Kentucky with hourly station data, VPD, precipitation windows, and NOAA impact context." />
+  <meta name="description" content="Compound heat-dryness climate data science workflow using hourly station data, vapor pressure deficit, precipitation deficits, and NOAA impact context." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    .prose h2 { font-family:var(--font-head); font-weight:700; font-size:1.3rem; color:var(--text-white); margin:2.25rem 0 0.75rem; padding-bottom:0.4rem; border-bottom:1px solid var(--border-glass); }
-    .prose p, .prose li { color:var(--text-muted); font-size:0.97rem; line-height:1.8; }
-    .prose ul { padding-left:1.5rem; margin-bottom:1rem; }
-    .prose strong { color:var(--accent-orange); font-weight:600; }
-    .fig-wrap { margin:2rem 0; }
-    .fig-wrap img { width:100%; border-radius:12px; border:1px solid var(--border-glass); display:block; }
-    .fig-caption { font-size:0.82rem; color:var(--text-muted); text-align:center; margin-top:0.6rem; font-style:italic; line-height:1.5; }
-    .fig-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:2rem 0; }
-    .metric-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1rem; margin:1.5rem 0; }
-    .metric-box { background:rgba(255,255,255,0.05); border:1px solid var(--border-glass); border-radius:12px; padding:1.1rem 0.75rem; text-align:center; }
-    .metric-val { font-family:var(--font-head); font-weight:800; font-size:1.5rem; color:var(--accent-gold); display:block; line-height:1.1; }
-    .metric-lbl { font-size:0.72rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem; display:block; }
-    .finding-box { background:rgba(255,215,0,0.06); border:1px solid rgba(255,215,0,0.22); border-left:4px solid var(--accent-gold); border-radius:0 12px 12px 0; padding:1.1rem 1.25rem; margin:0.75rem 0; }
-    .finding-box p { margin:0; }
-    @media (max-width:640px) { .fig-grid { grid-template-columns:1fr; } }
-    @media (max-width:480px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
-  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">Pinkrah<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </nav>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">Pinkrah Nana Ofosuhene</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <div class="page-header" style="background:linear-gradient(135deg,#061014 0%,#0a171d 52%,#102028 100%);">
-    <span class="page-header-label">Climate Data Science - GEOS 502 - Spring 2026</span>
-    <h1 class="page-header-title" style="font-size:clamp(1.5rem,4vw,2.8rem);">
-      Compound <span class="accent">Heat-Dryness</span> Events in Kentucky
-    </h1>
-    <p class="page-header-desc">
-      A reproducible station-based workflow for detecting concurrent high temperature, high vapor
-      pressure deficit, and low recent precipitation using hourly Kentucky observations.
-    </p>
-    <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
-      <span class="tag orange">Python</span>
-      <span class="tag teal">Hourly Station Data</span>
-      <span class="tag gold">VPD</span>
-      <span class="tag">NOAA Impact Context</span>
+<header class="page-header">
+  <span class="page-header-label">Climate Extremes</span>
+  <h1 class="page-header-title">Compound Heat-Dryness Events</h1>
+  <p class="page-header-desc">
+    A reproducible climate-data workflow for identifying overlapping heat and short-term dryness stress from hourly station observations.
+  </p>
+</header>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="grid-4">
+      <div class="card"><div class="card-title">Objective</div><p class="card-text">Detect compound hot-dry stress events relevant to agricultural, water-resource, and public-health risk.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Hourly station data, temperature, derived vapor pressure deficit, rolling precipitation windows, NOAA impact context.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Quality control, percentile thresholds, rolling-window precipitation deficits, event duration and intensity metrics.</p></div>
+      <div class="card"><div class="card-title">Outputs</div><p class="card-text">Event catalog, threshold diagnostics, duration-intensity plots, and impact-context figures.</p></div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-title">Research Relevance</div>
+      <p class="card-text">
+        This project extends single-hazard climate analysis into compound-risk detection, using physical variables
+        that connect atmospheric moisture demand and precipitation deficits to decision-relevant impacts.
+      </p>
+    </div>
+
+    <div class="fig-grid">
+      <div class="fig-wrap">
+        <img src="images/compound_workflow.png" alt="Compound heat-dryness workflow" />
+        <p class="fig-caption">Workflow for station QC, VPD derivation, threshold detection, and impact-context comparison.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/compound_duration_intensity.png" alt="Compound heat-dryness duration and intensity diagnostics" />
+        <p class="fig-caption">Duration and intensity diagnostics for identified compound heat-dryness events.</p>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">
+      <a href="projects.html" class="btn btn-secondary">Back to Projects</a>
+      <a href="research.html" class="btn btn-outline">Research Overview</a>
     </div>
   </div>
+</section>
 
-  <section class="section">
-    <div class="section-inner" style="max-width:920px;">
-      <div class="metric-grid fade-in-up">
-        <div class="metric-box"><span class="metric-val">87,531</span><span class="metric-lbl">Hourly Records</span></div>
-        <div class="metric-box"><span class="metric-val">0.16%</span><span class="metric-lbl">Missing Core Data</span></div>
-        <div class="metric-box"><span class="metric-val">321</span><span class="metric-lbl">7-Day Events</span></div>
-        <div class="metric-box"><span class="metric-val">837</span><span class="metric-lbl">24-Hour Events</span></div>
-        <div class="metric-box"><span class="metric-val">2016-25</span><span class="metric-lbl">Analysis Period</span></div>
-        <div class="metric-box"><span class="metric-val">FARM</span><span class="metric-lbl">Pilot Station</span></div>
-      </div>
+<footer class="footer">
+  <div class="footer-name">Pinkrah Nana Ofosuhene</div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
+</footer>
 
-      <div class="prose fade-in-up">
-        <div class="card" style="border-left:4px solid var(--accent-gold); margin-bottom:2.5rem;">
-          <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-gold); margin-bottom:0.75rem;">Project Summary</h3>
-          <p style="margin:0;">
-            This project extends my extreme-weather portfolio from single-hazard climatology into compound
-            climate risk. The workflow standardizes hourly station observations, derives vapor pressure
-            deficit, calculates rolling precipitation windows, identifies percentile-based compound events,
-            and compares event timing with NOAA heat and drought impact records. The pilot analysis used
-            FARM station data from 2016-2025 and provides a template for expanding to the full Kentucky
-            Mesonet network.
-          </p>
-        </div>
-
-        <h2>1. Scientific Motivation</h2>
-        <p>
-          Heat stress and short-term dryness are often studied separately, but their impacts are most
-          damaging when they overlap. High temperature, high atmospheric moisture demand, and limited
-          recent precipitation can rapidly increase agricultural stress, public health risk, fire-weather
-          concern, and water-resource pressure. This project builds a practical workflow for identifying
-          those overlapping conditions from high-frequency station observations.
-        </p>
-      </div>
-
-      <div class="fig-wrap fade-in-up">
-        <img src="images/compound_context_dashboard.png" alt="Study context dashboard for compound heat-dryness analysis" loading="lazy" />
-        <p class="fig-caption">
-          Study context dashboard summarizing the station-based framework, hazard motivation, and
-          Kentucky heat-dryness impact setting.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>2. Detection Framework</h2>
-        <p>
-          The workflow uses a percentile-based definition so that compound events are evaluated relative
-          to local station climatology. The pilot configuration flags hours when temperature and vapor
-          pressure deficit exceed their 90th percentiles while rolling precipitation is below the 20th
-          percentile. Sensitivity tests compare 24-hour, 3-day, and 7-day precipitation windows.
-        </p>
-      </div>
-
-      <div class="fig-grid fade-in-up">
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/compound_workflow.png" alt="Compound event workflow schematic" loading="lazy" />
-          <p class="fig-caption">Workflow from hourly observations through QC, derived VPD, event detection, sensitivity testing, and impact comparison.</p>
-        </div>
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/compound_threshold_timeseries.png" alt="Hourly threshold time series with event shading" loading="lazy" />
-          <p class="fig-caption">Hourly temperature, VPD, and precipitation thresholds with compound-event periods highlighted for the pilot station.</p>
-        </div>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>3. Pilot Results</h2>
-      </div>
-
-      <div class="fade-in-up">
-        <div class="finding-box">
-          <p><strong>Event sensitivity:</strong> the 24-hour window identifies 837 events, the 3-day window identifies 519, and the 7-day window identifies 321 main compound events.</p>
-        </div>
-        <div class="finding-box">
-          <p><strong>Data quality:</strong> the FARM pilot station provided 87,531 hourly records across 2016-2025 with only 0.16% missing core observations.</p>
-        </div>
-        <div class="finding-box">
-          <p><strong>Thresholds:</strong> the pilot station 90th-percentile temperature threshold was 27.153 C, 90th-percentile VPD was 1.435 kPa, and 7-day precipitation 20th percentile was 2.980 mm.</p>
-        </div>
-      </div>
-
-      <div class="fig-grid fade-in-up">
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/compound_seasonality.png" alt="Seasonality and variability of compound heat-dryness events" loading="lazy" />
-          <p class="fig-caption">Event seasonality and interannual variability, highlighting warm-season concentration and year-to-year differences.</p>
-        </div>
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/compound_duration_intensity.png" alt="Duration and intensity of compound heat-dryness events" loading="lazy" />
-          <p class="fig-caption">Duration and intensity diagnostics used to distinguish short-lived stress periods from longer, more severe compound episodes.</p>
-        </div>
-      </div>
-
-      <div class="fig-wrap fade-in-up">
-        <img src="images/compound_noaa_impacts.png" alt="NOAA impact context for Kentucky heat and drought events" loading="lazy" />
-        <p class="fig-caption">
-          NOAA impact context connects station-detected heat-dryness stress periods with reported
-          heat and drought impacts, supporting broader disaster-risk interpretation.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>4. Why It Belongs in My Research Portfolio</h2>
-        <p>
-          The project connects atmospheric diagnostics with decision-relevant impacts, which is the
-          same thread running through my CLIMBS thesis, WRF flood simulation, and Kentucky precipitation
-          frequency work. It also shows my Spring 2026 growth in climate data science: reproducible
-          workflows, physical feature engineering, threshold sensitivity analysis, and risk communication.
-        </p>
-      </div>
-
-      <div class="card fade-in-up" style="margin-top:1.5rem;">
-        <h3 class="card-title" style="margin-bottom:1rem;">Technology Stack</h3>
-        <div class="tags">
-          <span class="tag orange">Python</span>
-          <span class="tag orange">Pandas / NumPy</span>
-          <span class="tag orange">Matplotlib / Seaborn</span>
-          <span class="tag teal">Hourly Station Data</span>
-          <span class="tag teal">Vapor Pressure Deficit</span>
-          <span class="tag">Percentile Thresholds</span>
-          <span class="tag">Rolling Windows</span>
-          <span class="tag gold">NOAA Storm Events</span>
-          <span class="tag">Reproducible QC</span>
-        </div>
-      </div>
-
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border-glass);">
-        <a href="projects.html" class="btn btn-outline">&lt;- Back to Projects</a>
-        <a href="research.html" class="btn btn-secondary">All Research -&gt;</a>
-        <a href="contact.html" class="btn btn-primary">Discuss the Workflow</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-name">Pinkrah Nana <span>Ofosuhene</span></div>
-    <nav class="footer-links">
-      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a><a href="cv.html">CV</a><a href="contact.html">Contact</a>
-    </nav>
-    <div class="footer-divider"></div>
-    <p style="font-size:0.82rem; color:var(--text-muted);">&copy; 2026 Pinkrah Nana Ofosuhene - Atmospheric Scientist - WKU</p>
-    <div class="footer-ghana"><span></span><span></span><span></span></div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -3,271 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLIMBS Thesis Research | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="MS Thesis: Climatological and Future Projections of Severe-Storm Environments in the Ohio River Basin using ERA5 and CMIP6." />
+  <title>CLIMBS Severe-Storm Research | Pinkrah Nana Ofosuhene</title>
+  <meta name="description" content="CLIMBS thesis research on severe-storm environments in the Ohio River Basin using ERA5, CMIP6, NOAA Storm Events, Random Forest methods, and HPC workflows." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    .prose h2 { font-family:var(--font-head); font-weight:700; font-size:1.3rem; color:var(--text-white); margin:2.25rem 0 0.75rem; padding-bottom:0.4rem; border-bottom:1px solid var(--border-glass); }
-    .prose p  { color:var(--text-muted); font-size:0.97rem; line-height:1.8; margin-bottom:0.9rem; }
-    .prose strong { color:var(--accent-orange); font-weight:600; }
-    .prose em  { color:var(--accent-teal); font-style:normal; font-weight:500; }
-    .prose ul  { color:var(--text-muted); padding-left:1.5rem; font-size:0.97rem; line-height:1.9; margin-bottom:1rem; }
-    .fig-wrap  { margin:2rem 0; }
-    .fig-wrap img { width:100%; border-radius:12px; border:1px solid var(--border-glass); display:block; }
-    .fig-caption { font-size:0.82rem; color:var(--text-muted); text-align:center; margin-top:0.6rem; font-style:italic; line-height:1.5; }
-    .fig-grid  { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:2rem 0; }
-    @media (max-width:640px) { .fig-grid { grid-template-columns:1fr; } }
-    .param-table { width:100%; border-collapse:collapse; font-size:0.88rem; margin:1.25rem 0; }
-    .param-table th { font-family:var(--font-head); font-weight:700; font-size:0.75rem; letter-spacing:1px; text-transform:uppercase; color:var(--accent-teal); background:rgba(0,212,170,0.08); padding:0.65rem 1rem; text-align:left; border-bottom:1px solid rgba(0,212,170,0.2); }
-    .param-table td { padding:0.6rem 1rem; color:var(--text-muted); border-bottom:1px solid rgba(255,255,255,0.05); }
-    .param-table td:first-child { color:var(--text-white); font-weight:500; }
-    .metric-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1rem; margin:1.5rem 0; }
-    .metric-box { background:rgba(255,255,255,0.05); border:1px solid var(--border-glass); border-radius:12px; padding:1.1rem 0.75rem; text-align:center; }
-    .metric-val { font-family:var(--font-head); font-weight:800; font-size:1.55rem; color:var(--accent-gold); display:block; line-height:1.1; }
-    .metric-lbl { font-size:0.72rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-top:0.3rem; display:block; }
-    .phase-card { border:1px solid var(--border-glass); border-radius:12px; padding:1.5rem; margin-bottom:1rem; position:relative; overflow:hidden; }
-    .phase-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:4px; }
-    .phase-1::before { background:var(--accent-orange); }
-    .phase-2::before { background:var(--accent-teal); }
-    .phase-3::before { background:var(--accent-gold); }
-    .phase-num { font-family:var(--font-head); font-weight:900; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:0.4rem; }
-    .phase-1 .phase-num { color:var(--accent-orange); }
-    .phase-2 .phase-num { color:var(--accent-teal); }
-    .phase-3 .phase-num { color:var(--accent-gold); }
-    .phase-title { font-family:var(--font-head); font-weight:700; font-size:1rem; color:var(--text-white); margin-bottom:0.5rem; }
-    @media (max-width:480px) { .metric-grid { grid-template-columns:repeat(2,1fr); } }
-  </style>
 </head>
 <body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">Pinkrah Nana Ofosuhene</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">Pinkrah<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </nav>
+<header class="page-header">
+  <span class="page-header-label">MS Thesis &middot; NSF EPSCoR CLIMBS</span>
+  <h1 class="page-header-title">Severe-Storm Environments in the Ohio River Basin</h1>
+  <p class="page-header-desc">
+    ERA5 climatology, CMIP6 future climate scenarios, NOAA Storm Events labels, Random Forest classification,
+    and high-performance computing workflows for regional severe-weather environment analysis.
+  </p>
+</header>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header" style="background:linear-gradient(135deg,#061014 0%,#0a171d 52%,#102028 100%);">
-    <span class="page-header-label">MS Thesis &middot; NSF EPSCoR CLIMBS &middot; WKU</span>
-    <h1 class="page-header-title" style="font-size:clamp(1.5rem,4vw,2.8rem);">
-      Climatological &amp; Future Projections of <span class="accent">Severe-Storm Environments</span> in the Ohio River Basin
-    </h1>
-    <p class="page-header-desc">
-      ERA5 reanalysis (1996-2025) · CMIP6 SSP4.5 projections (2026-2100) · Random Forest classification · NOAA Storm Events
-    </p>
-    <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
-      <span class="tag teal">Active &middot; 2025–Present</span>
-      <span class="tag orange">NSF EPSCoR</span>
-      <span class="tag gold">WKU Thesis</span>
-      <span class="tag">Dr. Xingang Fan</span>
+<section class="section">
+  <div class="section-inner">
+    <div class="grid-4">
+      <div class="card"><div class="card-title">Objective</div><p class="card-text">Quantify historical and future severe-storm-supportive environments across the Ohio River Basin.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">ERA5 reanalysis, CMIP6 future climate scenarios, NOAA Storm Events, derived atmospheric diagnostics.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Python diagnostics, ERA5-to-CMIP6 evaluation, bias correction, Random Forest classification, HPC batch workflows.</p></div>
+      <div class="card"><div class="card-title">Outputs</div><p class="card-text">Severe-weather environment maps, trends, calibrated probabilities, and projection-ready diagnostic workflows.</p></div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-title">Research Relevance</div>
+      <p class="card-text">
+        The project supports climate-risk interpretation for severe convective hazards by linking historical reanalysis,
+        observed storm reports, and future climate scenarios. The diagnostic framework uses a large suite of atmospheric
+        diagnostics and predictors rather than conflicting fixed-count claims.
+      </p>
+      <div class="tags" style="margin-top:1rem;">
+        <span class="tag teal">ERA5</span>
+        <span class="tag teal">CMIP6</span>
+        <span class="tag">NOAA Storm Events</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">WRF/WPS</span>
+        <span class="tag">NCAR Derecho/Casper</span>
+        <span class="tag">TACC</span>
+      </div>
+    </div>
+
+    <div class="fig-grid">
+      <div class="fig-wrap">
+        <img src="images/climbs_cape.png" alt="ERA5 CAPE diagnostic map for the Ohio River Basin" />
+        <p class="fig-caption">Example thermodynamic diagnostic from the ERA5 severe-storm environment workflow.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/climbs_validation.png" alt="CLIMBS validation figure comparing diagnostics with storm events" />
+        <p class="fig-caption">Preliminary validation against observed severe-weather environments.</p>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">
+      <a href="projects.html" class="btn btn-secondary">Back to Projects</a>
+      <a href="research.html" class="btn btn-outline">Research Overview</a>
     </div>
   </div>
+</section>
 
-  <section class="section">
-    <div class="section-inner" style="max-width:920px;">
+<footer class="footer">
+  <div class="footer-name">Pinkrah Nana Ofosuhene</div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
+</footer>
 
-      <!-- STATS -->
-      <div class="metric-grid fade-in-up">
-        <div class="metric-box"><span class="metric-val">30 yr</span><span class="metric-lbl">ERA5 Period</span></div>
-        <div class="metric-box"><span class="metric-val">80+</span><span class="metric-lbl">Computed Parameters</span></div>
-        <div class="metric-box"><span class="metric-val">WRF</span><span class="metric-lbl">Downscaling Workflow</span></div>
-        <div class="metric-box"><span class="metric-val">2100</span><span class="metric-lbl">Projections Through</span></div>
-        <div class="metric-box"><span class="metric-val">3</span><span class="metric-lbl">Hazard Types</span></div>
-        <div class="metric-box"><span class="metric-val">RF</span><span class="metric-lbl">ML Model</span></div>
-      </div>
-
-      <div class="prose fade-in-up">
-
-        <!-- ABSTRACT -->
-        <div class="card" style="border-left:4px solid var(--accent-orange); margin-bottom:2.5rem;">
-          <div style="display:flex; gap:1rem; align-items:center; margin-bottom:1rem; flex-wrap:wrap;">
-            <img src="images/climbs_logo.png" alt="CLIMBS Project Logo" style="height:48px; width:auto; border-radius:6px; border:none;" />
-            <h3 style="font-family:var(--font-head); font-weight:700; color:var(--accent-orange); font-size:1rem; margin:0;">Abstract</h3>
-          </div>
-          <p style="margin:0; color:var(--text-muted); font-size:0.97rem; line-height:1.8;">
-            Severe convective storms — tornadoes, damaging winds, and large hail — pose a major weather hazard
-            across the <strong>Ohio River Basin (ORB)</strong>. Yet the long-term evolution of environments
-            conducive to severe convection in the region remains insufficiently documented. This study examines
-            the <em>climatology, spatial distribution, and temporal variability</em> of severe-storm environments
-            using <strong>ERA5 reanalysis (1996-2025)</strong>, then extends to <strong>CMIP6 future projections
-            under SSP4.5 through 2100</strong>. Over <em>80 thermodynamic, kinematic, and moisture parameters</em>
-            are derived at 6-hour intervals — including CAPE, CIN, SRH, wind shear, STP, EHI, and SCP.
-            <strong>Random Forest models</strong> trained on NOAA Storm Events data estimate probabilistic
-            hazard occurrence for tornadoes, hail, and damaging winds. Regional climate downscaling
-            workflows support physically interpretable severe-storm projection analysis.
-          </p>
-        </div>
-
-        <!-- MOTIVATION -->
-        <h2>1. Motivation &amp; Context</h2>
-      </div>
-
-      <!-- Billion dollar disasters image -->
-      <div class="fig-wrap fade-in-up">
-        <img src="images/billion_dollar_disasters.png" alt="2020 Billion-Dollar Disaster Map USA" loading="lazy" />
-        <p class="fig-caption">
-          Billion-dollar weather and climate disaster events across the United States (2020). The Ohio River
-          Basin and surrounding Midwest consistently appear as hotspots, motivating long-term climatological
-          analysis of severe-storm environments.
-        </p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <p>
-          The Ohio River Basin experiences some of the nation's highest severe-weather frequency, yet
-          comprehensive regional climatologies of the <em>atmospheric environments</em> that produce these
-          storms — rather than storm counts alone — remain limited. Understanding how CAPE, wind shear,
-          helicity, and composite parameters like STP have evolved over the past 30 years, and how they
-          may shift under high-emission scenarios, is critical for climate-resilient planning.
-        </p>
-
-        <!-- PARAMETERS -->
-        <h2>2. Parameters &amp; Diagnostics</h2>
-        <p>A comprehensive suite of <strong>80+ parameters</strong> is derived at 6-hour intervals from ERA5:</p>
-      </div>
-
-      <!-- Parameter figures -->
-      <div class="fig-grid fade-in-up">
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/climbs_cape.png" alt="Mixed-Layer CAPE Ohio Valley" loading="lazy" />
-          <p class="fig-caption"><strong>Mixed-Layer CAPE (MLCAPE)</strong> — Ohio River Basin. Convective available potential energy provides the fuel for deep convection. Higher CAPE values indicate greater thermodynamic instability and severe-storm potential.</p>
-        </div>
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/climbs_cin.png" alt="Mixed-Layer CIN Ohio Valley" loading="lazy" />
-          <p class="fig-caption"><strong>Mixed-Layer CIN (MLCIN)</strong> — Ohio River Basin. Convective inhibition acts as a "lid" suppressing storms until it is overcome. The interplay between CAPE and CIN determines when and where convection initiates.</p>
-        </div>
-      </div>
-
-      <div class="fig-grid fade-in-up">
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/climbs_shear.png" alt="0-6 km Wind Shear Ohio Valley" loading="lazy" />
-          <p class="fig-caption"><strong>0–6 km Bulk Wind Shear</strong> — Ohio River Basin. Deep-layer shear organizes convection into supercells capable of producing long-track tornadoes and large hail. This kinematic parameter is a key discriminator of hazard type.</p>
-        </div>
-        <div class="fig-wrap" style="margin:0;">
-          <img src="images/climbs_stp.png" alt="Significant Tornado Parameter" loading="lazy" />
-          <p class="fig-caption"><strong>Significant Tornado Parameter (STP)</strong> — Ohio River Basin. The STP combines CAPE, shear, CIN, and LCL height into a single composite index that discriminates environments favorable for significant tornadoes (EF2+).</p>
-        </div>
-      </div>
-
-      <div class="prose fade-in-up">
-        <div class="table-scroll">
-          <table class="param-table">
-            <tr><th>Category</th><th>Key Parameters</th></tr>
-            <tr><td>Thermodynamic Instability</td><td>MLCAPE, SBCAPE, MUCAPE, MLCIN, LCL Height, Lapse Rates</td></tr>
-            <tr><td>Kinematic / Shear</td><td>0–1 km, 0–3 km, 0–6 km bulk shear vectors, SRH (1 km, 3 km)</td></tr>
-            <tr><td>Moisture</td><td>Precipitable water, mixing ratio, dewpoint depression</td></tr>
-            <tr><td>Composite Indices</td><td>STP, EHI, SCP (Supercell Composite), SHIP</td></tr>
-            <tr><td>Storm Reports (labels)</td><td>NOAA Storm Events: tornado, hail ≥ 1 in, wind ≥ 58 mph</td></tr>
-          </table>
-        </div>
-
-        <!-- ML METHODOLOGY -->
-        <h2>3. Three-Phase Methodology</h2>
-      </div>
-
-      <div class="fade-in-up" style="margin-bottom:2rem;">
-        <div class="phase-card phase-1">
-          <div class="phase-num">Phase 1 — Knowledge Acquisition (1996-2025)</div>
-          <div class="phase-title">Historical Climatology &amp; ML Training</div>
-          <p class="card-text">ERA5 reanalysis provides the atmospheric environmental baseline. NOAA Storm Events provides storm-report labels mapped to a regional spatial neighborhood. A <strong>Random Forest classifier</strong> is trained on 1996-2020 data to identify severe-storm-supportive environments, then validated on the independent 2021-2025 period. Over 80 derived parameters feed the model, producing calibrated probabilities for tornado, hail, and damaging-wind hazards.</p>
-        </div>
-        <div class="phase-card phase-2">
-          <div class="phase-num">Phase 2 — Statistical Bridge (Calibration)</div>
-          <div class="phase-title">ERA5-to-CMIP6 Bias Correction &amp; Regional Downscaling</div>
-          <p class="card-text">The overlap period where both ERA5 and CMIP6 data are available is used to characterize biases and statistical relationships between the two datasets. Regional downscaling and calibration workflows support finer-scale interpretation of severe-storm environments. Isotonic regression calibrates model probabilities for reliability.</p>
-        </div>
-        <div class="phase-card phase-3">
-          <div class="phase-num">Phase 3 — Future Outlook (2026-2100)</div>
-          <div class="phase-title">End-of-Century Projections under SSP4.5</div>
-          <p class="card-text">The validated Random Forest workflow is applied to bias-corrected CMIP6 SSP4.5 projections to produce a 75-year outlook of severe-storm environment frequency, intensity, and seasonality across the Ohio River Basin. Key questions: Will severe-storm days increase by 2100? Will the season shift earlier into winter/spring? Will tornado-favorable environments expand northward?</p>
-        </div>
-      </div>
-
-      <!-- VALIDATION -->
-      <div class="prose fade-in-up">
-        <h2>4. Preliminary Validation</h2>
-      </div>
-      <div class="fig-wrap fade-in-up">
-        <img src="images/climbs_validation.png" alt="CLIMBS project validation results" loading="lazy" />
-        <p class="fig-caption">Preliminary validation results comparing ERA5-derived storm-environment parameters to NOAA Storm Events observations over the Ohio River Basin. Agreement between modeled and observed severe-weather environments confirms the diagnostic framework.</p>
-      </div>
-
-      <div class="prose fade-in-up">
-        <h2>5. Research Questions</h2>
-        <ul>
-          <li>How have severe-storm environments across the ORB changed over 1996–2025?</li>
-          <li>What spatial patterns and seasonal cycles characterize tornado-, hail-, and wind-favorable conditions?</li>
-          <li>How well does CMIP6 represent the ERA5-observed environments, and what biases exist?</li>
-          <li>Under SSP4.5, how will the frequency, intensity, and seasonality of severe-storm environments evolve through 2100?</li>
-          <li>Can Random Forest models reliably discriminate hazardous from non-hazardous environments across both ERA5 and CMIP6 data?</li>
-        </ul>
-
-        <h2>6. Significance</h2>
-        <p>
-          This study is among the first to apply a <strong>combined ERA5 + ML + downscaled CMIP6</strong>
-          framework to severe-storm environment climatology for the Ohio River Basin. The results will:
-        </p>
-        <ul>
-          <li>Provide the most comprehensive 30-year climatology of severe-storm environments in the ORB</li>
-          <li>Offer actionable projections for emergency management and infrastructure planning</li>
-          <li>Contribute to understanding of how climate change reshapes the "tornado belt" geography</li>
-          <li>Serve as a methodological template for other at-risk regions globally</li>
-        </ul>
-      </div>
-
-      <!-- TECH STACK -->
-      <div class="card fade-in-up" style="margin-top:1.5rem;">
-        <h3 class="card-title" style="margin-bottom:1rem;">Full Technology Stack</h3>
-        <div class="tags">
-          <span class="tag orange">Python</span>
-          <span class="tag orange">MetPy</span>
-          <span class="tag orange">Xarray</span>
-          <span class="tag orange">Pandas</span>
-          <span class="tag orange">Scikit-Learn (RF)</span>
-          <span class="tag teal">ERA5 (1996–2025)</span>
-          <span class="tag teal">CMIP6 SSP4.5</span>
-          <span class="tag teal">NOAA Storm Events</span>
-          <span class="tag gold">NCAR Casper &amp; Derecho</span>
-          <span class="tag">WRF/WPS Workflow</span>
-          <span class="tag">Cartopy</span>
-          <span class="tag">Matplotlib / Seaborn</span>
-          <span class="tag">Isotonic Regression</span>
-          <span class="tag">Linux / HPC</span>
-          <span class="tag">LaTeX</span>
-        </div>
-      </div>
-
-      <!-- NAV -->
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border-glass);">
-        <a href="projects.html" class="btn btn-outline">← Back to Projects</a>
-        <a href="research.html" class="btn btn-secondary">All Research →</a>
-        <a href="contact.html" class="btn btn-primary">Collaborate with Me</a>
-      </div>
-
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-name">Pinkrah Nana <span>Ofosuhene</span></div>
-    <nav class="footer-links">
-      <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a><a href="cv.html">CV</a><a href="contact.html">Contact</a>
-    </nav>
-    <div class="footer-divider"></div>
-    <p style="font-size:0.82rem; color:var(--text-muted);">&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
-    <div class="footer-ghana"><span></span><span></span><span></span></div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

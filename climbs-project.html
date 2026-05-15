@@ -44,7 +44,7 @@
 <body>
 
   <nav class="navbar">
-    <a href="index.html" class="nav-brand">Nana<span>.</span></a>
+    <a href="index.html" class="nav-brand">Pinkrah<span>.</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html">Research</a></li>
@@ -63,7 +63,7 @@
       Climatological &amp; Future Projections of <span class="accent">Severe-Storm Environments</span> in the Ohio River Basin
     </h1>
     <p class="page-header-desc">
-      ERA5 reanalysis (1996–2025) &middot; CMIP6 SSP5 projections (2026–2100) &middot; Random Forest ML &middot; 4-km downscaling
+      ERA5 reanalysis (1996-2025) · CMIP6 SSP4.5 projections (2026-2100) · Random Forest classification · NOAA Storm Events
     </p>
     <div style="margin-top:1.5rem; display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
       <span class="tag teal">Active &middot; 2025–Present</span>
@@ -80,7 +80,7 @@
       <div class="metric-grid fade-in-up">
         <div class="metric-box"><span class="metric-val">30 yr</span><span class="metric-lbl">ERA5 Period</span></div>
         <div class="metric-box"><span class="metric-val">80+</span><span class="metric-lbl">Computed Parameters</span></div>
-        <div class="metric-box"><span class="metric-val">4 km</span><span class="metric-lbl">Downscaling Resolution</span></div>
+        <div class="metric-box"><span class="metric-val">WRF</span><span class="metric-lbl">Downscaling Workflow</span></div>
         <div class="metric-box"><span class="metric-val">2100</span><span class="metric-lbl">Projections Through</span></div>
         <div class="metric-box"><span class="metric-val">3</span><span class="metric-lbl">Hazard Types</span></div>
         <div class="metric-box"><span class="metric-val">RF</span><span class="metric-lbl">ML Model</span></div>
@@ -99,12 +99,12 @@
             across the <strong>Ohio River Basin (ORB)</strong>. Yet the long-term evolution of environments
             conducive to severe convection in the region remains insufficiently documented. This study examines
             the <em>climatology, spatial distribution, and temporal variability</em> of severe-storm environments
-            using <strong>ERA5 reanalysis (1996–2025)</strong>, then extends to <strong>CMIP6 future projections
-            under SSP5-8.5 through 2100</strong>. Over <em>80 thermodynamic, kinematic, and moisture parameters</em>
+            using <strong>ERA5 reanalysis (1996-2025)</strong>, then extends to <strong>CMIP6 future projections
+            under SSP4.5 through 2100</strong>. Over <em>80 thermodynamic, kinematic, and moisture parameters</em>
             are derived at 6-hour intervals — including CAPE, CIN, SRH, wind shear, STP, EHI, and SCP.
-            <strong>Random Forest ML models</strong> trained on NOAA Storm Events data estimate probabilistic
-            hazard occurrence for tornadoes, hail, and damaging winds. Dynamically downscaled CMIP6 at
-            <strong>4-km resolution</strong> resolves the mesoscale processes critical for severe convection.
+            <strong>Random Forest models</strong> trained on NOAA Storm Events data estimate probabilistic
+            hazard occurrence for tornadoes, hail, and damaging winds. Regional climate downscaling
+            workflows support physically interpretable severe-storm projection analysis.
           </p>
         </div>
 
@@ -177,19 +177,19 @@
 
       <div class="fade-in-up" style="margin-bottom:2rem;">
         <div class="phase-card phase-1">
-          <div class="phase-num">Phase 1 — Knowledge Acquisition (1996–2025)</div>
+          <div class="phase-num">Phase 1 — Knowledge Acquisition (1996-2025)</div>
           <div class="phase-title">Historical Climatology &amp; ML Training</div>
-          <p class="card-text">ERA5 reanalysis provides the "atmospheric truth." NOAA Storm Events provides "ground truth" storm reports mapped to a 40-km spatial neighborhood. A <strong>Random Forest classifier</strong> is trained on 1996–2020 data to learn the physical "recipe" for severe-storm environments, then validated on the independent 2021–2025 period. Over 80 derived parameters feed the model, producing calibrated probabilities for tornado, hail, and damaging-wind hazards.</p>
+          <p class="card-text">ERA5 reanalysis provides the atmospheric environmental baseline. NOAA Storm Events provides storm-report labels mapped to a regional spatial neighborhood. A <strong>Random Forest classifier</strong> is trained on 1996-2020 data to identify severe-storm-supportive environments, then validated on the independent 2021-2025 period. Over 80 derived parameters feed the model, producing calibrated probabilities for tornado, hail, and damaging-wind hazards.</p>
         </div>
         <div class="phase-card phase-2">
           <div class="phase-num">Phase 2 — Statistical Bridge (Calibration)</div>
-          <div class="phase-title">ERA5 ↔ CMIP6 Bias Correction &amp; Downscaling</div>
-          <p class="card-text">The overlap period (2014–2025) where both ERA5 and CMIP6 data exist is used to characterize biases and statistical relationships between the two datasets. <strong>Dynamical downscaling of CMIP6 to 4-km resolution</strong> resolves mesoscale processes — low-level jets, boundary interactions, localized shear maxima — that coarse ~100-250 km CMIP6 grids cannot capture. Isotonic regression calibrates model probabilities for reliability.</p>
+          <div class="phase-title">ERA5-to-CMIP6 Bias Correction &amp; Regional Downscaling</div>
+          <p class="card-text">The overlap period where both ERA5 and CMIP6 data are available is used to characterize biases and statistical relationships between the two datasets. Regional downscaling and calibration workflows support finer-scale interpretation of severe-storm environments. Isotonic regression calibrates model probabilities for reliability.</p>
         </div>
         <div class="phase-card phase-3">
-          <div class="phase-num">Phase 3 — Future Outlook (2026–2100)</div>
-          <div class="phase-title">End-of-Century Projections under SSP5-8.5</div>
-          <p class="card-text">The validated Random Forest is applied to bias-corrected, downscaled CMIP6 projections (SSP2-4.5 and SSP5-8.5) to produce a 75-year outlook of severe-storm environment frequency, intensity, and seasonality across the Ohio River Basin. Key questions: Will severe-storm days increase by 2100&copy; Will the season shift earlier into winter/spring&copy; Will tornado-favorable environments expand northward&copy;</p>
+          <div class="phase-num">Phase 3 — Future Outlook (2026-2100)</div>
+          <div class="phase-title">End-of-Century Projections under SSP4.5</div>
+          <p class="card-text">The validated Random Forest workflow is applied to bias-corrected CMIP6 SSP4.5 projections to produce a 75-year outlook of severe-storm environment frequency, intensity, and seasonality across the Ohio River Basin. Key questions: Will severe-storm days increase by 2100? Will the season shift earlier into winter/spring? Will tornado-favorable environments expand northward?</p>
         </div>
       </div>
 
@@ -205,11 +205,11 @@
       <div class="prose fade-in-up">
         <h2>5. Research Questions</h2>
         <ul>
-          <li>How have severe-storm environments across the ORB changed over 1996–2025&copy;</li>
-          <li>What spatial patterns and seasonal cycles characterize tornado-, hail-, and wind-favorable conditions&copy;</li>
-          <li>How well does CMIP6 represent the ERA5-observed environments, and what biases exist&copy;</li>
-          <li>Under SSP5-8.5, how will the frequency, intensity, and seasonality of severe-storm environments evolve through 2100&copy;</li>
-          <li>Can Random Forest ML reliably discriminate hazardous from non-hazardous environments across both ERA5 and CMIP6 data&copy;</li>
+          <li>How have severe-storm environments across the ORB changed over 1996–2025?</li>
+          <li>What spatial patterns and seasonal cycles characterize tornado-, hail-, and wind-favorable conditions?</li>
+          <li>How well does CMIP6 represent the ERA5-observed environments, and what biases exist?</li>
+          <li>Under SSP4.5, how will the frequency, intensity, and seasonality of severe-storm environments evolve through 2100?</li>
+          <li>Can Random Forest models reliably discriminate hazardous from non-hazardous environments across both ERA5 and CMIP6 data?</li>
         </ul>
 
         <h2>6. Significance</h2>
@@ -235,10 +235,10 @@
           <span class="tag orange">Pandas</span>
           <span class="tag orange">Scikit-Learn (RF)</span>
           <span class="tag teal">ERA5 (1996–2025)</span>
-          <span class="tag teal">CMIP6 SSP5-8.5</span>
+          <span class="tag teal">CMIP6 SSP4.5</span>
           <span class="tag teal">NOAA Storm Events</span>
           <span class="tag gold">NCAR Casper &amp; Derecho</span>
-          <span class="tag">WRF 4-km Downscaling</span>
+          <span class="tag">WRF/WPS Workflow</span>
           <span class="tag">Cartopy</span>
           <span class="tag">Matplotlib / Seaborn</span>
           <span class="tag">Isotonic Regression</span>

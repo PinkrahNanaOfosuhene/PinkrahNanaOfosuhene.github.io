@@ -126,9 +126,9 @@ img { max-width: 100%; display: block; }
 .nav-brand {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--text-white);
-  letter-spacing: 0.3px;
+  letter-spacing: 0;
   flex-shrink: 0;
 }
 .nav-brand span { color: var(--accent-orange); }
@@ -728,9 +728,17 @@ img { max-width: 100%; display: block; }
 /* ============================================================
    GRIDS
    ============================================================ */
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: stretch; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: stretch; }
+.grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; align-items: stretch; }
+.grid-2 > .card,
+.grid-2 > a.card,
+.grid-3 > .card,
+.grid-3 > a.card,
+.grid-4 > .card,
+.grid-4 > a.card {
+  height: 100%;
+}
 
 /* ============================================================
    FEATURED WORK
@@ -1374,6 +1382,9 @@ img { max-width: 100%; display: block; }
     border-top: none;
     padding: 0.85rem 1.25rem;
   }
+  .nav-brand {
+    font-size: 1rem;
+  }
 
   .nav-links {
     display: none;
@@ -1407,6 +1418,9 @@ img { max-width: 100%; display: block; }
   }
   .hero-panel {
     order: 2;
+  }
+  .hero-panel-main h2 {
+    font-size: 1.1rem;
   }
   .hero-name {
     letter-spacing: -1px;
@@ -1447,6 +1461,9 @@ img { max-width: 100%; display: block; }
   .btn { width: 100%; justify-content: center; }
   .hero-focus span { width: 100%; text-align: center; }
   .hero-panel-grid { grid-template-columns: 1fr; }
+  .hero-panel-grid span {
+    overflow-wrap: anywhere;
+  }
   .feature-tile,
   .feature-tile.large { min-height: 180px; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }

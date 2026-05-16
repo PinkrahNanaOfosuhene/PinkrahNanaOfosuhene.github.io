@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compound Heat-Dryness Extremes | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Compound heat-dryness event workflow using Kentucky Mesonet hourly data, temperature, vapor pressure deficit, percentile thresholds, and event diagnostics." />
+  <meta name="description" content="Compound heat-dryness event analysis using Kentucky Mesonet hourly data, temperature, vapor pressure deficit, and percentile thresholds." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -25,53 +25,28 @@
 </nav>
 
 <header class="page-header">
-  <span class="page-header-label">Climate Data Science</span>
-  <h1 class="page-header-title">Compound Heat-Dryness Extremes</h1>
-  <p class="page-header-desc">
-    Observational, station-based analysis of compound heat-dryness events using Kentucky Mesonet hourly data.
-  </p>
+  <span class="page-header-label">Climate Extremes</span>
+  <h1 class="page-header-title">Compound Heat-Dryness Extremes Analysis</h1>
+  <p class="page-header-desc">Sanskar Adhikari; Nana Pinkrah; Riley Summers; Benjamin Woodson</p>
 </header>
 
 <section class="section">
-  <div class="section-inner">
+  <div class="section-inner project-detail">
     <div class="grid-4">
-      <div class="card"><div class="card-title">Scientific Objective</div><p class="card-text">Quantify the frequency, duration, and intensity of compound heat-dryness events in Kentucky.</p></div>
-      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Kentucky Mesonet temperature, relative humidity, and precipitation data at hourly resolution, with a 2016-2025 study period in the proposal draft.</p></div>
-      <div class="card"><div class="card-title">Methods</div><p class="card-text">Quality control, vapor pressure deficit derivation, station-specific percentile thresholds, rolling-window precipitation deficits, and event diagnostics.</p></div>
-      <div class="card"><div class="card-title">Research Output</div><p class="card-text">Workflow schematic, event catalog, threshold time series, seasonality, duration-intensity plots, and NOAA impact context.</p></div>
-    </div>
-
-    <div class="card prose" style="margin-top:1.5rem;">
-      <h2>Project Definition</h2>
-      <p>
-        The local project draft defines compound climate extremes as simultaneous or sequential occurrence of multiple climatic
-        stressors whose combined impacts exceed those of individual events. In this project, a compound heat-dryness event is
-        defined using high temperature and high vapor pressure deficit thresholds.
-      </p>
-      <p>
-        Vapor pressure deficit is used because it directly represents atmospheric moisture demand and connects heat stress to
-        plant-water stress and drought-relevant conditions.
-      </p>
-    </div>
-
-    <div class="card prose">
-      <h2>Technical Workflow and Results</h2>
-      <ul>
-        <li>Acquire and quality-control Kentucky Mesonet hourly station observations.</li>
-        <li>Derive vapor pressure deficit from temperature and relative humidity.</li>
-        <li>Define compound events using station-specific percentile thresholds for heat and dryness.</li>
-        <li>Summarize event frequency, seasonality, duration, intensity, and NOAA impact context.</li>
-      </ul>
+      <div class="card"><div class="card-title">Status</div><p class="card-text">Project proposal and analysis workflow.</p></div>
+      <div class="card"><div class="card-title">Objective</div><p class="card-text">Quantify the frequency, duration, intensity, and spatial variability of compound heat-dryness events across Kentucky.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Kentucky Mesonet hourly air temperature and relative humidity observations, 2016-2025.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Quality control, vapor pressure deficit calculation, station-specific 90th percentile thresholds, and event diagnostics.</p></div>
     </div>
 
     <div class="fig-grid">
       <div class="fig-wrap">
         <img src="images/compound_workflow.png" alt="Compound heat-dryness workflow" />
-        <p class="fig-caption">Data acquisition, quality control, VPD derivation, threshold detection, and impact-context workflow.</p>
+        <p class="fig-caption">Compound heat-dryness analysis workflow.</p>
       </div>
       <div class="fig-wrap">
         <img src="images/compound_threshold_timeseries.png" alt="Compound heat-dryness threshold time series" />
-        <p class="fig-caption">Station-level threshold and event-detection time series.</p>
+        <p class="fig-caption">Temperature and vapor pressure deficit threshold time series.</p>
       </div>
       <div class="fig-wrap">
         <img src="images/compound_seasonality.png" alt="Seasonality of compound heat-dryness events" />
@@ -79,8 +54,22 @@
       </div>
       <div class="fig-wrap">
         <img src="images/compound_duration_intensity.png" alt="Duration and intensity of compound heat-dryness events" />
-        <p class="fig-caption">Duration and intensity diagnostics for identified compound events.</p>
+        <p class="fig-caption">Duration and intensity of identified compound events.</p>
       </div>
+    </div>
+
+    <div class="card prose">
+      <h2>Key Outputs / Current Progress</h2>
+      <ul>
+        <li>Compound heat-dryness events are defined by concurrent high temperature and high vapor pressure deficit.</li>
+        <li>Thresholds are computed individually for each station to account for local climatological variability.</li>
+        <li>The workflow summarizes event frequency, duration, intensity, spatial distribution, and trend behavior.</li>
+      </ul>
+    </div>
+
+    <div class="card prose">
+      <h2>Research Significance</h2>
+      <p>Compound heat-dryness events intensify atmospheric moisture demand and can affect agriculture, water resources, and heat-stress risk across Kentucky.</p>
     </div>
 
     <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">

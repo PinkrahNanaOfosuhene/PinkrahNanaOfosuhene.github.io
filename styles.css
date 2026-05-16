@@ -4,8 +4,8 @@
   --bg: #f6f8fb;
   --surface: #ffffff;
   --surface-muted: #eef4f8;
-  --glass: rgba(255, 255, 255, 0.72);
-  --glass-strong: rgba(255, 255, 255, 0.86);
+  --glass: rgba(255, 255, 255, 0.86);
+  --glass-strong: rgba(255, 255, 255, 0.94);
   --text: #14202c;
   --muted: #536575;
   --subtle: #7a8b99;
@@ -181,6 +181,20 @@ a:hover {
 
 .hero-content {
   max-width: 760px;
+}
+
+.hero-shell-centered {
+  grid-template-columns: minmax(0, 820px);
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-shell-centered .hero-content {
+  margin: 0 auto;
+}
+
+.hero-shell-centered .hero-cta {
+  justify-content: center;
 }
 
 .hero-copy {
@@ -591,6 +605,14 @@ a:hover {
   font-size: 1.08rem;
   line-height: 1.35;
   margin-bottom: 0.5rem;
+}
+
+.project-authors {
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
 }
 
 .project-card p {

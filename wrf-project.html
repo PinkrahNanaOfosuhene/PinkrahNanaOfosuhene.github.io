@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WRF Flood Simulation | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="WRF/WPS simulation and verification of the July 26-27, 2022 Central Appalachian flood event." />
+  <meta name="description" content="WRF/WPS simulation of the July 2022 Central Appalachian flood event." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -27,63 +27,49 @@
 <header class="page-header">
   <span class="page-header-label">Numerical Weather Prediction</span>
   <h1 class="page-header-title">WRF Simulation of the July 2022 Central Appalachian Flood Event</h1>
-  <p class="page-header-desc">
-    Convection-permitting WRF simulation using ERA5 boundary conditions and NOAA Stage IV precipitation verification.
-  </p>
+  <p class="page-header-desc">Pinkrah Nana Ofosuhene</p>
 </header>
 
 <section class="section">
-  <div class="section-inner">
+  <div class="section-inner project-detail">
     <div class="grid-4">
-      <div class="card"><div class="card-title">Scientific Objective</div><p class="card-text">Simulate a high-impact flash-flood event and evaluate whether WRF captures the precipitation structure and magnitude.</p></div>
+      <div class="card"><div class="card-title">Status</div><p class="card-text">Completed course research project.</p></div>
+      <div class="card"><div class="card-title">Objective</div><p class="card-text">Simulate the July 26-27, 2022 Central Appalachian flood event and evaluate the modeled precipitation structure.</p></div>
       <div class="card"><div class="card-title">Datasets</div><p class="card-text">ERA5 initial and lateral boundary conditions, WRF model output, and NOAA Stage IV precipitation estimates.</p></div>
-      <div class="card"><div class="card-title">Methods</div><p class="card-text">WRF/WPS preprocessing, nested domains, physics configuration, HPC execution, accumulated precipitation verification, and WRF-Python plotting.</p></div>
-      <div class="card"><div class="card-title">Research Output</div><p class="card-text">Time-window precipitation maps, observed-versus-modeled comparison, spatial verification, and event interpretation.</p></div>
-    </div>
-
-    <div class="card prose" style="margin-top:1.5rem;">
-      <h2>Research Relevance</h2>
-      <p>
-        This project demonstrates numerical weather prediction workflow competency for an extreme rainfall event over complex
-        Appalachian terrain. It complements the statistical severe-storm and hydroclimate work by adding process-level model
-        interpretation of a high-impact event.
-      </p>
-      <div class="tags">
-        <span class="tag teal">WRF</span>
-        <span class="tag teal">WPS</span>
-        <span class="tag">ERA5</span>
-        <span class="tag">NOAA Stage IV</span>
-        <span class="tag">WRF-Python</span>
-      </div>
-    </div>
-
-    <div class="card prose">
-      <h2>Technical Workflow and Results</h2>
-      <ul>
-        <li>Prepare ERA5 forcing data through WPS preprocessing and WRF-compatible intermediate files.</li>
-        <li>Run a nested-domain WRF simulation for the July 26-27, 2022 Central Appalachian flood period.</li>
-        <li>Generate accumulated precipitation maps for event sub-periods.</li>
-        <li>Verify simulated precipitation against NOAA Stage IV precipitation fields.</li>
-      </ul>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">WRF/WPS preprocessing, nested-domain simulation, accumulated precipitation mapping, and observation-based verification.</p></div>
     </div>
 
     <div class="fig-grid">
       <div class="fig-wrap">
-        <img src="images/wrf_precip_00-06_jul26.png" alt="WRF precipitation from 00-06 UTC July 26 2022" />
-        <p class="fig-caption">Six-hour WRF accumulated precipitation window for the Central Appalachian flood case.</p>
+        <img src="images/wrf_precip_00-06_jul26.png" alt="WRF accumulated precipitation from 00-06 UTC July 26 2022" />
+        <p class="fig-caption">Six-hour WRF accumulated precipitation, 00-06 UTC July 26, 2022.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/wrf_precip_12-18_jul26.png" alt="WRF precipitation from 12-18 UTC July 26 2022" />
-        <p class="fig-caption">Intermediate event precipitation period from the WRF simulation.</p>
+        <img src="images/wrf_precip_06-12_jul26.png" alt="WRF accumulated precipitation from 06-12 UTC July 26 2022" />
+        <p class="fig-caption">Six-hour WRF accumulated precipitation, 06-12 UTC July 26, 2022.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/wrf_precip_18-00_jul26-27.png" alt="WRF precipitation from 18-00 UTC July 26-27 2022" />
-        <p class="fig-caption">Late-period WRF accumulated precipitation during the event.</p>
+        <img src="images/wrf_precip_18-00_jul26-27.png" alt="WRF accumulated precipitation from 18-00 UTC July 26-27 2022" />
+        <p class="fig-caption">Six-hour WRF accumulated precipitation, 18-00 UTC July 26-27, 2022.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/wrf_verification.png" alt="WRF verification against NOAA Stage IV precipitation" />
-        <p class="fig-caption">WRF precipitation verification against NOAA Stage IV observations.</p>
+        <img src="images/wrf_verification.png" alt="WRF precipitation verification against Stage IV precipitation" />
+        <p class="fig-caption">Modeled precipitation compared with NOAA Stage IV precipitation.</p>
       </div>
+    </div>
+
+    <div class="card prose">
+      <h2>Key Outputs / Current Progress</h2>
+      <ul>
+        <li>WRF precipitation accumulations for six-hour event windows.</li>
+        <li>Spatial comparison of simulated precipitation and Stage IV observations.</li>
+        <li>Event-scale numerical modeling workflow for extreme rainfall over complex Appalachian terrain.</li>
+      </ul>
+    </div>
+
+    <div class="card prose">
+      <h2>Research Significance</h2>
+      <p>The project connects numerical weather prediction with process-level analysis of a high-impact flash-flood event, complementing the statistical severe-storm and hydroclimatology projects.</p>
     </div>
 
     <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLIMBS Severe-Storm Research | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="MS thesis research on severe-storm environments in the Ohio River Basin using ERA5, downscaled CMIP6, NOAA Storm Events, Random Forest classification, and HPC workflows." />
+  <title>Severe-Storm Environments | Pinkrah Nana Ofosuhene</title>
+  <meta name="description" content="M.S. thesis research on mesoscale severe-storm environments in the Ohio River Basin using ERA5, downscaled CMIP6, NOAA Storm Events, and Random Forest classification." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -25,72 +25,51 @@
 </nav>
 
 <header class="page-header">
-  <span class="page-header-label">MS Thesis | NSF EPSCoR CLIMBS</span>
-  <h1 class="page-header-title">Climatology and Future Projection of Mesoscale Severe-Storm Environments in the Ohio River Basin Derived from ERA5 and A Downscaled CMIP6</h1>
-  <p class="page-header-desc">
-    Thesis proposal title and project scope from local thesis proposal materials, WKU abstract text, and defense notes.
-  </p>
+  <span class="page-header-label">M.S. Thesis | NSF EPSCoR CLIMBS</span>
+  <h1 class="page-header-title">Climatology and Future Projection of Mesoscale Severe-Storm Environments in the Ohio River Basin</h1>
+  <p class="page-header-desc">Pinkrah Nana Ofosuhene; Dr. Xingang Fan; Dr. Zachary J. Suriano; Dr. Manmeet Singh</p>
 </header>
 
 <section class="section">
-  <div class="section-inner">
+  <div class="section-inner project-detail">
     <div class="grid-4">
-      <div class="card"><div class="card-title">Scientific Objective</div><p class="card-text">Quantify the climatology, spatial distribution, and temporal variability of mesoscale severe-storm-supportive environments across the Ohio River Basin.</p></div>
-      <div class="card"><div class="card-title">Datasets</div><p class="card-text">ERA5 reanalysis, NOAA Storm Events Database, downscaled CMIP6 climate projections, and derived severe-weather diagnostics.</p></div>
-      <div class="card"><div class="card-title">Methods</div><p class="card-text">Event-environment matching, diagnostic computation, ERA5-CMIP6 overlap evaluation, calibration, and Random Forest classification.</p></div>
-      <div class="card"><div class="card-title">Research Output</div><p class="card-text">Historical climatologies, validation figures, probability maps, feature-importance interpretation, and future severe-storm environment projections.</p></div>
+      <div class="card"><div class="card-title">Status</div><p class="card-text">Current M.S. thesis research.</p></div>
+      <div class="card"><div class="card-title">Objective</div><p class="card-text">Quantify the climatology, spatial patterns, and temporal trends of severe-storm environments across the Ohio River Basin.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">ERA5 reanalysis, NOAA Storm Events, and dynamically downscaled CMIP6 simulations under SSP4.5.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Severe-storm diagnostics, event-environment matching, ERA5-CMIP6 evaluation, and Random Forest classification.</p></div>
     </div>
 
-    <div class="card prose" style="margin-top:1.5rem;">
-      <h2>Research Context</h2>
-      <p>
-        The Ohio River Basin experiences frequent severe convective hazards, including tornadoes, damaging winds, and large hail.
-        My thesis addresses a documented gap by focusing on the environmental conditions that support these events, rather than
-        using storm reports alone.
-      </p>
-      <p>
-        The framework uses thermodynamic, kinematic, moisture-related, and composite diagnostics including CAPE, CIN, vertical
-        wind shear, storm-relative helicity, lapse rates, vorticity, Significant Tornado Parameter, and Supercell Composite
-        Parameter.
-      </p>
-      <div class="tags">
-        <span class="tag teal">ERA5</span>
-        <span class="tag teal">CMIP6 SSP4.5</span>
-        <span class="tag">NOAA Storm Events</span>
-        <span class="tag">Random Forest</span>
-        <span class="tag">Python</span>
-        <span class="tag">NetCDF</span>
-        <span class="tag">PBS scheduling</span>
-      </div>
+    <div class="card prose">
+      <h2>Key Outputs / Current Progress</h2>
+      <ul>
+        <li>Thermodynamic, kinematic, moisture-related, and composite severe-storm-supportive environmental diagnostics.</li>
+        <li>Overlap-period comparison of ERA5 and CMIP6 diagnostics for model evaluation and calibration.</li>
+        <li>Severe-storm probability estimates for tornadoes, large hail, and damaging wind environments.</li>
+      </ul>
     </div>
 
     <div class="fig-grid">
       <div class="fig-wrap">
-        <img src="images/climbs_cape.png" alt="ERA5 CAPE diagnostic map for the Ohio River Basin" />
-        <p class="fig-caption">Thermodynamic diagnostic example from the ERA5 severe-storm environment workflow.</p>
+        <img src="images/thesis_ohio_river_basin.png" alt="Ohio River Basin thesis study region" />
+        <p class="fig-caption">Ohio River Basin study region.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/climbs_shear.png" alt="0-6 km bulk wind shear diagnostic map" />
-        <p class="fig-caption">Kinematic diagnostic example used to characterize storm-supportive environments.</p>
+        <img src="images/thesis_environmental_parameters.png" alt="Severe-storm environmental parameters used in the thesis workflow" />
+        <p class="fig-caption">Environmental parameters used to characterize severe-storm-supportive environments.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/climbs_stp.png" alt="Significant Tornado Parameter diagnostic map" />
-        <p class="fig-caption">Composite parameter diagnostic used in tornado-supportive environment analysis.</p>
+        <img src="images/thesis_tornado_probability_maps.png" alt="Tornado probability maps from the severe-storm environment workflow" />
+        <p class="fig-caption">Tornado probability maps from the severe-storm environment workflow.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/climbs_validation.png" alt="Validation figure comparing modeled severe-storm environments with observed events" />
-        <p class="fig-caption">Validation figure linking ERA5-derived environments with observed severe-weather occurrence.</p>
+        <img src="images/STP.png" alt="Significant Tornado Parameter over the thesis study domain" />
+        <p class="fig-caption">Significant Tornado Parameter diagnostic over the study domain.</p>
       </div>
     </div>
 
     <div class="card prose">
-      <h2>Technical Workflow</h2>
-      <ul>
-        <li>Derive severe-weather diagnostics from ERA5 reanalysis over a multi-decadal historical period.</li>
-        <li>Match environmental fields to NOAA Storm Events labels for tornado, large hail, and damaging-wind occurrence.</li>
-        <li>Train and evaluate Random Forest classifiers to estimate severe-storm-supportive environments.</li>
-        <li>Evaluate downscaled CMIP6 against ERA5 over the overlap period and apply calibrated relationships to future scenarios.</li>
-      </ul>
+      <h2>Research Significance</h2>
+      <p>Severe convective storms are driven by the interplay of atmospheric instability, moisture, and vertical wind shear. This project evaluates how storm-supportive environments have varied historically and how they may evolve under future climate forcing across the Ohio River Basin.</p>
     </div>
 
     <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">

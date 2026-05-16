@@ -24,187 +24,151 @@
   </button>
 </nav>
 
-<section class="hero">
-  <div class="hero-shell">
-    <div class="hero-content">
-      <div class="hero-badge">Graduate Research Assistant, Western Kentucky University</div>
-      <h1 class="hero-name">Pinkrah Nana Ofosuhene</h1>
-      <p class="hero-tagline">Atmospheric Scientist | Severe-Storm Climatology | Climate Data Science</p>
-      <p class="hero-description">
-        I study storm-supportive environments, climate extremes, and data-driven atmospheric prediction using
-        ERA5 reanalysis, NOAA Storm Events, downscaled CMIP6 projections, WRF modeling, and high-performance
-        computing workflows.
-      </p>
-      <div class="hero-cta">
-        <a href="research.html" class="btn btn-primary">Research Overview</a>
-        <a href="projects.html" class="btn btn-secondary">Featured Projects</a>
-        <a href="mailto:pinkrahnanaofosuhene9690@gmail.com" class="btn btn-outline">Email</a>
-      </div>
+<main>
+  <section class="hero hero-liquid">
+    <div class="hero-atmosphere" aria-hidden="true">
+      <img src="images/climbs_validation.png" alt="" />
     </div>
-    <aside class="hero-panel" aria-label="Research profile summary">
-      <div class="hero-portrait-card">
-        <img src="images/profile.jpg" alt="Pinkrah Nana Ofosuhene" />
-        <div>
-          <strong>Pinkrah Nana Ofosuhene</strong>
-          <span>Atmospheric science graduate researcher</span>
+    <div class="hero-shell">
+      <div class="hero-content glass-panel hero-copy">
+        <div class="hero-badge">Western Kentucky University</div>
+        <h1 class="hero-name">Pinkrah Nana Ofosuhene</h1>
+        <p class="hero-tagline">Atmospheric Scientist | Severe-Storm Climatology | Climate Data Science</p>
+        <div class="hero-cta">
+          <a href="research.html" class="btn btn-primary">Research</a>
+          <a href="projects.html" class="btn btn-secondary">Projects</a>
+          <a href="mailto:pinkrahnanaofosuhene9690@gmail.com" class="btn btn-outline">Email</a>
         </div>
       </div>
-      <div class="hero-panel-main">
-        <span class="panel-label">Current Thesis</span>
-        <h2>Climatology and Future Projection of Mesoscale Severe-Storm Environments in the Ohio River Basin Derived from ERA5 and A Downscaled CMIP6</h2>
-      </div>
-      <div class="hero-panel-grid">
-        <div><strong>ERA5</strong><span>Reanalysis diagnostics</span></div>
-        <div><strong>CMIP6</strong><span>Future projections</span></div>
-        <div><strong>WRF</strong><span>Event simulation</span></div>
-        <div><strong>HPC</strong><span>NCAR and TACC workflows</span></div>
-      </div>
-    </aside>
-  </div>
-</section>
+      <aside class="hero-panel glass-panel" aria-label="Current research summary">
+        <div class="hero-portrait-card">
+          <img src="images/profile.jpg" alt="Pinkrah Nana Ofosuhene" />
+          <div>
+            <strong>Graduate Research Assistant</strong>
+            <span>Atmospheric Science and Climate Data Science</span>
+          </div>
+        </div>
+        <div class="hero-panel-main">
+          <span class="panel-label">Current Thesis</span>
+          <h2>Climatology and Future Projection of Mesoscale Severe-Storm Environments in the Ohio River Basin Derived from ERA5 and A Downscaled CMIP6</h2>
+        </div>
+        <div class="hero-panel-grid">
+          <div><strong>ERA5</strong><span>Severe-weather diagnostics</span></div>
+          <div><strong>CMIP6</strong><span>Future projections</span></div>
+          <div><strong>WRF</strong><span>Extreme-event simulation</span></div>
+          <div><strong>HPC</strong><span>NCAR and TACC workflows</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-<section class="section">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">About</span>
-      <h2 class="section-title">Atmospheric Science and Data-Driven Prediction</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="about-grid">
-      <div>
-        <img src="images/profile.jpg" alt="Pinkrah Nana Ofosuhene" class="about-photo" />
+  <section class="section about-section">
+    <div class="section-inner">
+      <div class="about-card glass-panel">
+        <div class="section-header left">
+          <span class="section-label">About</span>
+          <h2 class="section-title">About</h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="about-grid">
+          <div>
+            <img src="images/profile.jpg" alt="Pinkrah Nana Ofosuhene" class="about-photo" />
+          </div>
+          <div class="about-text">
+            <p>I am an atmospheric scientist specializing in severe storm environments, climate variability, and data-driven prediction frameworks at Western Kentucky University. My work integrates understanding of atmospheric processes with high-performance computing and machine learning to quantify how storm-supportive environments evolve across space, time, and future climate scenarios.</p>
+            <p>My current research focuses on the Ohio River Basin, a region strongly influenced by northward moisture transport from the Gulf of Mexico into the interior United States, which enhances convective instability. Leveraging ERA5 reanalysis, NOAA Storm Events Database, and downscaled CMIP6 climate projections, I develop probabilistic frameworks to estimate the occurrence of tornadoes, large hail, and damaging winds at high spatiotemporal resolution. This work involves Random Forest classification with calibration, event–environment matching, and diagnostic analysis of thermodynamic and kinematic parameters, including CAPE, vertical wind shear, storm-relative helicity, lapse rates, and a large suite (100) of derived environmental predictors.</p>
+            <p>I conduct large-scale atmospheric data processing on national high-performance computing systems, including NCAR’s Derecho supercomputer and Casper cluster under Dr. Fan, as well as Stampede3 supercomputer at the Texas Advanced Computing Center under Dr. Manmeet Singh. Across these platforms, I generate multi-decadal climatologies of severe weather diagnostics and develop scalable, reproducible workflows for processing multi-terabyte atmospheric datasets. My computational framework integrates Python-based scientific computing (xarray, MetPy, scikit-learn), NetCDF data pipelines, and parallelized batch processing using PBS scheduling.</p>
+            <p>In addition, I apply numerical weather prediction using the WRF (Weather Research and Forecasting Model) to simulate extreme events, including mesoscale convective systems and flash floods, enabling process-level insight alongside statistical modeling. My broader research interests include severe weather, climate modeling, hydroclimatology, and climate dynamics.</p>
+            <p>I am particularly interested in advancing physically interpretable machine learning approaches in atmospheric science and contributing to research that improves severe weather prediction, risk assessment, and societal resilience.</p>
+          </div>
+        </div>
       </div>
-      <div class="about-text">
-        <p>I am an atmospheric scientist specializing in severe storm environments, climate variability, and data-driven prediction frameworks at Western Kentucky University. My work integrates understanding of atmospheric processes with high-performance computing and machine learning to quantify how storm-supportive environments evolve across space, time, and future climate scenarios.</p>
-        <p>My current research focuses on the Ohio River Basin, a region strongly influenced by northward moisture transport from the Gulf of Mexico into the interior United States, which enhances convective instability. Leveraging ERA5 reanalysis, NOAA Storm Events Database, and downscaled CMIP6 climate projections, I develop probabilistic frameworks to estimate the occurrence of tornadoes, large hail, and damaging winds at high spatiotemporal resolution. This work involves Random Forest classification with calibration, event–environment matching, and diagnostic analysis of thermodynamic and kinematic parameters, including CAPE, vertical wind shear, storm-relative helicity, lapse rates, and a large suite (100) of derived environmental predictors.</p>
-        <p>I conduct large-scale atmospheric data processing on national high-performance computing systems, including NCAR’s Derecho supercomputer and Casper cluster under Dr. Fan, as well as Stampede3 supercomputer at the Texas Advanced Computing Center under Dr. Manmeet Singh. Across these platforms, I generate multi-decadal climatologies of severe weather diagnostics and develop scalable, reproducible workflows for processing multi-terabyte atmospheric datasets. My computational framework integrates Python-based scientific computing (xarray, MetPy, scikit-learn), NetCDF data pipelines, and parallelized batch processing using PBS scheduling.</p>
-        <p>In addition, I apply numerical weather prediction using the WRF (Weather Research and Forecasting Model) to simulate extreme events, including mesoscale convective systems and flash floods, enabling process-level insight alongside statistical modeling. My broader research interests include severe weather, climate modeling, hydroclimatology, and climate dynamics.</p>
-        <p>I am particularly interested in advancing physically interpretable machine learning approaches in atmospheric science and contributing to research that improves severe weather prediction, risk assessment, and societal resilience.</p>
+    </div>
+  </section>
+
+  <section class="section visual-interest-section" aria-label="Research interests">
+    <div class="section-inner">
+      <div class="focus-grid visual-only">
+        <a href="climbs-project.html" class="image-card glass-card">
+          <img src="images/climbs_validation.png" alt="Severe-storm diagnostic validation figure" />
+          <span>Severe Convective Storm Climatology</span>
+        </a>
+        <a href="wrf-project.html" class="image-card glass-card">
+          <img src="images/wrf_verification.png" alt="WRF precipitation verification figure" />
+          <span>Numerical Weather Prediction</span>
+        </a>
+        <a href="climbs-project.html" class="image-card glass-card">
+          <img src="images/climbs_shear.png" alt="ERA5 wind shear diagnostic map" />
+          <span>Climate Modeling and Downscaling</span>
+        </a>
+        <a href="hydro-project.html" class="image-card glass-card">
+          <img src="images/hydro_spatial_multidur.png" alt="Spatial precipitation frequency analysis across Kentucky" />
+          <span>Hydroclimatology and Precipitation Extremes</span>
+        </a>
+        <a href="climbs-project.html" class="image-card glass-card">
+          <img src="images/climbs_stp.png" alt="Significant Tornado Parameter diagnostic map" />
+          <span>Machine Learning for Environmental Prediction</span>
+        </a>
+        <a href="compound-heat-dryness.html" class="image-card glass-card">
+          <img src="images/compound_context_dashboard.png" alt="Compound heat-dryness context dashboard" />
+          <span>Climate Extremes and Risk Assessment</span>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Research Focus</span>
-      <h2 class="section-title">Core Scientific Directions</h2>
-      <div class="section-divider"></div>
+  <section class="section project-strip" aria-label="Flagship projects">
+    <div class="section-inner">
+      <div class="project-grid">
+        <a href="climbs-project.html" class="project-card glass-card">
+          <img src="images/climbs_cape.png" alt="ERA5 CAPE diagnostic map" />
+          <div>
+            <h3>CLIMATOLOGY AND FUTURE PROJECTION OF MESOSCALE SEVERE-STORM ENVIRONMENTS IN THE OHIO RIVER BASIN</h3>
+            <p>Thesis research linking ERA5-derived environments, NOAA Storm Events, Random Forest classification, and downscaled CMIP6 projections through 2100.</p>
+          </div>
+        </a>
+        <a href="wrf-project.html" class="project-card glass-card">
+          <img src="images/wrf_precip_18-00_jul26-27.png" alt="WRF precipitation simulation" />
+          <div>
+            <h3>WRF Simulation of the July 2022 Central Appalachian Flood Event</h3>
+            <p>WRF/WPS simulation of the July 26-27, 2022 Central Appalachian flood using ERA5 boundary conditions and NOAA Stage IV verification.</p>
+          </div>
+        </a>
+        <a href="hydro-project.html" class="project-card glass-card">
+          <img src="images/hydro_idf_curve.png" alt="Kentucky Mesonet IDF curve" />
+          <div>
+            <h3>A Comparison of Atlas 14 to Precipitation Frequency Statistics Derived from the Kentucky Mesonet</h3>
+            <p>Submitted JoASC manuscript comparing Kentucky Mesonet precipitation-frequency statistics with NOAA Atlas 14 for durations from 5 minutes to 24 hours.</p>
+          </div>
+        </a>
+        <a href="heatwave-project.html" class="project-card glass-card">
+          <img src="images/heatwave_ssrn_p17_01.png" alt="Heatwave figure extracted from the SSRN Ghana heatwave manuscript" />
+          <div>
+            <h3>Historical Heatwave Analysis in Ghana</h3>
+            <p>SSRN preprint analysis of heatwave prevalence, frequency, duration, and intensity across Ghana's climatic zones using daily maximum temperature data.</p>
+          </div>
+        </a>
+        <a href="compound-heat-dryness.html" class="project-card glass-card">
+          <img src="images/compound_duration_intensity.png" alt="Compound heat-dryness duration and intensity diagnostics" />
+          <div>
+            <h3>Compound Heat-Dryness Extremes Analysis</h3>
+            <p>Kentucky Mesonet workflow using hourly temperature, relative humidity, vapor pressure deficit, and percentile thresholds to identify compound events.</p>
+          </div>
+        </a>
+      </div>
     </div>
-    <div class="focus-grid">
-      <a href="climbs-project.html" class="image-card">
-        <img src="images/climbs_validation.png" alt="Severe-storm diagnostic validation figure" />
-        <span>Severe Convective Storm Climatology</span>
-      </a>
-      <a href="wrf-project.html" class="image-card">
-        <img src="images/wrf_verification.png" alt="WRF precipitation verification figure" />
-        <span>Numerical Weather Prediction</span>
-      </a>
-      <a href="climbs-project.html" class="image-card">
-        <img src="images/climbs_shear.png" alt="ERA5 wind shear diagnostic map" />
-        <span>Climate Modeling and Downscaling</span>
-      </a>
-      <a href="hydro-project.html" class="image-card">
-        <img src="images/hydro_spatial_multidur.png" alt="Spatial precipitation frequency analysis across Kentucky" />
-        <span>Hydroclimatology and Precipitation Extremes</span>
-      </a>
-      <a href="climbs-project.html" class="image-card">
-        <img src="images/climbs_stp.png" alt="Significant Tornado Parameter diagnostic map" />
-        <span>Machine Learning for Environmental Prediction</span>
-      </a>
-      <a href="compound-heat-dryness.html" class="image-card">
-        <img src="images/compound_context_dashboard.png" alt="Compound heat-dryness context dashboard" />
-        <span>Climate Extremes and Risk Assessment</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Featured Research Projects</span>
-      <h2 class="section-title">Flagship Research Work</h2>
-      <div class="section-divider"></div>
+  <section class="section home-contact" aria-label="Contact">
+    <div class="section-inner">
+      <div class="contact-strip glass-panel">
+        <a href="mailto:pinkrahnanaofosuhene9690@gmail.com">pinkrahnanaofosuhene9690@gmail.com</a>
+        <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-    <div class="project-grid">
-      <a href="climbs-project.html" class="project-card">
-        <img src="images/climbs_cape.png" alt="ERA5 CAPE diagnostic map" />
-        <div>
-          <h3>CLIMBS Severe-Storm Environment Climatology and Future Projections</h3>
-          <p>Thesis research using ERA5 diagnostics, NOAA Storm Events, Random Forest classification, and downscaled CMIP6 projections for the Ohio River Basin.</p>
-        </div>
-      </a>
-      <a href="wrf-project.html" class="project-card">
-        <img src="images/wrf_precip_18-00_jul26-27.png" alt="WRF precipitation simulation" />
-        <div>
-          <h3>WRF Simulation of Central Appalachian Flood Event</h3>
-          <p>WRF/WPS simulation of the July 26-27, 2022 Central Appalachian flood using ERA5 boundary conditions and NOAA Stage IV verification.</p>
-        </div>
-      </a>
-      <a href="hydro-project.html" class="project-card">
-        <img src="images/hydro_idf_curve.png" alt="Kentucky Mesonet IDF curve" />
-        <div>
-          <h3>Kentucky Mesonet vs NOAA Atlas 14 Hydroclimatology Analysis</h3>
-          <p>Submitted manuscript comparing precipitation-frequency statistics derived from Kentucky Mesonet observations with NOAA Atlas 14.</p>
-        </div>
-      </a>
-      <a href="heatwave-project.html" class="project-card">
-        <img src="images/tcci_ghana_map.jpg" alt="Map of Ghana used for climate analysis context" />
-        <div>
-          <h3>Ghana Heatwave Climatology</h3>
-          <p>Station-based heatwave research on historical prevalence, frequency, duration, and intensity in Ghana, with a related Northern Ghana conference abstract.</p>
-        </div>
-      </a>
-      <a href="compound-heat-dryness.html" class="project-card">
-        <img src="images/compound_duration_intensity.png" alt="Compound heat-dryness duration and intensity diagnostics" />
-        <div>
-          <h3>Compound Heat-Dryness Extremes</h3>
-          <p>Observational workflow using Kentucky Mesonet station data, vapor pressure deficit, percentile thresholds, duration, intensity, and event context.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Selected Publications</span>
-      <h2 class="section-title">Manuscripts and Abstracts</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="pub-card">
-      <div class="pub-meta"><span class="pub-badge review">Under Editorial Review</span></div>
-      <div class="pub-title">Pinkrah, N. O., Adhikari, S., Tobbe, P., &amp; Suriano, Z. J. (2026). "A Comparison of Atlas 14 to Precipitation Frequency Statistics Derived from the Kentucky Mesonet."</div>
-      <div class="pub-venue">Journal of Applied and Service Climatology (JoASC).</div>
-    </div>
-    <div class="pub-card">
-      <div class="pub-meta"><span class="pub-badge">In Preparation</span></div>
-      <div class="pub-title">Pinkrah, N. O., Fan, X., Suriano, Z. J., &amp; Singh, M. (2026). "Prediction of Tornado, Large Hail, and Thunderstorm Wind Occurrence across the Ohio River Basin Using ERA5 Reanalysis and Random Forest Classification."</div>
-    </div>
-    <div style="text-align:center; margin-top:1.5rem;">
-      <a href="publications.html" class="btn btn-secondary">View Publications</a>
-    </div>
-  </div>
-</section>
-
-<section class="section contact-section">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Contact</span>
-      <h2 class="section-title">Research Collaboration and PhD Outreach</h2>
-      <div class="section-divider"></div>
-      <p class="section-subtitle">For research collaboration, PhD opportunities, or scientific correspondence, please contact me by email.</p>
-    </div>
-    <div class="contact-strip">
-      <a href="mailto:pinkrahnanaofosuhene9690@gmail.com">pinkrahnanaofosuhene9690@gmail.com</a>
-      <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer class="footer">
   <div class="footer-name">Pinkrah Nana Ofosuhene</div>

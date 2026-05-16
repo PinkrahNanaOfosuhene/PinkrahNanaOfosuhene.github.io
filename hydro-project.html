@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kentucky Extreme Precipitation | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Kentucky Mesonet and NOAA Atlas 14 precipitation-frequency analysis by Pinkrah Nana Ofosuhene." />
+  <title>Kentucky Mesonet and Atlas 14 | Pinkrah Nana Ofosuhene</title>
+  <meta name="description" content="Hydroclimatology manuscript project comparing NOAA Atlas 14 precipitation-frequency estimates with Kentucky Mesonet-derived statistics." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,7 +18,6 @@
     <li><a href="cv.html">CV</a></li>
     <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
     <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -26,38 +25,68 @@
 </nav>
 
 <header class="page-header">
-  <span class="page-header-label">Hydroclimatology</span>
-  <h1 class="page-header-title">Kentucky Mesonet vs NOAA Atlas 14</h1>
+  <span class="page-header-label">Hydroclimatology | Submitted Manuscript</span>
+  <h1 class="page-header-title">A Comparison of Atlas 14 to Precipitation Frequency Statistics Derived from the Kentucky Mesonet</h1>
   <p class="page-header-desc">
-    Precipitation-frequency statistics from Kentucky Mesonet observations compared with NOAA Atlas 14 design-rainfall guidance.
+    Manuscript submitted to the Journal of Applied and Service Climatology, based on the local submitted manuscript and cover letter.
   </p>
 </header>
 
 <section class="section">
   <div class="section-inner">
     <div class="grid-4">
-      <div class="card"><div class="card-title">Objective</div><p class="card-text">Evaluate how Kentucky Mesonet precipitation-frequency estimates compare with NOAA Atlas 14.</p></div>
-      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Kentucky Mesonet observations and NOAA Atlas 14 reference precipitation-frequency estimates.</p></div>
-      <div class="card"><div class="card-title">Methods</div><p class="card-text">Annual maxima, return-period estimation, IDF curves, and spatial comparison of precipitation intensity.</p></div>
-      <div class="card"><div class="card-title">Outputs</div><p class="card-text">IDF curves, spatial rainfall diagnostics, and hydroclimate design interpretation.</p></div>
+      <div class="card"><div class="card-title">Scientific Objective</div><p class="card-text">Derive precipitation-frequency statistics for Kentucky from Mesonet stations and compare them against NOAA Atlas 14.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Five-minute Kentucky Mesonet precipitation observations and NOAA Atlas 14 precipitation-frequency estimates.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Annual maximum precipitation, rolling-window durations, Gumbel frequency analysis, IDF derivation, and spatial fields.</p></div>
+      <div class="card"><div class="card-title">Research Output</div><p class="card-text">IDF curves, statewide precipitation-frequency maps, station comparisons, and design-rainfall interpretation.</p></div>
     </div>
 
-    <div class="card" style="margin-top:1.5rem;">
-      <div class="card-title">Research Relevance</div>
-      <p class="card-text">
-        This project supports regional hydroclimate risk assessment by testing whether modern Mesonet observations
-        reveal short-duration precipitation behavior that differs from established Atlas 14 design guidance.
+    <div class="card prose" style="margin-top:1.5rem;">
+      <h2>Research Context</h2>
+      <p>
+        Reliable precipitation-frequency estimates are essential for stormwater design, flood-risk planning, and resilience,
+        particularly in regions where short-duration rainfall strongly influences flash flooding. The manuscript evaluates
+        precipitation-frequency statistics derived from the Kentucky Mesonet and compares them with NOAA Atlas 14.
       </p>
+      <p>
+        The local submitted manuscript states that the study uses quality-controlled Kentucky Mesonet stations, durations from
+        five minutes to 24 hours, and return periods from 2 to 100 years.
+      </p>
+      <div class="tags">
+        <span class="tag teal">Kentucky Mesonet</span>
+        <span class="tag teal">NOAA Atlas 14</span>
+        <span class="tag">IDF curves</span>
+        <span class="tag">Gumbel analysis</span>
+        <span class="tag">Extreme precipitation</span>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2>Technical Workflow and Results</h2>
+      <ul>
+        <li>Compute rolling precipitation accumulations for durations from five minutes to 24 hours.</li>
+        <li>Extract annual maximum precipitation series for each station and duration.</li>
+        <li>Apply Gumbel frequency analysis to derive precipitation-frequency estimates and IDF curves.</li>
+        <li>Compare Mesonet-derived estimates with NOAA Atlas 14 and map spatial precipitation-frequency structure across Kentucky.</li>
+      </ul>
     </div>
 
     <div class="fig-grid">
       <div class="fig-wrap">
-        <img src="images/hydro_idf_curve.png" alt="Kentucky Mesonet derived IDF curve" />
+        <img src="images/hydro_idf_curve.png" alt="Kentucky Mesonet-derived IDF curve" />
         <p class="fig-caption">Kentucky Mesonet-derived intensity-duration-frequency curve.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/hydro_spatial_multidur.png" alt="Spatial extreme precipitation diagnostics for Kentucky" />
-        <p class="fig-caption">Spatial analysis of short-duration precipitation extremes across Kentucky.</p>
+        <img src="images/hydro_spatial_multidur.png" alt="Spatial precipitation frequency diagnostics across Kentucky" />
+        <p class="fig-caption">Spatial structure of short-duration precipitation-frequency estimates across Kentucky.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/hydro_spatial_60min.png" alt="Sixty-minute precipitation frequency spatial field" />
+        <p class="fig-caption">Example duration-specific spatial precipitation-frequency diagnostic.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/hydro_timeseries.png" alt="Kentucky precipitation annual maximum time series" />
+        <p class="fig-caption">Annual maximum precipitation behavior from station observations.</p>
       </div>
     </div>
 
@@ -78,7 +107,6 @@
     <a href="cv.html">CV</a>
     <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="contact.html">Contact</a>
   </nav>
   <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
 </footer>

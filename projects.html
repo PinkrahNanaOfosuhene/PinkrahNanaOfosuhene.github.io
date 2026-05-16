@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Atmospheric science, climate extremes, WRF, hydroclimatology, and severe-weather research projects by Pinkrah Nana Ofosuhene." />
+  <meta name="description" content="Research project pages for Pinkrah Nana Ofosuhene, including CLIMBS severe-storm environments, WRF flood simulation, Kentucky Mesonet hydroclimatology, Ghana heatwaves, and compound heat-dryness extremes." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,7 +18,6 @@
     <li><a href="cv.html">CV</a></li>
     <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
     <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -26,81 +25,83 @@
 </nav>
 
 <header class="page-header">
-  <span class="page-header-label">Research Portfolio</span>
-  <h1 class="page-header-title">Projects</h1>
+  <span class="page-header-label">Research Projects</span>
+  <h1 class="page-header-title">Atmospheric Science Project Portfolio</h1>
   <p class="page-header-desc">
-    Selected projects in severe-weather climatology, climate projections, numerical modeling,
-    hydroclimatology, heat extremes, and reproducible climate-data workflows.
+    Flagship projects are consolidated by scientific theme to avoid duplication and to emphasize coherent research directions.
   </p>
 </header>
 
 <section class="section">
   <div class="section-inner">
-    <div class="grid-3">
-      <a href="climbs-project.html" class="card">
-        <div class="card-title">CLIMBS Severe-Storm Environments</div>
-        <div class="card-subtitle">ERA5, CMIP6, NOAA Storm Events</div>
-        <p class="card-text">
-          Objective: characterize historical and future severe-storm-supportive environments in the Ohio River Basin.
-          Methods include derived thermodynamic and kinematic diagnostics, climate-model evaluation, and Random Forest classification.
-        </p>
-        <div class="tags"><span class="tag teal">Severe Storms</span><span class="tag">HPC</span><span class="tag">Thesis</span></div>
+    <div class="project-grid">
+      <a href="climbs-project.html" class="project-card">
+        <img src="images/climbs_validation.png" alt="CLIMBS severe-storm validation figure" />
+        <div>
+          <span class="card-subtitle">MS Thesis | NSF EPSCoR CLIMBS</span>
+          <h3>CLIMBS Severe-Storm Environment Climatology and Future Projections</h3>
+          <p>Climatology and Future Projection of Mesoscale Severe-Storm Environments in the Ohio River Basin Derived from ERA5 and A Downscaled CMIP6.</p>
+          <div class="tags"><span class="tag teal">ERA5</span><span class="tag">CMIP6</span><span class="tag">Random Forest</span></div>
+        </div>
       </a>
 
-      <a href="climbs-project.html" class="card">
-        <div class="card-title">ERA5/CMIP6 Severe-Weather Projection Framework</div>
-        <div class="card-subtitle">Climate-model evaluation and bias correction</div>
-        <p class="card-text">
-          Objective: connect ERA5 severe-storm diagnostics with CMIP6 future-scenario output to support regional severe-weather projection analysis.
-        </p>
-        <div class="tags"><span class="tag teal">ERA5</span><span class="tag">CMIP6</span><span class="tag">Downscaling</span></div>
+      <a href="wrf-project.html" class="project-card">
+        <img src="images/wrf_verification.png" alt="WRF verification against Stage IV observations" />
+        <div>
+          <span class="card-subtitle">Numerical Weather Prediction</span>
+          <h3>WRF Simulation of Central Appalachian Flood Event</h3>
+          <p>WRF/WPS simulation and verification of the July 26-27, 2022 Central Appalachian flood event using ERA5 and NOAA Stage IV precipitation.</p>
+          <div class="tags"><span class="tag teal">WRF</span><span class="tag">ERA5</span><span class="tag">Stage IV</span></div>
+        </div>
       </a>
 
-      <a href="climbs-project.html" class="card">
-        <div class="card-title">Random Forest Severe-Weather Hazard Prediction</div>
-        <div class="card-subtitle">NOAA Storm Events and atmospheric predictors</div>
-        <p class="card-text">
-          Objective: estimate probabilistic tornado, hail, and damaging-wind environments using atmospheric predictors and verified storm-event labels.
-        </p>
-        <div class="tags"><span class="tag teal">Random Forest</span><span class="tag">NOAA Storm Events</span><span class="tag">Scikit-learn</span></div>
+      <a href="hydro-project.html" class="project-card">
+        <img src="images/hydro_spatial_multidur.png" alt="Kentucky spatial precipitation frequency maps" />
+        <div>
+          <span class="card-subtitle">Hydroclimatology Manuscript</span>
+          <h3>Kentucky Mesonet vs NOAA Atlas 14 Hydroclimatology Analysis</h3>
+          <p>A Comparison of Atlas 14 to Precipitation Frequency Statistics Derived from the Kentucky Mesonet.</p>
+          <div class="tags"><span class="tag teal">Kentucky Mesonet</span><span class="tag">NOAA Atlas 14</span><span class="tag">IDF</span></div>
+        </div>
       </a>
 
-      <a href="wrf-project.html" class="card">
-        <div class="card-title">WRF Central Appalachian Flood Simulation</div>
-        <div class="card-subtitle">WRF/WPS, ERA5, NOAA Stage IV</div>
-        <p class="card-text">
-          Objective: simulate and verify the July 26-27, 2022 Central Appalachian flood with a convection-permitting WRF setup on NCAR Derecho.
-        </p>
-        <div class="tags"><span class="tag teal">WRF</span><span class="tag">ERA5</span><span class="tag">NCAR Derecho</span></div>
+      <a href="heatwave-project.html" class="project-card">
+        <img src="images/tcci_ghana_map.jpg" alt="Map of Ghana for climate analysis context" />
+        <div>
+          <span class="card-subtitle">Climate Extremes | Ghana</span>
+          <h3>Ghana Heatwave Climatology</h3>
+          <p>Historical analysis of heatwave prevalence, frequency, duration, and intensity in Ghana, with a related Northern Ghana heatwave abstract.</p>
+          <div class="tags"><span class="tag teal">Heatwaves</span><span class="tag">Ghana</span><span class="tag">Station Data</span></div>
+        </div>
       </a>
 
-      <a href="hydro-project.html" class="card">
-        <div class="card-title">Kentucky Mesonet vs NOAA Atlas 14</div>
-        <div class="card-subtitle">Precipitation-frequency statistics</div>
-        <p class="card-text">
-          Objective: compare Kentucky Mesonet short-duration precipitation-frequency estimates with NOAA Atlas 14 design-rainfall guidance.
-        </p>
-        <div class="tags"><span class="tag teal">Hydroclimatology</span><span class="tag">IDF Curves</span><span class="tag">Kentucky Mesonet</span></div>
-      </a>
-
-      <a href="research.html#heatwave" class="card">
-        <div class="card-title">Ghana Heatwave Climatology</div>
-        <div class="card-subtitle">Station observations and climate extremes</div>
-        <p class="card-text">
-          Objective: quantify heatwave prevalence, frequency, duration, and intensity using long-term meteorological station records across Ghana.
-        </p>
-        <div class="tags"><span class="tag teal">Heatwaves</span><span class="tag">Ghana</span><span class="tag">Climate Extremes</span></div>
-      </a>
-
-      <a href="compound-heat-dryness.html" class="card">
-        <div class="card-title">Compound Heat-Dryness Extremes</div>
-        <div class="card-subtitle">Hourly station workflow</div>
-        <p class="card-text">
-          Objective: identify compound hot-dry events using temperature, vapor pressure deficit, rolling precipitation deficits, and NOAA impact context.
-        </p>
-        <div class="tags"><span class="tag teal">VPD</span><span class="tag">Station Data</span><span class="tag">Risk Analysis</span></div>
+      <a href="compound-heat-dryness.html" class="project-card">
+        <img src="images/compound_workflow.png" alt="Compound heat-dryness workflow" />
+        <div>
+          <span class="card-subtitle">Climate Data Science</span>
+          <h3>Compound Heat-Dryness Extremes</h3>
+          <p>Observational, station-based workflow for compound heat-dryness detection using Kentucky Mesonet hourly data, VPD, and percentile thresholds.</p>
+          <div class="tags"><span class="tag teal">VPD</span><span class="tag">Kentucky Mesonet</span><span class="tag">Compound Extremes</span></div>
+        </div>
       </a>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Additional Applied Climatology</span>
+      <h2 class="section-title">Secondary Project</h2>
+      <div class="section-divider"></div>
+    </div>
+    <a href="tcci-project.html" class="project-card compact">
+      <img src="images/tcci_fig6_spatial_maps.jpg" alt="Spatial TCCI maps for Ghana" />
+      <div>
+        <h3>Mapping Tourism Climate Suitability in Ghana</h3>
+        <p>Applied climatology manuscript draft using the Tourism Climate Comfort Index and long-term Ghana Meteorological Agency station data.</p>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -114,7 +115,6 @@
     <a href="cv.html">CV</a>
     <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="contact.html">Contact</a>
   </nav>
   <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
 </footer>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CLIMBS Severe-Storm Research | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="CLIMBS thesis research on severe-storm environments in the Ohio River Basin using ERA5, CMIP6, NOAA Storm Events, Random Forest methods, and HPC workflows." />
+  <meta name="description" content="MS thesis research on severe-storm environments in the Ohio River Basin using ERA5, downscaled CMIP6, NOAA Storm Events, Random Forest classification, and HPC workflows." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,7 +18,6 @@
     <li><a href="cv.html">CV</a></li>
     <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
     <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -26,50 +25,72 @@
 </nav>
 
 <header class="page-header">
-  <span class="page-header-label">MS Thesis &middot; NSF EPSCoR CLIMBS</span>
-  <h1 class="page-header-title">Severe-Storm Environments in the Ohio River Basin</h1>
+  <span class="page-header-label">MS Thesis | NSF EPSCoR CLIMBS</span>
+  <h1 class="page-header-title">Climatology and Future Projection of Mesoscale Severe-Storm Environments in the Ohio River Basin Derived from ERA5 and A Downscaled CMIP6</h1>
   <p class="page-header-desc">
-    ERA5 climatology, CMIP6 future climate scenarios, NOAA Storm Events labels, Random Forest classification,
-    and high-performance computing workflows for regional severe-weather environment analysis.
+    Thesis proposal title and project scope from local thesis proposal materials, WKU abstract text, and defense notes.
   </p>
 </header>
 
 <section class="section">
   <div class="section-inner">
     <div class="grid-4">
-      <div class="card"><div class="card-title">Objective</div><p class="card-text">Quantify historical and future severe-storm-supportive environments across the Ohio River Basin.</p></div>
-      <div class="card"><div class="card-title">Datasets</div><p class="card-text">ERA5 reanalysis, CMIP6 future climate scenarios, NOAA Storm Events, derived atmospheric diagnostics.</p></div>
-      <div class="card"><div class="card-title">Methods</div><p class="card-text">Python diagnostics, ERA5-to-CMIP6 evaluation, bias correction, Random Forest classification, HPC batch workflows.</p></div>
-      <div class="card"><div class="card-title">Outputs</div><p class="card-text">Severe-weather environment maps, trends, calibrated probabilities, and projection-ready diagnostic workflows.</p></div>
+      <div class="card"><div class="card-title">Scientific Objective</div><p class="card-text">Quantify the climatology, spatial distribution, and temporal variability of mesoscale severe-storm-supportive environments across the Ohio River Basin.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">ERA5 reanalysis, NOAA Storm Events Database, downscaled CMIP6 climate projections, and derived severe-weather diagnostics.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Event-environment matching, diagnostic computation, ERA5-CMIP6 overlap evaluation, calibration, and Random Forest classification.</p></div>
+      <div class="card"><div class="card-title">Research Output</div><p class="card-text">Historical climatologies, validation figures, probability maps, feature-importance interpretation, and future severe-storm environment projections.</p></div>
     </div>
 
-    <div class="card" style="margin-top:1.5rem;">
-      <div class="card-title">Research Relevance</div>
-      <p class="card-text">
-        The project supports climate-risk interpretation for severe convective hazards by linking historical reanalysis,
-        observed storm reports, and future climate scenarios. The diagnostic framework uses a large suite of atmospheric
-        diagnostics and predictors rather than conflicting fixed-count claims.
+    <div class="card prose" style="margin-top:1.5rem;">
+      <h2>Research Context</h2>
+      <p>
+        The Ohio River Basin experiences frequent severe convective hazards, including tornadoes, damaging winds, and large hail.
+        My thesis addresses a documented gap by focusing on the environmental conditions that support these events, rather than
+        using storm reports alone.
       </p>
-      <div class="tags" style="margin-top:1rem;">
+      <p>
+        The framework uses thermodynamic, kinematic, moisture-related, and composite diagnostics including CAPE, CIN, vertical
+        wind shear, storm-relative helicity, lapse rates, vorticity, Significant Tornado Parameter, and Supercell Composite
+        Parameter.
+      </p>
+      <div class="tags">
         <span class="tag teal">ERA5</span>
-        <span class="tag teal">CMIP6</span>
+        <span class="tag teal">CMIP6 SSP4.5</span>
         <span class="tag">NOAA Storm Events</span>
         <span class="tag">Random Forest</span>
-        <span class="tag">WRF/WPS</span>
-        <span class="tag">NCAR Derecho/Casper</span>
-        <span class="tag">TACC</span>
+        <span class="tag">Python</span>
+        <span class="tag">NetCDF</span>
+        <span class="tag">PBS scheduling</span>
       </div>
     </div>
 
     <div class="fig-grid">
       <div class="fig-wrap">
         <img src="images/climbs_cape.png" alt="ERA5 CAPE diagnostic map for the Ohio River Basin" />
-        <p class="fig-caption">Example thermodynamic diagnostic from the ERA5 severe-storm environment workflow.</p>
+        <p class="fig-caption">Thermodynamic diagnostic example from the ERA5 severe-storm environment workflow.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/climbs_validation.png" alt="CLIMBS validation figure comparing diagnostics with storm events" />
-        <p class="fig-caption">Preliminary validation against observed severe-weather environments.</p>
+        <img src="images/climbs_shear.png" alt="0-6 km bulk wind shear diagnostic map" />
+        <p class="fig-caption">Kinematic diagnostic example used to characterize storm-supportive environments.</p>
       </div>
+      <div class="fig-wrap">
+        <img src="images/climbs_stp.png" alt="Significant Tornado Parameter diagnostic map" />
+        <p class="fig-caption">Composite parameter diagnostic used in tornado-supportive environment analysis.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/climbs_validation.png" alt="Validation figure comparing modeled severe-storm environments with observed events" />
+        <p class="fig-caption">Validation figure linking ERA5-derived environments with observed severe-weather occurrence.</p>
+      </div>
+    </div>
+
+    <div class="card prose">
+      <h2>Technical Workflow</h2>
+      <ul>
+        <li>Derive severe-weather diagnostics from ERA5 reanalysis over a multi-decadal historical period.</li>
+        <li>Match environmental fields to NOAA Storm Events labels for tornado, large hail, and damaging-wind occurrence.</li>
+        <li>Train and evaluate Random Forest classifiers to estimate severe-storm-supportive environments.</li>
+        <li>Evaluate downscaled CMIP6 against ERA5 over the overlap period and apply calibrated relationships to future scenarios.</li>
+      </ul>
     </div>
 
     <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:2rem;">
@@ -89,7 +110,6 @@
     <a href="cv.html">CV</a>
     <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="contact.html">Contact</a>
   </nav>
   <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
 </footer>

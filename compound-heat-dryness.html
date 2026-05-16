@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compound Heat-Dryness Events | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Compound heat-dryness climate data science workflow using hourly station data, vapor pressure deficit, precipitation deficits, and NOAA impact context." />
+  <title>Compound Heat-Dryness Extremes | Pinkrah Nana Ofosuhene</title>
+  <meta name="description" content="Compound heat-dryness event workflow using Kentucky Mesonet hourly data, temperature, vapor pressure deficit, percentile thresholds, and event diagnostics." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,7 +18,6 @@
     <li><a href="cv.html">CV</a></li>
     <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
     <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -26,38 +25,61 @@
 </nav>
 
 <header class="page-header">
-  <span class="page-header-label">Climate Extremes</span>
-  <h1 class="page-header-title">Compound Heat-Dryness Events</h1>
+  <span class="page-header-label">Climate Data Science</span>
+  <h1 class="page-header-title">Compound Heat-Dryness Extremes</h1>
   <p class="page-header-desc">
-    A reproducible climate-data workflow for identifying overlapping heat and short-term dryness stress from hourly station observations.
+    Observational, station-based analysis of compound heat-dryness events using Kentucky Mesonet hourly data.
   </p>
 </header>
 
 <section class="section">
   <div class="section-inner">
     <div class="grid-4">
-      <div class="card"><div class="card-title">Objective</div><p class="card-text">Detect compound hot-dry stress events relevant to agricultural, water-resource, and public-health risk.</p></div>
-      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Hourly station data, temperature, derived vapor pressure deficit, rolling precipitation windows, NOAA impact context.</p></div>
-      <div class="card"><div class="card-title">Methods</div><p class="card-text">Quality control, percentile thresholds, rolling-window precipitation deficits, event duration and intensity metrics.</p></div>
-      <div class="card"><div class="card-title">Outputs</div><p class="card-text">Event catalog, threshold diagnostics, duration-intensity plots, and impact-context figures.</p></div>
+      <div class="card"><div class="card-title">Scientific Objective</div><p class="card-text">Quantify the frequency, duration, and intensity of compound heat-dryness events in Kentucky.</p></div>
+      <div class="card"><div class="card-title">Datasets</div><p class="card-text">Kentucky Mesonet temperature, relative humidity, and precipitation data at hourly resolution, with a 2016-2025 study period in the proposal draft.</p></div>
+      <div class="card"><div class="card-title">Methods</div><p class="card-text">Quality control, vapor pressure deficit derivation, station-specific percentile thresholds, rolling-window precipitation deficits, and event diagnostics.</p></div>
+      <div class="card"><div class="card-title">Research Output</div><p class="card-text">Workflow schematic, event catalog, threshold time series, seasonality, duration-intensity plots, and NOAA impact context.</p></div>
     </div>
 
-    <div class="card" style="margin-top:1.5rem;">
-      <div class="card-title">Research Relevance</div>
-      <p class="card-text">
-        This project extends single-hazard climate analysis into compound-risk detection, using physical variables
-        that connect atmospheric moisture demand and precipitation deficits to decision-relevant impacts.
+    <div class="card prose" style="margin-top:1.5rem;">
+      <h2>Project Definition</h2>
+      <p>
+        The local project draft defines compound climate extremes as simultaneous or sequential occurrence of multiple climatic
+        stressors whose combined impacts exceed those of individual events. In this project, a compound heat-dryness event is
+        defined using high temperature and high vapor pressure deficit thresholds.
       </p>
+      <p>
+        Vapor pressure deficit is used because it directly represents atmospheric moisture demand and connects heat stress to
+        plant-water stress and drought-relevant conditions.
+      </p>
+    </div>
+
+    <div class="card prose">
+      <h2>Technical Workflow and Results</h2>
+      <ul>
+        <li>Acquire and quality-control Kentucky Mesonet hourly station observations.</li>
+        <li>Derive vapor pressure deficit from temperature and relative humidity.</li>
+        <li>Define compound events using station-specific percentile thresholds for heat and dryness.</li>
+        <li>Summarize event frequency, seasonality, duration, intensity, and NOAA impact context.</li>
+      </ul>
     </div>
 
     <div class="fig-grid">
       <div class="fig-wrap">
         <img src="images/compound_workflow.png" alt="Compound heat-dryness workflow" />
-        <p class="fig-caption">Workflow for station QC, VPD derivation, threshold detection, and impact-context comparison.</p>
+        <p class="fig-caption">Data acquisition, quality control, VPD derivation, threshold detection, and impact-context workflow.</p>
       </div>
       <div class="fig-wrap">
-        <img src="images/compound_duration_intensity.png" alt="Compound heat-dryness duration and intensity diagnostics" />
-        <p class="fig-caption">Duration and intensity diagnostics for identified compound heat-dryness events.</p>
+        <img src="images/compound_threshold_timeseries.png" alt="Compound heat-dryness threshold time series" />
+        <p class="fig-caption">Station-level threshold and event-detection time series.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/compound_seasonality.png" alt="Seasonality of compound heat-dryness events" />
+        <p class="fig-caption">Seasonal distribution of compound heat-dryness events.</p>
+      </div>
+      <div class="fig-wrap">
+        <img src="images/compound_duration_intensity.png" alt="Duration and intensity of compound heat-dryness events" />
+        <p class="fig-caption">Duration and intensity diagnostics for identified compound events.</p>
       </div>
     </div>
 
@@ -78,7 +100,6 @@
     <a href="cv.html">CV</a>
     <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="contact.html">Contact</a>
   </nav>
   <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
 </footer>

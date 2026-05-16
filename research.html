@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research | Pinkrah Nana Ofosuhene</title>
-  <meta name="description" content="Research focus areas and scholarly work by Pinkrah Nana Ofosuhene in severe-storm climatology, climate extremes, hydroclimatology, and climate data science." />
+  <meta name="description" content="Research focus areas of Pinkrah Nana Ofosuhene in severe-storm environments, ERA5 and CMIP6 climate diagnostics, WRF modeling, hydroclimatology, and climate extremes." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,7 +18,6 @@
     <li><a href="cv.html">CV</a></li>
     <li><a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a></li>
     <li><a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a></li>
-    <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -27,10 +26,10 @@
 
 <header class="page-header">
   <span class="page-header-label">Research</span>
-  <h1 class="page-header-title">Severe Weather, Climate Extremes, and Climate Data Science</h1>
+  <h1 class="page-header-title">Severe-Storm Environments, Climate Extremes, and Atmospheric Prediction</h1>
   <p class="page-header-desc">
-    My research integrates atmospheric diagnostics, numerical modeling, machine learning, and high-performance
-    computing to understand severe-storm environments and climate-sensitive hazards.
+    My work links atmospheric diagnostics, observed hazard reports, climate model projections, numerical weather prediction,
+    and reproducible scientific computing.
   </p>
 </header>
 
@@ -38,24 +37,44 @@
   <div class="section-inner">
     <div class="section-header">
       <span class="section-label">Current Thesis Research</span>
-      <h2 class="section-title">CLIMBS Severe-Storm Environments</h2>
+      <h2 class="section-title">Ohio River Basin Severe-Storm Environments</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="card">
-      <div class="card-title">Climatological and Future Projections of Severe-Storm Environments in the Ohio River Basin</div>
-      <p class="card-text">
-        This MS thesis research examines severe-storm-supportive environments across Kentucky and the broader Ohio River Basin.
-        The work combines ERA5 reanalysis, CMIP6 future climate scenarios, NOAA Storm Events labels, Random Forest classification,
-        and high-performance computing workflows on NCAR Derecho/Casper and TACC systems.
-      </p>
-      <div class="grid-4" style="margin-top:1rem;">
-        <div><strong>Objective</strong><p class="card-text">Quantify historical and future severe-storm environments.</p></div>
-        <div><strong>Datasets</strong><p class="card-text">ERA5, CMIP6, NOAA Storm Events.</p></div>
-        <div><strong>Methods</strong><p class="card-text">Diagnostics, bias correction, Random Forest classification.</p></div>
-        <div><strong>Outputs</strong><p class="card-text">Maps, trends, calibrated probabilities, projection workflow.</p></div>
+    <div class="feature-work">
+      <div class="card prose">
+        <h3 class="card-title">Climatology and Future Projection of Mesoscale Severe-Storm Environments in the Ohio River Basin Derived from ERA5 and A Downscaled CMIP6</h3>
+        <p>
+          Severe convective storms are a major weather hazard across the United States, driven by the interplay of atmospheric
+          instability, moisture, and vertical wind shear. My thesis develops an Ohio River Basin-focused framework that links
+          long-term ERA5-derived environments to observed severe storms and provides projections of severe-storm probabilities
+          through 2100.
+        </p>
+        <p>
+          The study develops severe-storm-supportive environmental diagnostics grouped into thermodynamic, kinematic,
+          moisture-related, and composite parameters, then evaluates how those environments correspond to NOAA Storm Events
+          reports and downscaled CMIP6 climate simulations.
+        </p>
+        <div class="tags">
+          <span class="tag teal">ERA5</span>
+          <span class="tag teal">CMIP6</span>
+          <span class="tag">NOAA Storm Events</span>
+          <span class="tag">Random Forest</span>
+          <span class="tag">Ohio River Basin</span>
+        </div>
       </div>
-      <div style="margin-top:1rem;">
-        <a href="climbs-project.html" class="btn btn-primary">View CLIMBS Project</a>
+      <div class="feature-gallery">
+        <a href="climbs-project.html" class="feature-tile large">
+          <img src="images/climbs_validation.png" alt="Severe-storm validation figure" />
+          <span>Validation against observed storm environments</span>
+        </a>
+        <a href="climbs-project.html" class="feature-tile">
+          <img src="images/climbs_shear.png" alt="ERA5 wind shear map" />
+          <span>0-6 km bulk wind shear</span>
+        </a>
+        <a href="climbs-project.html" class="feature-tile">
+          <img src="images/climbs_stp.png" alt="Significant Tornado Parameter map" />
+          <span>Significant Tornado Parameter</span>
+        </a>
       </div>
     </div>
   </div>
@@ -69,30 +88,12 @@
       <div class="section-divider"></div>
     </div>
     <div class="grid-3">
-      <div class="card">
-        <div class="card-title">Severe Convective Storms</div>
-        <p class="card-text">Environmental controls on tornado, hail, and damaging-wind potential using thermodynamic and kinematic diagnostics.</p>
-      </div>
-      <div class="card">
-        <div class="card-title">Climate Modeling</div>
-        <p class="card-text">ERA5/CMIP6 evaluation, regional climate interpretation, and downscaling workflows for severe-weather environments.</p>
-      </div>
-      <div class="card">
-        <div class="card-title">Numerical Weather Prediction</div>
-        <p class="card-text">WRF/WPS event simulation and verification for high-impact flood and convective systems.</p>
-      </div>
-      <div class="card">
-        <div class="card-title">Hydroclimatology</div>
-        <p class="card-text">Extreme precipitation, IDF curves, return periods, and design-rainfall relevance for Kentucky.</p>
-      </div>
-      <div class="card">
-        <div class="card-title">Climate Extremes</div>
-        <p class="card-text">Heatwave climatology, compound heat-dryness events, and risk-relevant climate diagnostics.</p>
-      </div>
-      <div class="card">
-        <div class="card-title">Scientific Computing</div>
-        <p class="card-text">Python, Xarray, MetPy, Cartopy, Linux, NetCDF, WRF-Python, and reproducible HPC workflows.</p>
-      </div>
+      <div class="card"><div class="card-title">Severe Convective Storm Climatology</div><p class="card-text">Climatology, spatial distribution, temporal variability, and event-environment relationships for tornado, large hail, and damaging-wind environments.</p></div>
+      <div class="card"><div class="card-title">Climate Modeling and Downscaling</div><p class="card-text">ERA5-to-CMIP6 evaluation, overlap-period comparison, bias correction, and future storm-supportive environment projections.</p></div>
+      <div class="card"><div class="card-title">Numerical Weather Prediction</div><p class="card-text">WRF/WPS simulation of extreme precipitation and flash-flood events using reanalysis boundary conditions and model verification.</p></div>
+      <div class="card"><div class="card-title">Hydroclimatology and Precipitation Extremes</div><p class="card-text">Precipitation-frequency statistics, IDF curves, return periods, and comparison of Kentucky Mesonet estimates with NOAA Atlas 14.</p></div>
+      <div class="card"><div class="card-title">Machine Learning for Environmental Prediction</div><p class="card-text">Random Forest classification, calibrated probabilities, and physically interpretable atmospheric predictors for severe-weather occurrence.</p></div>
+      <div class="card"><div class="card-title">Climate Extremes and Risk Assessment</div><p class="card-text">Heatwave climatology, compound heat-dryness events, vapor pressure deficit, duration-intensity diagnostics, and impact context.</p></div>
     </div>
   </div>
 </section>
@@ -101,17 +102,20 @@
   <div class="section-inner">
     <div class="section-header">
       <span class="section-label">Previous Research</span>
-      <h2 class="section-title">Ghana Heatwave Climatology</h2>
+      <h2 class="section-title">Heatwaves in Ghana</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="card">
-      <div class="card-title">Historical Heatwave Analysis in Ghana</div>
-      <p class="card-text">
-        This work examines heatwave prevalence, frequency, duration, and intensity using long-term meteorological
-        station records across Ghana. The Ghana heatwave manuscript is submitted for review, and a related Northern
-        Ghana heatwave abstract has been published by the Ghana Science Association.
+    <div class="card prose">
+      <p>
+        My undergraduate heatwave research examined the historical and projected occurrences, frequency, duration, and
+        intensity of heatwaves in Ghana using meteorological station data. A related conference abstract was titled
+        "Trends and Characteristics of Heatwaves in Northern Ghana."
       </p>
-      <div class="tags"><span class="tag teal">Heatwaves</span><span class="tag">Station Data</span><span class="tag">Ghana</span></div>
+      <p>
+        This work is connected to my broader interest in climate extremes, public-health risk, and climate-sensitive
+        decision support in West Africa.
+      </p>
+      <a href="heatwave-project.html" class="btn btn-secondary">View Heatwave Project</a>
     </div>
   </div>
 </section>
@@ -126,7 +130,6 @@
     <a href="cv.html">CV</a>
     <a href="https://github.com/PinkrahNanaOfosuhene" target="_blank" rel="noopener">GitHub</a>
     <a href="https://linkedin.com/in/nana-pinkrah-4a4a73212" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="contact.html">Contact</a>
   </nav>
   <p>&copy; 2026 Pinkrah Nana Ofosuhene &middot; Atmospheric Scientist &middot; WKU</p>
 </footer>

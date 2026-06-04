@@ -907,6 +907,42 @@ a:hover {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.animation-showcase {
+  margin: 2rem 0;
+}
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.animation-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.animation-card img,
+.animation-card video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.animation-card figcaption {
+  color: var(--muted);
+  font-size: 0.84rem;
+  padding: 0.7rem 0.8rem 0.8rem;
+}
+
+.animation-card-wide {
+  grid-column: 1 / -1;
+}
+
 .table-scroll {
   overflow-x: auto;
   margin: 1rem 0;
@@ -1109,6 +1145,7 @@ a:hover {
   .focus-grid,
   .project-grid,
   .fig-grid,
+  .animation-grid,
   .stats-bar,
   .hero-panel-grid,
   .about-details,

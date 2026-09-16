@@ -1,138 +1,84 @@
-/* ============================================================
-   script.js - Navbar, scroll, and animation behavior
-   ============================================================ */
-
-// Navbar: scroll class + hamburger
-const navbar = document.querySelector('.navbar');
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+﻿/* Progressive enhancement: content and links work without JavaScript. */
+document.documentElement.classList.add('js');
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#primary-nav');
+function closeMenu(returnFocus = false) {
+  if (!menuButton || !navigation) return;
+  navigation.classList.remove('is-open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open navigation');
+  document.body.classList.remove('menu-open');
+  if (returnFocus) menuButton.focus();
+}
+menuButton?.addEventListener('click', () => {
+  const open = menuButton.getAttribute('aria-expanded') !== 'true';
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  navigation.classList.toggle('is-open', open);
+  document.body.classList.toggle('menu-open', open);
 });
-
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open') ? 'true' : 'false');
-    const spans = hamburger.querySelectorAll('span');
-    spans[0].style.transform = navLinks.classList.contains('open')
-      ? 'rotate(45deg) translate(5px, 5px)' : '';
-    spans[1].style.opacity = navLinks.classList.contains('open') ? '0' : '1';
-    spans[2].style.transform = navLinks.classList.contains('open')
-      ? 'rotate(-45deg) translate(5px, -5px)' : '';
-  });
-
-  // Close on link click
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => closeMenu()));
+document.addEventListener('click', event => { if (!event.target.closest('.site-header')) closeMenu(); });
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') closeMenu(true);
+});
+window.matchMedia('(min-width: 851px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+const toolbar = document.querySelector('.project-toolbar');
+if (toolbar) {
+  const cards = [...document.querySelectorAll('.projects-section .project-card')];
+  const search = toolbar.querySelector('input[type="search"]');
+  const filters = [...toolbar.querySelectorAll('[data-filter]')];
+  const count = document.querySelector('.results-count');
+  const empty = document.querySelector('.empty-state');
+  let category = 'All projects';
+  function filterProjects() {
+    const query = search.value.trim().toLocaleLowerCase();
+    let visible = 0;
+    cards.forEach(card => {
+      const matches = (category === 'All projects' || card.dataset.category === category) && card.dataset.search.includes(query);
+      card.hidden = !matches;
+      if (matches) visible++;
     });
-  });
-}
-
-// Active nav link highlight
-function setActiveNav() {
-  const current = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === current || (current === '' && href === 'index.html')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-}
-setActiveNav();
-
-// Scroll-triggered fade-in
-const fadeEls = document.querySelectorAll('.fade-in-up');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-fadeEls.forEach(el => observer.observe(el));
-
-// Skill bar animation
-const skillBars = document.querySelectorAll('.skill-bar-fill');
-
-// Read data-width or inline style width attribute and set CSS variable
-skillBars.forEach(bar => {
-  const w = bar.dataset.width || bar.getAttribute('width') || '75%';
-  bar.style.setProperty('--bar-width', w.includes('%') ? w : (parseFloat(w) * 100) + '%');
-});
-
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animated');
-      skillObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-skillBars.forEach(bar => skillObserver.observe(bar));
-
-// Animated counter for stats
-function animateCounter(el) {
-  const target = parseFloat(el.dataset.target);
-  const isDecimal = el.dataset.decimal === 'true';
-  const duration = 1500;
-  const start = performance.now();
-
-  function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 3);
-    const value = target * ease;
-    el.textContent = isDecimal ? value.toFixed(2) : Math.floor(value) + (el.dataset.suffix || '');
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = (isDecimal ? target.toFixed(2) : target) + (el.dataset.suffix || '');
+    count.textContent = `${visible} ${visible === 1 ? 'project' : 'projects'}${query ? ` matching “${search.value.trim()}”` : ''}`;
+    empty.hidden = visible !== 0;
   }
-  requestAnimationFrame(update);
+  filters.forEach(button => button.addEventListener('click', () => {
+    category = button.dataset.filter;
+    filters.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+    filterProjects();
+  }));
+  search.addEventListener('input', filterProjects);
 }
-
-const counters = document.querySelectorAll('.stat-number[data-target]');
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCounter(entry.target);
-      counterObserver.unobserve(entry.target);
-    }
+const dialog = document.querySelector('.figure-dialog');
+if (dialog && typeof dialog.showModal === 'function') {
+  document.querySelectorAll('.figure-expand').forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const figure = dialog.querySelector('img');
+    figure.src = link.href;
+    figure.alt = link.querySelector('img').alt;
+    dialog.querySelector('p').textContent = link.dataset.caption;
+    dialog.showModal();
+  }));
+  dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const box = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
   });
-}, { threshold: 0.5 });
-
-counters.forEach(c => counterObserver.observe(c));
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = navbar ? navbar.offsetHeight + 16 : 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+}
+document.querySelectorAll('.gif-player').forEach(player => {
+  const toggle = player.querySelector('.animation-toggle');
+  const figure = player.querySelector('img');
+  function stop() {
+    figure.src = player.dataset.poster;
+    toggle.setAttribute('aria-pressed', 'false');
+    toggle.textContent = 'Play animation';
+  }
+  toggle.addEventListener('click', () => {
+    if (toggle.getAttribute('aria-pressed') === 'true') return stop();
+    figure.src = player.dataset.animation;
+    toggle.setAttribute('aria-pressed', 'true');
+    toggle.textContent = 'Stop animation';
   });
-});
-
-// Stagger child animations
-document.querySelectorAll('.stagger-children').forEach(container => {
-  Array.from(container.children).forEach((child, i) => {
-    child.style.transitionDelay = `${i * 0.1}s`;
-    child.classList.add('fade-in-up');
-    observer.observe(child);
-  });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
 });

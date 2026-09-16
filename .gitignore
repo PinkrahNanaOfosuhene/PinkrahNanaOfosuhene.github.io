@@ -1,0 +1,6 @@
+# Local research sources, render outputs, and development workspaces.
+/tmp/
+/output/
+/node_modules/
+.env
+.env.local
